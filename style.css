@@ -1,0 +1,638 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 25px;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:target{
+    scroll-margin-top: 65px;
+}
+
+
+.flex {
+    display: flex;
+}
+
+body{
+    background-color: #1d1717;
+}
+
+section{
+    height: 100%;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: 5s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0%);
+    transition: 10s;
+}
+
+.container{
+    max-width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* header */
+
+header{
+    position: fixed;
+    background-color: #242424e3;
+    width: 100%;
+    height: 75px;
+    padding: 10px;
+    box-shadow: 0px 0px 8px #ffffff;
+    z-index: 2;
+}
+
+.logo, .social{
+    width: 25%;
+}
+
+.menu-desktop{
+    width: 50%;
+}
+
+.menu-desktop nav a{
+    color: #000000;
+    text-decoration: none;
+    padding-right: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    transition: 0.2s;
+    margin-left: 35px;
+}
+
+.menu-desktop nav a:hover{
+    transform: scale(1.1);
+    color: #ffffff;
+    font-weight: 600; 
+}
+
+.menu-desktop nav a::after{
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    position: absolute;
+    top: 22px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.menu-desktop nav a:hover::after{
+    width: 32px;
+}
+
+.menu-desktop nav a.ativo{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.menu-desktop nav a.ativo::after{
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 32px;
+    transition: width 0.5s;
+}
+
+
+.social button i{
+    font-size: 25px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+
+}
+
+.social button:hover i{
+    color: #ffffff;
+    transform: scale(1.3);
+}
+
+.social button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+#linkedin::before{
+    background-color: #0A66C2;
+}
+
+#gh::before{
+    background-color: #000000;
+}
+
+#whatsapp::before{
+    background-color: #25D366;
+}
+
+.social button::before{
+    content: "";
+    width: 65px;
+    height: 65px;
+    border-radius: 50px;
+    position: absolute;
+    left: -100;
+    top: 100%;
+    background-color: #242424e3;
+}
+
+.social button:hover::before{
+    animation: deslocamento .6s;
+    left: 0;
+    top: 0;
+}
+
+@keyframes deslocamento {
+    0%{
+        left: -100;
+        top: 100%;
+    }
+    50%{
+        left: 15%;
+        top: -25%;
+    }
+    100%{
+        left: 0;
+        top: 0;
+    }
+}
+
+.trilho{
+    width: 50px;
+    height: 20px;
+    margin-left: -75px;
+    margin-right: 30px;
+    border-radius: 20px;
+    background: #3b3b3be7;
+    position: relative;
+ 
+}
+
+.trilho .indicador{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: -20px;
+    background-color: #000000e7;
+    position: absolute;
+    transform: scale(.9);
+    left: 0;
+    transition: .5s;
+}
+
+.trilho.dark .indicador{
+    left: 30px;
+}
+
+.trilho span{
+    margin-left: -25px;
+    display: flex;
+    gap: 60px;
+    font-size: 20px;
+} 
+
+.fa-sun{
+    color: rgb(255, 238, 0);
+}
+
+.fa-moon{
+    color: #450f9c;
+}
+
+
+/* texto topo lado esquerdo */
+
+section.topo{
+    padding: 80px 4%;
+    
+}
+
+section.topo .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+
+.topo .texto-topo h1{
+    color: #fe4701;
+    font-size: 40px;
+    margin-top: 60px;
+}
+
+.topo .texto-topo h1 span{
+    color: #ff2500;
+}
+
+.topo .texto-topo h2{
+    color: aqua;
+}
+
+.topo .texto-topo h2 span{
+    color: rgb(255, 0, 255);
+}
+
+.topo span{
+    color: #ff2500;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.topo .contato button{
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    font-weight: 300;
+    color: #ffffff;
+    padding: auto;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.contato button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 8px #ff7100;
+    font-weight: 600;
+}
+
+.topo .contato button::after{
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg, #000000, #000000);
+    position: absolute;
+    top: 35px;
+    left: 0;
+    margin-left: 14px;
+    transition: width 0.5s;
+}
+
+.topo .contato button:hover::after{
+    width: 65px;
+}
+
+/* imagem topo lado direito */
+
+
+.topo .img-topo img{
+    position: relative;
+    animation: animar 2s ease-in-out infinite alternate;
+    box-shadow: 0px 0px 8px #ff7100;
+    margin: 30px;
+    height: 450px;
+    width: 250px;
+}
+
+@keyframes animar{
+    0%{
+        top:0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* habilidades */
+
+section.habilidades{
+    padding: 40px 4%;
+    box-shadow: 0px 0px 8px #ffffff;
+}
+
+section.habilidades .interface{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.habilidades h2{
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.habilidades h2 span{
+    position: relative;
+   
+}
+
+.habilidades h2 span::before{
+    content: "";
+    color: #ffffff;
+    animation: hab 5s infinite;
+}
+
+.habilidades h2 span::after{
+    content: "";
+    position: absolute;
+    height: 35px;
+    bottom: 4px;
+    border-left: 2px solid red;
+    right: -10px;
+    animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
+    width: calc(100% + 12px);
+    background-color: #1D1717;
+    
+}
+
+@keyframes digitar {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 90%{
+        width: calc(100% + 12px);
+    }
+}
+
+@keyframes ponteiroi{
+    0%{
+        border-left: 2px solid #1D1717;
+    }
+}
+
+@keyframes hab{
+    0%,100%{
+        content: "<MINHAS> </HABILIDADES>" ;
+    }
+}
+
+.habilidades p{
+    color: #ffffff;
+    padding: 20px;
+}
+
+.nivel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin: 5px;
+    padding: 5px;
+    list-style-type: none;
+}
+
+.lista {
+    color: #ffffff ;
+    font-weight: 300;
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    column-gap: 30px;
+    padding: 10px;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.habs a {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.habil{
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 25px;
+    list-style-type: none;
+    transition: .5s;
+}
+
+.habil:hover{
+    transform: scale(1.1); 
+    box-shadow: 0px 0px 8px #ffffff;
+    border-radius: 20px;
+
+}
+
+.habil a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.habil i{
+    font-size: 75px;
+    padding-top: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sombreado-habil{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    font-size: 20px;
+    background-color: #000000b2;
+    color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .5s;
+}
+
+.sombreado-habil:hover{
+    opacity: 1;
+}
+
+#html{
+    color: rgb(233, 94, 30);
+}
+
+#css{
+    color: rgb(48, 18, 216);
+}
+
+#git{
+    color: rgb(255, 255, 255);
+}
+
+#gh{
+    color: rgb(255, 255, 255);
+}
+
+#js{
+    color: rgb(230, 233, 30);
+}
+
+#boot{
+    color: rgb(152, 30, 233);
+}
+#ang{
+    color: rgb(233, 30, 30);
+}
+#react{
+    color: rgb(30, 176, 233);
+}
+
+
+/* sobre */
+
+section.sobre{
+    padding: 40px 4%;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+section.sobre .texto-sobre{
+    color: #ffffff;
+}
+
+section.sobre .texto-sobre h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+section.sobre .texto-sobre p{
+    margin: 15px 0px;
+    text-align: justify;
+}
+
+/* projetos */
+
+section.projetos{
+    padding: 80px 4%;
+    box-shadow: 0px 0px 8px #ffffff;
+}
+
+section.projetos h2{
+    font-size: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+section.projetos .flex{
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.img-proj{
+    width: 360px;
+    height: 480px;
+    border-radius: 35px;
+    background-size: cover;
+    background-position: 100% 0%;
+    cursor: pointer;
+    position: relative;
+    transition: 5s;
+}
+
+.img-proj:hover{
+    background-position: 100% 100%;
+}
+
+.sombreado{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #450f9cbd;
+    color: #ffffff;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sombreado:hover{
+    opacity: 1;
+}
+
+/* footer */
+
+footer{
+    padding: 40px 4%;
+}
+
+footer.flex{
+    justify-content: space-between;
+}
+
+.logo-footer, .social-footer{
+    width: 50%;
+}
+
+.social-footer{
+    justify-content: end;
+}
+
+footer .divisa-footer{
+    padding: 20px 0;
+}
+
+.email{
+    color: #ffffff;
+    border-top: 2px solid rgb(128, 19, 0);
+}
+
+@media screen and (max-width: 1200px){
+    .menu-desktop, .social{
+        display: none;
+    }
+
+    .logo, .trilho{
+        width: 50%;
+    }
+
+    .flex{
+        flex-direction: column;
+    }
+
+    section{
+        height: 100%;
+    }
+}
