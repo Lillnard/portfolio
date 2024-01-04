@@ -137,10 +137,9 @@ header{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-
     border: none;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 20px;
     transition: 0.2s;
     position: relative;
     overflow: hidden;
@@ -435,7 +434,6 @@ section.habilidades .interface{
     justify-content: center;
     align-items: center;
     width: 150px;
-    font-size: 20px;
 }
 
 .habil{
@@ -446,7 +444,6 @@ section.habilidades .interface{
     margin-bottom: 40px;
     color: #ffffff;
     padding: 5px;
-    font-size: 25px;
     list-style-type: none;
     transition: .5s;
 }
@@ -615,8 +612,7 @@ footer.flex{
 
 .social-footer{
     justify-content: end;
-    margin-left: 200px;
-    margin-top: -55px;
+    text-align: end;
 }
 
 footer .divisa-footer{
@@ -684,9 +680,84 @@ footer .divisa-footer p{
     section.sobre .social{
         display: inline;       
     }
+
+    .img-proj{
+        width: 300px;
+        height: 380px;
+        border-radius: 35px;
+        display: flex;
+        margin: 20px auto  ;
+    }
     
     footer{
         padding: 10px 4%;
     }
 
+    .social button{
+        margin-right: 5px;
+    }
+
+    .social-footer{
+        justify-content: end;
+        margin-left: 185px;
+        margin-top: -55px;
+    }
+}
+
+@media screen and (max-width: 370px){
+
+    .habilidades h2 span::before{
+        font-size: 28px;
+    }
+    
+    .habs li{
+       width: 55px;
+    }   
+
+    .social button{
+        margin-right: 5px;
+    }
+
+    .social-footer{
+        justify-content: end;
+        margin-left: 160px;
+        margin-top: -55px;
+        margin-right: 2;
+    }
+}
+
+@media screen and (max-width: 330px){
+    
+    .habilidades h2 span::before{
+        font-size: 24px;
+    }
+
+    .habs li{
+       width: 48px;
+    }
+
+    .habs li.nivel{
+        font-size: 12px;
+    }
+
+    .sombreado-habil{
+        font-size: 15px;
+    }
+
+    .logo-footer img{
+        height: 40px;
+        width: 120px;
+    }
+
+
+    .social button{
+        margin-right: 5px;
+    }
+    
+    .social-footer{
+        justify-content: end;
+        margin-left: 140px;
+        margin-top: -55px;
+        margin-right: 2;
+    }
 }
