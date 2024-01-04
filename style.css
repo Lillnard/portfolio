@@ -24,19 +24,17 @@ body{
 }
 
 section{
-    height: 100%;
+    min-height: 100vh;
 }
 
 .hidden{
     opacity: 0;
-    filter: blur(15px);
     transform: translateX(-100%);
     transition: 5s;
 }
 
 .show{
     opacity: 1;
-    filter: blur(0px);
     transform: translateX(0%);
     transition: 10s;
 }
@@ -334,7 +332,7 @@ section.topo .flex{
 /* habilidades */
 
 section.habilidades{
-    padding: 40px 4%;
+    padding: 80px 20px 40px 20px;
     box-shadow: 0px 0px 8px #ffffff;
 }
 
@@ -358,13 +356,14 @@ section.habilidades .interface{
 .habilidades h2 span::before{
     content: "";
     color: #ffffff;
+    font-size: 50px;
     animation: hab 5s infinite;
 }
 
 .habilidades h2 span::after{
     content: "";
     position: absolute;
-    height: 35px;
+    height: 42px;
     bottom: 4px;
     border-left: 2px solid red;
     right: -10px;
@@ -400,40 +399,51 @@ section.habilidades .interface{
     padding: 20px;
 }
 
-.nivel{
+.habs li.nivel{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    margin: 5px;
-    padding: 5px;
+    font-size: 15px;
+    height: 30px;
+    margin: 10px 20PX;
     list-style-type: none;
 }
 
 .lista {
     color: #ffffff ;
     font-weight: 300;
-    display: grid;
-    grid-template-columns: repeat(5, max-content);
-    column-gap: 30px;
+    display: flex;
+    column-gap: 50px;
     padding: 10px;
     justify-content: center;
     transition: 0.2s;
 }
 
-.habs a {
-    display: flex; 
-    align-items: center;
+.habs{
+    transition: .5s;
+}
+
+.habs:hover{
+    box-shadow: 0px 0px 8px #ffffff;
+    border-radius: 10px;
+
+}
+
+.habs li{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-decoration: none; 
-    margin-top: 5px;
+    align-items: center;
+    width: 150px;
     font-size: 20px;
 }
 
 .habil{
-    width: 120px;
-    height: 120px;
-    margin: 5px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    margin-bottom: 40px;
     color: #ffffff;
     padding: 5px;
     font-size: 25px;
@@ -443,39 +453,28 @@ section.habilidades .interface{
 
 .habil:hover{
     transform: scale(1.1); 
-    box-shadow: 0px 0px 8px #ffffff;
     border-radius: 20px;
 
 }
 
-.habil a{
-    color: #ffffff;
-    text-decoration: none;
-}
-
 .habil i{
-    font-size: 75px;
+    font-size: 60px;
     padding-top: 20px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .sombreado-habil{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 120px;
-    height: 120px;
+    display: flex;
+    width: 80px;
+    height: 90px;
     font-size: 20px;
-    background-color: #000000b2;
     color: #ffffff;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 35PX;
     opacity: 0;
     transition: .5s;
+    align-items: end;
+    justify-content: center;
 }
 
 .sombreado-habil:hover{
@@ -516,7 +515,7 @@ section.habilidades .interface{
 /* sobre */
 
 section.sobre{
-    padding: 40px 4%;
+    padding: 80px 4%;
 }
 
 section.sobre .flex{
@@ -531,12 +530,14 @@ section.sobre .texto-sobre{
 section.sobre .texto-sobre h2{
     font-size: 30px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 section.sobre .texto-sobre p{
     margin: 15px 0px;
     text-align: justify;
 }
+
 
 /* projetos */
 
@@ -566,6 +567,7 @@ section.projetos .flex{
     cursor: pointer;
     position: relative;
     transition: 5s;
+    margin-top: 20px;
 }
 
 .img-proj:hover{
@@ -595,7 +597,7 @@ section.projetos .flex{
 /* footer */
 
 footer{
-    padding: 40px 4%;
+    padding: 20px 4%;
 }
 
 footer.flex{
@@ -606,26 +608,35 @@ footer.flex{
     width: 50%;
 }
 
+.logo-footer img{
+    height: 50px;
+    width: 150px;
+}
+
 .social-footer{
     justify-content: end;
+    margin-left: 200px;
+    margin-top: -55px;
 }
 
 footer .divisa-footer{
     padding: 20px 0;
 }
 
-.email{
+footer .divisa-footer p{
     color: #ffffff;
+    text-align: center;
+    font-weight: 100;
     border-top: 2px solid rgb(128, 19, 0);
 }
 
 @media screen and (max-width: 1200px){
-    .menu-desktop, .social{
+    .menu-desktop, #social-header{
         display: none;
     }
 
     .logo, .trilho{
-        width: 50%;
+        margin: 0px 80px;
     }
 
     .flex{
@@ -635,4 +646,47 @@ footer .divisa-footer{
     section{
         height: 100%;
     }
+
+    section.habilidades{
+        padding: 40px 20px 20px 20px;
+    }
+
+    .habilidades h2{
+        color: #ffffff;
+        font-size: 30px;
+    }
+    
+    .habilidades h2 span::before{
+        font-size: 30px;
+    }
+
+    .habs{
+        box-shadow: 0px 0px 8px #ffffff;
+        border-radius: 10px;
+    }
+
+    .sombreado-habil{
+        opacity: 1;
+    }
+
+    .lista {
+        column-gap: 20px;
+    }
+       
+    .habs li{
+        width: 65px;
+    }
+
+    .habil{
+        height: 60px;
+    }
+    
+    section.sobre .social{
+        display: inline;       
+    }
+    
+    footer{
+        padding: 10px 4%;
+    }
+
 }
