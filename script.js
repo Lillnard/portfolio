@@ -47,3 +47,19 @@ window.addEventListener('scroll', ()=>{
 window.onload = function() {
     window.scrollTo(0, 0);
 }
+
+let abrirMenu = document.getElementById('abrir-menu')
+let menu = document.getElementById('menu-mobile')
+let sombreado = document.getElementById('sombreado-menu')
+
+abrirMenu.addEventListener('click', ()=>{
+    menu.classList.add('menu-aberto')
+})
+
+menu.addEventListener('click', ()=>{
+    menu.classList.remove('menu-aberto')
+})
+
+sombreado.addEventListener('click', ()=>{
+    menu.classList.remove('menu-aberto')
+})
