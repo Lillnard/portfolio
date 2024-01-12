@@ -35,11 +35,11 @@
                 </nav>
             </div> <!-- menu -->
             <div class="social" id="social-header">
-                <a href="#"><button id="linkedin">
+                <a href="www.linkedin.com/in/leofonseca0" target="_blank"><button id="linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </button></a>
 
-                <a href="#"><button id="gh">
+                <a href="https://github.com/Lillnard" target="_blank"><button id="gh">
                     <i class="fa-brands fa-github"></i>
                 </button></a>
 
@@ -54,9 +54,7 @@
                         
                     </div><!-- indicador -->                   
                 </div><!-- trilho -->
-
             </div><!-- trilhos -->
-
             
             <div class="abrir-menu" id="abrir-menu">
                 <i class="fa-solid fa-bars"></i>
@@ -81,7 +79,7 @@
                     </nav>
 
                     <div class="social" id="social-mobile">
-                        <a href="#"><button id="linkedin">
+                        <a href=""><button id="linkedin">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </button></a>
         
@@ -135,12 +133,13 @@
 
             <div class="lista hidden">
 
-                    <ul class="habs">
+                    <ul class="habs" id="avancado">
                         <li class="nivel">AVANÇADO</li>
                         <li class="habil"><i class="fa-brands fa-html5" id="html"></i>
                             <div class="sombreado-habil">HTML</div>
                         </li>
-                        <li class="habil"><i class="fa-brands fa-css3-alt" id="css"></i>
+                        <li onclick="abrirModal()" class="habil"><i class="fa-brands fa-css3-alt" id="css"></i>
+                            
                             <div class="sombreado-habil">CSS</div>
                         </li>
                         <li class="habil"><i class="fa-brands fa-js" id="js"></i>
@@ -151,7 +150,7 @@
                         </li>                        
                     </ul>
     
-                    <ul class="habs"> 
+                    <ul class="habs" id="intermediario"> 
                         <li class="nivel">INTERMEDIÁRIO</li>
                         <li class="habil"><i class="fa-brands fa-angular" id="ang"></i>
                             <div class="sombreado-habil">Angular</div>
@@ -167,12 +166,12 @@
                         </li>                        
                     </ul>
     
-                    <ul class="habs">
+                    <ul class="habs" id="iniciante">
                         <li class="nivel">INICIANTE</li>
 
                         <li class="habil"><i class="fa-brands fa-css3-alt" id="#"></i>
                             <div class="sombreado-habil">CSS</div>
-                        </li>
+                        </li>                        
                         <li class="habil"><i class="fa-brands fa-css3-alt" id="#"></i>
                             <div class="sombreado-habil">CSS</div>
                         </li> 
@@ -222,16 +221,28 @@
                 <h2>MEUS PROJETOS</h2>
                 <div class="flex">
 
-                    <div class="img-proj" style="background-image: url(img/face.png);">
-                        <div class="sombreado">PROJETO 1</div>
+                    <div class="img-proj" style="background-image: url(img/Wreck-It_Ralph_logo\ 3.png);">
+                        <div class="sombreado">
+                            <a href="https://github.com/Lillnard/game-detona-ralph-js" target="_blank"><button class="btn-projeto" id="codigo">Código</button></a>
+                            
+                            <a href="https://lillnard.github.io/game-detona-ralph-js/" target="_blank"><button class="btn-projeto" id="abrirs-proj">Abrir projeto</button></a>
+                        </div>
                     </div>
 
-                    <div class="img-proj" style="background-image: url(img/face.png);">
-                        <div class="sombreado">PROJETO 2</div>
+                    <div class="img-proj" style="background-image: url(img/Wreck-It_Ralph_logo\ 3.png);">
+                        <div class="sombreado">
+                            <a href="https://github.com/Lillnard/game-detona-ralph-js" target="_blank"><button class="btn-projeto" id="codigo">Código</button></a>
+                            
+                            <a href="https://lillnard.github.io/game-detona-ralph-js/" target="_blank"><button class="btn-projeto" id="abrirs-proj">Abrir projeto</button></a>
+                        </div>
                     </div>
                     
-                    <div class="img-proj" style="background-image: url(img/face.png);">
-                        <div class="sombreado">PROJETO 3</div>
+                    <div class="img-proj" style="background-image: url(img/jogo\ da\ memória\ 2.png);">
+                        <div class="sombreado">
+                            <a href="https://github.com/Lillnard/memory-game-js" target="_blank"><button class="btn-projeto" id="codigo">Código</button></a>
+                            
+                            <a href="https://lillnard.github.io/memory-game-js/" target="_blank"><button class="btn-projeto" id="abrirs-proj">Abrir projeto</button></a>
+                        </div>
                     </div>
                 </div><!-- flex -->
             </div><!-- interface -->
