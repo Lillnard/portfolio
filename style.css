@@ -317,8 +317,7 @@ header{
 /* texto topo lado esquerdo */
 
 section.topo{
-    padding: 80px 4%;
-    
+    padding: 40px 4%;
 }
 
 section.topo .flex{
@@ -329,28 +328,66 @@ section.topo .flex{
 
 
 .topo .texto-topo h1{
-    color: #fe4701;
-    font-size: 40px;
-    margin-top: 60px;
+    color: #ff3c00;
+    font-size: 60px;
+    margin-top: 100px;
+    position: relative;
 }
 
 .topo .texto-topo h1 span{
-    color: #ff2500;
+    color: #ffae00;
+    font-size: 50px;
 }
 
 .topo .texto-topo h2{
-    color: aqua;
+    color: rgb(255, 0, 242);
+    font-size: 35px;
+    margin-top: 35px;
+    margin-left: 70px;
+}
+
+#front{
+    color: #8400ff;
 }
 
 .topo .texto-topo h2 span{
     color: rgb(255, 0, 255);
 }
 
-.topo span{
-    color: #ff2500;
-    font-size: 25px;
+#chaves{
+    color: #ffae00;
+    font-size: 50px;
     font-weight: bold;
+    position: absolute;
+    margin-top: 25px;
 }
+
+.habilidades-inicio{
+    font-size: 55px;
+    color: #fff;
+    margin: 13px 0px 0px 40px;
+    text-align: center;
+}
+
+h3{
+    color: #ffffff;
+    text-align: end;
+    margin-top: 120px;
+    text-transform: uppercase;
+}
+
+.topo .texto-topo p{
+    margin-top: 30px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: end;
+    line-height: 30px;
+}
+
+.topo .texto-topo p span{
+    margin-top: 20px;
+}
+  
 
 .topo .contato button{
     margin-top: 20px;
@@ -393,21 +430,11 @@ section.topo .flex{
 
 
 .topo .img-topo img{
-    position: relative;
-    animation: animar 2s ease-in-out infinite alternate;
+    margin-top: 80px;
     box-shadow: 0px 0px 8px #ff7100;
-    margin: 30px;
-    height: 450px;
-    width: 250px;
-}
-
-@keyframes animar{
-    0%{
-        top:0;
-    }
-    100%{
-        top: 30px;
-    }
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
 }
 
 /* habilidades */
@@ -595,7 +622,7 @@ section.habilidades .interface{
 /* sobre */
 
 section.sobre{
-    padding: 80px 4%;
+    padding: 40px 4%;
 }
 
 section.sobre .flex{
@@ -795,7 +822,7 @@ footer .divisa-footer p{
 
     .img-proj{
         width: 300px;
-        height: 380px;
+        height: 360px;
         border-radius: 35px;
         display: flex;
         margin: 20px auto  ;
@@ -817,6 +844,37 @@ footer .divisa-footer p{
 }
 
 @media screen and (max-width: 500px){
+
+    .topo .texto-topo h1{
+        font-size: 40px;
+        margin-top: 100px;
+        margin-left: 20px;
+    }
+
+    .topo .texto-topo h1 span{
+        color: #ffae00;
+        font-size: 40px;
+    }
+    
+    .topo .texto-topo h2{
+        color: rgb(255, 0, 242);
+        font-size: 25px;
+        margin-top: 25px;
+        margin-left: 30px;
+    }
+        
+    #chaves{
+        font-size: 40px;
+        margin-left: 20px;
+    }
+
+    .topo .img-topo img{
+        margin-top: 40px;
+        box-shadow: 0px 0px 8px #ff7100;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+    }
 
     .abrir-menu i{
         margin-left: 0px;
