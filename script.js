@@ -1,13 +1,26 @@
 //função modo dark
 
-let trilho = document.getElementById('dark-mode')
-let body = document.querySelector('body')
+let body = document.querySelector('body');
+let header = document.querySelector('header');
+let habilidadesTitulo = document.querySelector('.habilidades h2 span');
+let logoHeader = document.querySelector('.logo a span');
 
-trilho.addEventListener('click',()=>{
-    trilho.classList.toggle('dark')
-    body.classList.toggle('dark')
 
-})
+document.getElementById('dark-mode').addEventListener('click', () => {
+    toggleDarkMode();
+});
+
+document.getElementById('menu-mobile').querySelector('#dark-mode').addEventListener('click', () => {
+    toggleDarkMode();
+});
+
+function toggleDarkMode() {
+    document.getElementById('dark-mode').classList.toggle('dark');
+    body.classList.toggle('dark');
+    header.classList.toggle('dark');
+    logoHeader.classList.toggle('dark');
+    habilidadesTitulo.classList.toggle('dark');
+}
 
 //função visualizar habilidaddes
 

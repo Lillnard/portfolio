@@ -64,6 +64,10 @@ header{
     z-index: 2;
 }
 
+header.dark{
+    background-color: #000000;
+}
+
 .logo, .social{
     width: 25%;
 }
@@ -100,6 +104,10 @@ header{
     animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
     width: calc(100% + 12px);
     background-color: #cccccc;   
+}
+
+.logo span.dark::after{
+    background-color: #000000;
 }
 
 @keyframes logo{
@@ -428,7 +436,7 @@ section.topo .flex{
 }
 
 h3{
-    color: #272727;
+    color: #363636;
     text-align: end;
     margin-top: 120px;
     text-transform: uppercase;
@@ -521,7 +529,7 @@ section.habilidades .interface{
 
 .habilidades h2 span::before{
     content: "";
-    color: #242424;
+    color: #363636;
     font-size: 50px;
     animation: hab 5s infinite;
 }
@@ -536,8 +544,12 @@ section.habilidades .interface{
     animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
     width: calc(100% + 12px);
     background-color: #cccccc;
-    
 }
+
+.habilidades h2 span.dark::after{
+    background-color: #000000;
+}
+
 
 @keyframes digitar {
     10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
@@ -821,6 +833,7 @@ footer .divisa-footer p{
 
     .abrir-menu i{
         display: block;
+        margin-left: 350px;
     }
 
     .menu-desktop, .dark-desktop, #social-header {
@@ -873,6 +886,9 @@ footer .divisa-footer p{
         display: inline;       
     }
 
+    .dark-mode{
+        margin-left: 15px;
+    }
     .img-proj{
         width: 300px;
         height: 360px;
@@ -897,10 +913,6 @@ footer .divisa-footer p{
 }
 
 @media screen and (max-width: 500px){
-
-    body.dark{
-        background: #000000;
-    }
 
     .topo .texto-topo h1{
         font-size: 40px;
