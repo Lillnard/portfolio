@@ -1,3 +1,8 @@
+:root{
+    --color-light: #b1b1b1
+    --color-dark: #242424s
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +30,7 @@ body{
 }
 
 body.dark{
-    background: #000000;
+    background-image: url(img/rrt1.jpg);
 }
 
 section{
@@ -89,22 +94,26 @@ header.dark{
 
 .logo span::before{
     content: "";
-    font-family: 'Press Start 2P', system-ui;    
     color: #242424;
     font-size: 35px;
     animation: logo 5s infinite;
 }
 
+.logo span.dark::before{
+    color: #636363;
+}
+
+
 .logo span::after{
     content: "";
     position: absolute;
-    height: 42px;
+    height: 30px;
     bottom: 4px;
-    border-left: 2px solid red;
+    border-left: 2px solid #838383;
     right: -10px;
     animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
     width: calc(100% + 12px);
-    background-color: #cccccc;   
+    background-color: #D5D5D5;   
 }
 
 .logo span.dark::after{
@@ -113,27 +122,28 @@ header.dark{
 
 @keyframes logo{
     0%,100%{
-        content: "PixeLéo" ;
+        content: "HTMLovers" ;
     }
 }
 
 /* MENU-DESKTOP */
 
 .menu-desktop nav a{
-    color: #242424;
+    color: #636363;
     text-decoration: none;
     padding-right: 50px;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 400;
     position: relative;
     display: inline-block;
     transition: 0.2s;
     margin-left: 35px;
 }
 
+
+
 .menu-desktop nav a:hover{
     transform: scale(1.1);
-    color: #242424;
     font-weight: 600; 
 }
 
@@ -152,8 +162,8 @@ header.dark{
     width: 32px;
 }
 
-.menu-desktop nav a.ativo{
-    color: #242424;
+.menu-desktop nav a .ativo{
+    color: #000000;
     font-weight: 600;
 }
 
@@ -240,6 +250,15 @@ header.dark{
     margin: 15px;
 }
 
+#social-mobile.dark{
+    background-color: #242424;
+    box-shadow: 0px 0px 8px #ffffff;
+}
+
+#social-mobile.dark i{
+    color: #ffffff;
+}
+
 .sombreado-menu{
     background-color: #000000a2;
     width: 100%;
@@ -271,6 +290,7 @@ header.dark{
 .social button{
     width: 40px;
     height: 40px;
+    box-shadow: 0px 0px 8px #000000;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -279,6 +299,16 @@ header.dark{
     position: relative;
     overflow: hidden;
 }
+
+.social.dark button{
+    background-color: #242424;
+    box-shadow: 0px 0px 8px #ffffff;
+}
+
+.social.dark button i{
+    color: #ffffff;
+}
+
 
 #linkedin::before{
     background-color: #0A66C2;
@@ -334,6 +364,7 @@ header.dark{
     background-color: #F0F0F0;
     width: 40px;
     height: 40px;
+    box-shadow: 0px 0px 8px #000000;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -341,6 +372,15 @@ header.dark{
     transition: 0.2s;
     position: relative;
     overflow: hidden;
+}
+
+.dark-mode.dark{
+    background-color: #242424;
+    box-shadow: 0px 0px 8px #ffffff;
+}
+
+.dark-mode.dark i{
+    color: #ffffff;
 }
 
 .dark-mode i{
@@ -396,7 +436,7 @@ section.topo .flex{
     -webkit-text-fill-color: transparent;
     color: #ff1e00;
     font-size: 60px;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 10px;
 }
 
@@ -452,6 +492,32 @@ h3{
 .topo .texto-topo p span{
     margin-top: 20px;
 }
+
+.repositorio-port{
+    justify-content: end;
+    background-color: transparent;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 0px 8px #000000;
+    transition: .2s;
+}
+
+.repositorio-port a{
+    color: #242424;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.repositorio-port:hover{
+    transform: scale(1.1);
+}
+
+.repositorio-port,dark{
+    box-shadow: 0px 0px 8px #ffffff;
+}
+
   
 
 /* .topo .contato button{
@@ -495,18 +561,21 @@ h3{
 
 
 .topo .img-topo img{
+
     margin-top: 100px;
-    box-shadow: 0px 0px 8px #ff7100;
-    height: 300px;
-    width: 300px;
+    box-shadow: 0px 0px 10px #ffffff;
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
+    background-size: cover;
+
 }
 
 .habilidades-topo button{
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    margin: 20px 0 0 10px;
+    margin: 20px 0 0 30px;
     border: none;
 }
 
@@ -568,11 +637,11 @@ section.habilidades .interface{
     position: absolute;
     height: 42px;
     bottom: 4px;
-    border-left: 2px solid red;
+    border-left: 2px solid #838383;
     right: -10px;
     animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
     width: calc(100% + 12px);
-    background-color: #cccccc;
+    background-color: #BDBDBD;
 }
 
 .habilidades h2 span.dark::after{
@@ -728,6 +797,13 @@ section.sobre .flex{
     align-items: center;
     gap: 60px;
 }
+
+section.sobre img{
+    margin-top: 65px;
+    width: 200px;
+    height: 400px;
+}
+
 
 section.sobre .texto-sobre{
     color: #242424;

@@ -2,8 +2,12 @@
 
 let body = document.querySelector('body');
 let header = document.querySelector('header');
+let botaoRepositorio = document.querySelector('.repositorio-port');
 let habilidadesTitulo = document.querySelector('.habilidades h2 span');
 let logoHeader = document.querySelector('.logo a span');
+let social = document.querySelector('.social');
+let SocialMobile = document.getElementById('#social-mobile');
+let darkMode = document.getElementById('.dark-mode');
 
 
 document.getElementById('dark-mode').addEventListener('click', () => {
@@ -20,6 +24,9 @@ function toggleDarkMode() {
     header.classList.toggle('dark');
     logoHeader.classList.toggle('dark');
     habilidadesTitulo.classList.toggle('dark');
+    social.classList.toggle('dark');
+    darkMode.classList.toggle('dark');
+    botaoRepositorio.classList.toggle('dark')
 }
 
 //função visualizar habilidaddes
