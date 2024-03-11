@@ -1,6 +1,6 @@
 :root{
     --color-light: #b1b1b1
-    --color-dark: #242424s
+    --color-dark: #242424
 }
 
 * {
@@ -26,15 +26,20 @@ html{
 }
 
 body{
-    background: linear-gradient(#929292, #e2e2e2, #929292);
+    background: #000000;
 }
 
 body.dark{
-    background-image: url(img/rrt1.jpg);
+    background: #000000;
 }
 
 section{
     min-height: 100vh;
+    box-shadow: 0px 0px 3px #ffffff;
+}
+
+section.dark{
+    box-shadow: 0px 0px 3px #ffffff;
 }
 
 .hidden{
@@ -61,11 +66,11 @@ section{
 
 header{
     position: fixed;
-    background-color: #dddddde3;
+    background-color: #000000;
     width: 100%;
-    height: 75px;
+    height: 65px;
     padding: 10px;
-    box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 3px #ffffff;
     z-index: 2;
 }
 
@@ -86,46 +91,6 @@ header.dark{
     margin-top: 15px;
 }
 
-/* ANIMAÇÃO LOGO */
-
-.logo span{
-    position: relative;
-}
-
-.logo span::before{
-    content: "";
-    color: #242424;
-    font-size: 35px;
-    animation: logo 5s infinite;
-}
-
-.logo span.dark::before{
-    color: #636363;
-}
-
-
-.logo span::after{
-    content: "";
-    position: absolute;
-    height: 30px;
-    bottom: 4px;
-    border-left: 2px solid #838383;
-    right: -10px;
-    animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
-    width: calc(100% + 12px);
-    background-color: #D5D5D5;   
-}
-
-.logo span.dark::after{
-    background-color: #000000;
-}
-
-@keyframes logo{
-    0%,100%{
-        content: "HTMLovers" ;
-    }
-}
-
 /* MENU-DESKTOP */
 
 .menu-desktop nav a{
@@ -144,14 +109,19 @@ header.dark{
 
 .menu-desktop nav a:hover{
     transform: scale(1.1);
-    font-weight: 600; 
+    font-weight: 600;
 }
+
+.menu-desktop nav a:active{
+    color: #ffffff;
+}
+
 
 .menu-desktop nav a::after{
     content: " ";
     width: 0px;
     height: 4px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-image: linear-gradient(45deg, #ffffff, #aaaaaa);
     position: absolute;
     top: 22px;
     left: 0;
@@ -162,8 +132,8 @@ header.dark{
     width: 32px;
 }
 
-.menu-desktop nav a .ativo{
-    color: #000000;
+.menu-desktop nav a.ativo{
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -171,7 +141,7 @@ header.dark{
     content: " ";
     width: 0px;
     height: 4px;
-    background-image: linear-gradient(45deg, #8c00ff, #2600ff);
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
     position: absolute;
     top: 22px;
     left: 0;
@@ -248,6 +218,8 @@ header.dark{
     display: flex;
     gap: 15px;
     margin: 15px;
+    background-color: #242424;
+
 }
 
 #social-mobile.dark{
@@ -274,7 +246,7 @@ header.dark{
 
 .social button i{
     font-size: 25px;
-    color: #000000;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,10 +259,15 @@ header.dark{
     transform: scale(1.1);
 }
 
+#gh i:hover{
+    color: #000000;
+}
+
 .social button{
+    background-color: #242424;
+    box-shadow: 0px 0px 8px #ffffff;
     width: 40px;
     height: 40px;
-    box-shadow: 0px 0px 8px #000000;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -315,7 +292,7 @@ header.dark{
 }
 
 #gh::before{
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 #whatsapp::before{
@@ -361,10 +338,10 @@ header.dark{
 /* BOTÃO MODO DARK */
 
 .dark-mode{
-    background-color: #F0F0F0;
+    background-color: #242424;
+    box-shadow: 0px 0px 8px #ffffff;
     width: 40px;
     height: 40px;
-    box-shadow: 0px 0px 8px #000000;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -386,7 +363,7 @@ header.dark{
 .dark-mode i{
     font-size: 20px;
     margin-top: 10px;
-    color: #000000;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -396,7 +373,7 @@ header.dark{
 
 .dark-mode:hover i{
     color: #ffffff;
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .dark-mode::before{
@@ -429,19 +406,17 @@ section.topo .flex{
 }
 
 .topo .texto-topo h1{
-    height: 60px;
     background: linear-gradient(to bottom, #ff1e00, rgb(255, 115, 0), rgb(224, 221, 64));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #ff1e00;
     font-size: 60px;
-    margin-top: 50px;
-    padding: 10px;
+    margin-top: 100px;
+    padding: 15px;
 }
 
 .topo .texto-topo h1 span{
-    color: #ffae00;
     font-size: 50px;
 
 }
@@ -477,92 +452,53 @@ section.topo .flex{
 h3{
     color: #363636;
     text-align: end;
-    margin-top: 120px;
+    margin: 80px 0 0 0;
     text-transform: uppercase;
 }
 
 .topo .texto-topo p{
-    margin-top: 30px;
+    margin: 20px 0 0 0;
     font-size: 20px;
     color: #242424;
     text-align: end;
     line-height: 30px;
 }
 
-.topo .texto-topo p span{
-    margin-top: 20px;
-}
+/* BOTÃO REPOSITÓRIO */
 
-.repositorio-port{
-    justify-content: end;
+.topo .texto-topo button{
+    margin: 50px 0 0 350px;
     background-color: transparent;
     width: 120px;
     height: 40px;
     border: none;
     border-radius: 30px;
-    box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 8px #ffffff;
     transition: .2s;
+    cursor: pointer;
 }
 
-.repositorio-port a{
+.topo .texto-topo a button{
     color: #242424;
     font-size: 18px;
     font-weight: 600;
+    transition: .2s;
+
 }
 
-.repositorio-port:hover{
+.topo .texto-topo button:hover{
     transform: scale(1.1);
 }
 
-.repositorio-port,dark{
-    box-shadow: 0px 0px 8px #ffffff;
+.topo .texto-topo a button:hover{
+    color: #ffffff;
 }
 
-  
-
-/* .topo .contato button{
-    margin-top: 20px;
-    width: 150px;
-    height: 50px;
-    border-radius: 30px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    font-weight: 300;
-    color: #a33838;
-    padding: auto;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: 0.2s;
-}
-
-.contato button:hover{
-    transform: scale(1.1);
-    box-shadow: 0px 0px 8px #ff7100;
-    font-weight: 600;
-} */
-
-/* .topo .contato button::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg, #000000, #000000);
-    position: absolute;
-    top: 35px;
-    left: 0;
-    margin-left: 14px;
-    transition: width 0.5s;
-} */
-
-/* .topo .contato button:hover::after{
-    width: 65px;
-} */
-
-/* imagem topo lado direito */
-
+/* IMAGEM TOPO DO SITE */
 
 .topo .img-topo img{
 
-    margin-top: 100px;
+    margin-top: 80px;
     box-shadow: 0px 0px 10px #ffffff;
     height: 400px;
     width: 400px;
@@ -571,41 +507,10 @@ h3{
 
 }
 
-.habilidades-topo button{
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    margin: 20px 0 0 30px;
-    border: none;
-}
-
-.habilidades-topo button i{
-    font-size: 40px;
-    margin-top: 4px;
-}
-
-#html-topo{
-    color: #DD4B25;
-}
-
-#css-topo{
-    color: #254BDD;
-}
-
-#js-topo{
-    color: #EFD81D;
-}
-
-#code-topo{
-    color: #E61A23;
-}
-
-
 /* habilidades */
 
 section.habilidades{
-    padding: 40px 20px 40px 20px;
-    box-shadow: 0px 0px 8px #000000;
+    padding: 80px 20px 40px 20px;
 }
 
 section.habilidades .interface{
@@ -622,12 +527,14 @@ section.habilidades .interface{
 
 .habilidades h2 span{
     position: relative;
-   
 }
 
 .habilidades h2 span::before{
     content: "";
-    color: #363636;
+    background: linear-gradient(to bottom, #ff1e00, rgb(255, 115, 0), rgb(224, 221, 64));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 50px;
     animation: hab 5s infinite;
 }
@@ -641,7 +548,7 @@ section.habilidades .interface{
     right: -10px;
     animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
     width: calc(100% + 12px);
-    background-color: #BDBDBD;
+    background-color: #000000;
 }
 
 .habilidades h2 span.dark::after{
@@ -726,7 +633,7 @@ section.habilidades .interface{
 }
 
 .habil:hover{
-    transform: scale(1.1); 
+    transform: scale(1.1);
     border-radius: 20px;
 
 }
@@ -790,28 +697,24 @@ section.habilidades .interface{
 /* sobre */
 
 section.sobre{
-    padding: 40px 4%;
+    padding: 80px 20px 40px 20px;
 }
 
 section.sobre .flex{
     align-items: center;
-    gap: 60px;
 }
-
-section.sobre img{
-    margin-top: 65px;
-    width: 200px;
-    height: 400px;
-}
-
 
 section.sobre .texto-sobre{
-    color: #242424;
+    color: #363636;
 }
 
 section.sobre .texto-sobre h2{
-    font-size: 30px;
-    margin-bottom: 30px;
+    background: linear-gradient(to bottom, #ff1e00, rgb(255, 115, 0), rgb(224, 221, 64));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    padding: 10PX;
     text-align: center;
 }
 
@@ -823,9 +726,61 @@ section.sobre .texto-sobre p{
 
 /* projetos */
 
+.projetos h2 span{
+    position: relative;
+}
+
+.projetos h2 span::before{
+    content: "";
+    background: linear-gradient(to bottom, #ff1e00, rgb(255, 115, 0), rgb(224, 221, 64));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    animation: projetos 5s infinite;
+}
+
+.projetos h2 span::after{
+    content: "";
+    position: absolute;
+    height: 42px;
+    bottom: 4px;
+    border-left: 2px solid #838383;
+    right: -10px;
+    animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
+    width: calc(100% + 12px);
+    background-color: #000000;
+}
+
+.projetos h2 span.dark::after{
+    background-color: #000000;
+}
+
+
+@keyframes digitar {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 90%{
+        width: calc(100% + 12px);
+    }
+}
+
+@keyframes ponteiroi{
+    0%{
+        border-left: 2px solid #1D1717;
+    }
+}
+
+@keyframes projetos{
+    0%,100%{
+        content: "<MEUS> </PROJETOS>" ;
+    }
+}
+
+
 section.projetos{
-    padding: 40px 4%;
-    box-shadow: 0px 0px 8px #242424;
+    padding: 80px 20px 40px 20px;
 }
 
 section.projetos h2{
@@ -925,12 +880,16 @@ footer .divisa-footer{
 }
 
 footer .divisa-footer p{
-    color: #242424;
+    color: #636363;
+    font-weight: 300;
     text-align: center;
-    font-weight: 100;
-    border-top: 2px solid rgb(128, 19, 0);
 }
 
+.divisa{
+    border-top: 2px solid #636363;
+}
+
+/* RESPONSIVIDADE */
 
 
 
@@ -961,7 +920,7 @@ footer .divisa-footer p{
         color: #ffffff;
         font-size: 30px;
     }
-    
+
     .habilidades h2 span::before{
         font-size: 30px;
     }
@@ -978,7 +937,7 @@ footer .divisa-footer p{
     .lista {
         column-gap: 20px;
     }
-       
+
     .habs li{
         width: 65px;
     }
@@ -986,9 +945,9 @@ footer .divisa-footer p{
     .habil{
         height: 60px;
     }
-    
+
     section.sobre .social{
-        display: inline;       
+        display: inline;
     }
 
     .dark-mode{
@@ -1001,7 +960,7 @@ footer .divisa-footer p{
         display: flex;
         margin: 20px auto  ;
     }
-    
+
     footer{
         padding: 10px 4%;
     }
@@ -1017,37 +976,48 @@ footer .divisa-footer p{
     }
 }
 
+
 @media screen and (max-width: 500px){
 
     .topo .texto-topo h1{
         font-size: 40px;
-        margin-top: 100px;
-        margin-left: 20px;
+        margin-top: 60px;
     }
 
     .topo .texto-topo h1 span{
-        color: #ffae00;
         font-size: 40px;
+
     }
-    
+
     .topo .texto-topo h2{
-        color: rgb(255, 0, 242);
         font-size: 25px;
-        margin-top: 25px;
-        margin-left: 30px;
     }
-        
+
     #chaves{
         font-size: 40px;
-        margin-left: 20px;
+        margin-top: 0px;
+    }
+
+    h3{
+        text-align: center;
+    }
+
+    .topo .texto-topo p{
+        text-align: center;
+    }
+
+    .topo .texto-topo button{
+        margin: 30px 0 0 120px;
     }
 
     .topo .img-topo img{
-        margin-top: 40px;
-        box-shadow: 0px 0px 8px #ff7100;
         height: 300px;
         width: 300px;
         border-radius: 50%;
+    }
+
+    .habilidades-topo{
+        display: none;
     }
 
     .abrir-menu i{
@@ -1073,10 +1043,10 @@ footer .divisa-footer p{
     .habilidades h2 span::before{
         font-size: 28px;
     }
-    
+
     .habs li{
        width: 55px;
-    }   
+    }
 
     .social button{
         margin-right: 5px;
@@ -1091,11 +1061,11 @@ footer .divisa-footer p{
 }
 
 @media screen and (max-width: 330px){
-   
+
     .abrir-menu i{
         margin-left: 100px;
     }
-    
+
     .trilho{
         margin-left: 170px;
     }
@@ -1124,7 +1094,7 @@ footer .divisa-footer p{
     .social button{
         margin-right: 5px;
     }
-    
+
     .social-footer{
         justify-content: end;
         margin-left: 140px;

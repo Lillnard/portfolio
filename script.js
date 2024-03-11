@@ -1,8 +1,9 @@
 //função modo dark
 
 let body = document.querySelector('body');
+let sectionDark = document.querySelector('section');
 let header = document.querySelector('header');
-let botaoRepositorio = document.querySelector('.repositorio-port');
+let botaoRepositorio = document.querySelector('.topo .texto-topo button');
 let habilidadesTitulo = document.querySelector('.habilidades h2 span');
 let logoHeader = document.querySelector('.logo a span');
 let social = document.querySelector('.social');
@@ -21,12 +22,13 @@ document.getElementById('menu-mobile').querySelector('#dark-mode').addEventListe
 function toggleDarkMode() {
     document.getElementById('dark-mode').classList.toggle('dark');
     body.classList.toggle('dark');
+    sectionDark.classList.toggle('dark');
     header.classList.toggle('dark');
     logoHeader.classList.toggle('dark');
     habilidadesTitulo.classList.toggle('dark');
     social.classList.toggle('dark');
     darkMode.classList.toggle('dark');
-    botaoRepositorio.classList.toggle('dark')
+    botaoRepositorio.classList.toggle('dark');
 }
 
 //função visualizar habilidaddes
@@ -74,7 +76,7 @@ window.onload = function() {
     window.scrollTo(0, 0);
 }
 
-//função para menu mobile abiri e fechar com toque em qualquer pate da tela
+//função para menu mobile abrir e fechar com toque em qualquer pate da tela
 
 let abrirMenu = document.getElementById('abrir-menu')
 let menu = document.getElementById('menu-mobile')
@@ -91,17 +93,3 @@ menu.addEventListener('click', ()=>{
 sombreado.addEventListener('click', ()=>{
     menu.classList.remove('menu-aberto')
 })
-
-
-//função abertura de modal de habilidades
-
-// function abrirModal(){
-//     const modal = document.getElementById('janela')
-//     modal.classList.add('abrir');
-
-//     modal.addEventListener('click', (e) =>{
-//         if(e.target.id == 'fehcar-modal' || e.target.id == 'modal'){
-//             modal.classList.remove('abrir')
-//         }
-//     })
-// }
