@@ -20,7 +20,6 @@ html{
     scroll-margin-top: 65px;
 }
 
-
 .flex {
     display: flex;
 }
@@ -62,7 +61,11 @@ section.dark{
     justify-content: center;
 }
 
+
+
 /* header */
+
+
 
 header{
     position: fixed;
@@ -91,7 +94,11 @@ header.dark{
     margin-top: 15px;
 }
 
+
+
 /* MENU-DESKTOP */
+
+
 
 .menu-desktop nav a{
     color: #636363;
@@ -105,8 +112,6 @@ header.dark{
     margin-left: 35px;
 }
 
-
-
 .menu-desktop nav a:hover{
     transform: scale(1.1);
     font-weight: 600;
@@ -115,7 +120,6 @@ header.dark{
 .menu-desktop nav a:active{
     color: #ffffff;
 }
-
 
 .menu-desktop nav a::after{
     content: " ";
@@ -149,7 +153,11 @@ header.dark{
     transition: width 0.5s;
 }
 
+
+
 /* menu mobile */
+
+
 
 .abrir-menu i{
     color: #fe4701;
@@ -186,7 +194,6 @@ header.dark{
     padding: 20px 6%;
 }
 
-
 .menu-mobile .fechar i{
     color: #fe4701;
     font-size: 40px;
@@ -219,7 +226,6 @@ header.dark{
     gap: 15px;
     margin: 15px;
     background-color: #242424;
-
 }
 
 #social-mobile.dark{
@@ -242,7 +248,11 @@ header.dark{
     display: none;
 }
 
+
+
 /* REDES SOCIAIS */
+
+
 
 .social button i{
     font-size: 25px;
@@ -251,7 +261,6 @@ header.dark{
     align-items: center;
     justify-content: center;
     transition: 0.2s;
-
 }
 
 .social button:hover i{
@@ -335,7 +344,11 @@ header.dark{
     }
 }
 
+
+
 /* BOTÃO MODO DARK */
+
+
 
 .dark-mode{
     background-color: #242424;
@@ -368,7 +381,6 @@ header.dark{
     align-items: center;
     justify-content: center;
     transition: 0.2s;
-
 }
 
 .dark-mode:hover i{
@@ -393,7 +405,11 @@ header.dark{
     top: 0;
 }
 
+
+
 /* texto topo lado esquerdo */
+
+
 
 section.topo{
     padding: 40px 4%;
@@ -406,65 +422,42 @@ section.topo .flex{
 }
 
 .topo .texto-topo h1{
-    background: linear-gradient(to bottom, #ff1e00, rgb(255, 115, 0), rgb(224, 221, 64));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #ff1e00;
+    color: #cccccc;
     font-size: 60px;
     margin-top: 100px;
-    padding: 15px;
-}
-
-.topo .texto-topo h1 span{
-    font-size: 50px;
-
+    text-align: end;
 }
 
 .topo .texto-topo h2{
-    color: rgb(0, 255, 34);
-    font-size: 35px;
-    margin-top: 20px;
-    margin-left: 70px;
-}
-
-#front{
-    color: #8400ff;
-}
-
-.topo .texto-topo h2 span{
-    color: rgb(255, 0, 255);
-}
-
-#chaves{
-    height: 60px;
     background: linear-gradient(to bottom, #ff1e00, rgb(255, 115, 0), rgb(224, 221, 64));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 50px;
-    font-weight: bold;
-    position: absolute;
-    margin-top: 25px;
-    padding: 10px;
+    font-size: 35px;
+    margin-top: 30px;
+    text-align: end;
 }
 
 h3{
-    color: #363636;
+    color: #cccccc;
     text-align: end;
-    margin: 80px 0 0 0;
+    margin: 50px 0 0 0;
     text-transform: uppercase;
 }
 
 .topo .texto-topo p{
     margin: 20px 0 0 0;
     font-size: 20px;
-    color: #242424;
+    color: #cccccc;
     text-align: end;
     line-height: 30px;
 }
 
+
+
 /* BOTÃO REPOSITÓRIO */
+
+
 
 .topo .texto-topo button{
     margin: 50px 0 0 350px;
@@ -479,11 +472,10 @@ h3{
 }
 
 .topo .texto-topo a button{
-    color: #242424;
+    color: #cccccc;
     font-size: 18px;
     font-weight: 600;
     transition: .2s;
-
 }
 
 .topo .texto-topo button:hover{
@@ -494,7 +486,11 @@ h3{
     color: #ffffff;
 }
 
+
+
 /* IMAGEM TOPO DO SITE */
+
+
 
 .topo .img-topo img{
 
@@ -507,7 +503,11 @@ h3{
 
 }
 
-/* habilidades */
+
+
+/* HABILIDADES */
+
+
 
 section.habilidades{
     padding: 80px 20px 40px 20px;
@@ -521,7 +521,6 @@ section.habilidades .interface{
 }
 
 .habilidades h2{
-    color: #242424;
     font-size: 40px;
 }
 
@@ -578,23 +577,12 @@ section.habilidades .interface{
 }
 
 .habilidades p{
-    color: #242424;
+    color: #cccccc;
+    font-weight: 700;
     padding: 20px;
 }
 
-.habs li.nivel{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    height: 30px;
-    margin: 10px 20PX;
-    list-style-type: none;
-}
-
 .lista {
-    color: #242424 ;
-    font-weight: 300;
     display: flex;
     column-gap: 50px;
     padding: 10px;
@@ -604,12 +592,6 @@ section.habilidades .interface{
 
 .habs{
     transition: .5s;
-}
-
-.habs:hover{
-    box-shadow: 0px 0px 8px #000000;
-    border-radius: 10px;
-
 }
 
 .habs li{
@@ -626,7 +608,6 @@ section.habilidades .interface{
     height: 80px;
     margin: 20px;
     margin-bottom: 40px;
-    color: #ffffff;
     padding: 5px;
     list-style-type: none;
     transition: .5s;
@@ -634,67 +615,47 @@ section.habilidades .interface{
 
 .habil:hover{
     transform: scale(1.1);
-    border-radius: 20px;
-
 }
 
-.habil i{
-    font-size: 60px;
-    padding-top: 20px;
+.habil img{
+    width: 100px;
+    height: 100px;
+}
+
+#angular-icon{
+    width: 90px;
+    height: 85px;
+}
+
+#react-icon{
+    width: 80px;
+    height: 80px;
+}
+
+#figma-icon{
+    height: 85px;
 }
 
 .sombreado-habil{
     position: absolute;
     display: flex;
-    width: 80px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     font-size: 20px;
-    color: #000000;
+    font-weight: 300;
+    color: #cccccc;
     border-radius: 20px;
     margin-top: 35PX;
-    opacity: 0;
     transition: .5s;
     align-items: end;
     justify-content: center;
 }
 
-.sombreado-habil:hover{
-    opacity: 1;
-}
 
 
-#html{
-    color: rgb(233, 94, 30);
-}
-
-#css{
-    color: rgb(48, 18, 216);
-}
-
-#git{
-    color: rgb(255, 255, 255);
-}
-
-#gh{
-    color: rgb(255, 255, 255);
-}
-
-#js{
-    color: rgb(230, 233, 30);
-}
-
-#boot{
-    color: rgb(152, 30, 233);
-}
-#ang{
-    color: rgb(233, 30, 30);
-}
-#react{
-    color: rgb(30, 176, 233);
-}
+/* SOBRE */
 
 
-/* sobre */
 
 section.sobre{
     padding: 80px 20px 40px 20px;
@@ -702,10 +663,6 @@ section.sobre{
 
 section.sobre .flex{
     align-items: center;
-}
-
-section.sobre .texto-sobre{
-    color: #363636;
 }
 
 section.sobre .texto-sobre h2{
@@ -718,13 +675,20 @@ section.sobre .texto-sobre h2{
     text-align: center;
 }
 
+section.sobre .texto-sobre{
+    color: #cccccc;
+}
+
 section.sobre .texto-sobre p{
     margin: 15px 0px;
     text-align: justify;
 }
 
 
+
 /* projetos */
+
+
 
 .projetos h2 span{
     position: relative;
@@ -778,7 +742,6 @@ section.sobre .texto-sobre p{
     }
 }
 
-
 section.projetos{
     padding: 80px 20px 40px 20px;
 }
@@ -786,9 +749,7 @@ section.projetos{
 section.projetos h2{
     font-size: 40px;
     text-align: center;
-    color: #242424;
 }
-
 
 section.projetos .flex{
     justify-content: space-around;
@@ -851,7 +812,11 @@ section.projetos .flex{
     color: #ffffff;
 }
 
+
+
 /* footer */
+
+
 
 footer{
     padding: 20px 4%;
@@ -880,14 +845,71 @@ footer .divisa-footer{
 }
 
 footer .divisa-footer p{
-    color: #636363;
+    color: #cccccc;
     font-weight: 300;
     text-align: center;
+}
+
+footer p a{
+    font-weight: 600;
+    color: #cccccc;
+}
+
+.divisa span{
+    font-weight: 600;
+    color: #cccccc;
 }
 
 .divisa{
     border-top: 2px solid #636363;
 }
+
+
+
+/* MODAL SAÍDA */
+
+
+
+dialog{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 800px;
+    height: 400px;
+    border-radius: 30px;
+
+    background-image: url(img/rosto.jpg);
+    background-size: cover;
+    box-shadow: 0px 0px 5px #ffffff;
+}
+
+dialog .saida{
+    color: #ffffff;
+    font-size: 20px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-modal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+}
+
+dialog::backdrop{
+    background-color: #000000d3;
+}
+
+
 
 /* RESPONSIVIDADE */
 

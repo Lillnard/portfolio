@@ -93,3 +93,13 @@ menu.addEventListener('click', ()=>{
 sombreado.addEventListener('click', ()=>{
     menu.classList.remove('menu-aberto')
 })
+
+//FUNÇÃO MODAL SAIDA DO SITE
+
+let abrirModal = document.querySelector('#abrir-modal-saida');
+let modalSaida = document.querySelector('dialog');
+
+abrirModal.onclick = () => {
+    modalSaida.showModal()
+}
+ 
