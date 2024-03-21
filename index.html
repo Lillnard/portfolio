@@ -117,7 +117,7 @@
         <section class="section topo" id="inicio">
             <div class="interface">
                 <div class="flex">
-                    <div class="texto-topo">
+                    <div class="texto-topo hidden delay1">
                         <h1>Oi, eu sou o Léo!</h1>
                         <h2>Desenvolvedor Web</h2>
 
@@ -131,7 +131,7 @@
                             <a href="https://github.com/Lillnard/portfolio" target="_blank" class="Repositório-btn"><button>Repositório</button></a>
                     </div> <!-- texto topo -->
 
-                    <div class="img-topo">
+                    <div class="img-topo hidden">
                         <img src="img/foto portfolio.jpg">
                     </div> <!-- img topo -->
 
@@ -147,9 +147,9 @@
                 <p>Veja abaixo uma lista com as minhas principais habilidades</p>
             </div><!-- interface -->
 
-            <div class="lista hidden">
+            <div class="lista ">
 
-                    <ul class="habs">
+                    <ul class="habs hidden delay2">
 
                         <li class="habil">
                             <img src="img/tecnologias/icons8-html-144.png" alt="" id="html-icon">
@@ -169,7 +169,7 @@
                         </li>                        
                     </ul>
     
-                    <ul class="habs"> 
+                    <ul class="habs hidden delay1"> 
 
                         <li class="habil">
                             <img src="img/tecnologias/icons8-css-144.png" alt="" id="css-icon">
@@ -189,7 +189,7 @@
                         </li>                                                
                     </ul>
 
-                    <ul class="habs">
+                    <ul class="habs hidden">
 
                         <li class="habil">
                             <img src="img/tecnologias/icons8-javascript-144.png" alt="" id="js-icon">
@@ -226,7 +226,7 @@
                         </div>
                     </div>
 
-                    <div class="img-proj" style="background-image: url(img/jogo\ da\ memória\ 2.png);">
+                    <div class="img-proj " style="background-image: url(img/jogo\ da\ memória\ 2.png);">
                         <div class="sombreado">
                             <a href="" target="_blank"><button class="btn-projeto" id="codigo">Código</button></a>
                             
@@ -248,7 +248,7 @@
         <section class="section sobre" id="sobre">
             <div class="interface">
                 <div class="flex">
-                    <div class="texto-sobre">
+                    <div class="texto-sobre hidden">
                         <h2>MUITO PRAZER, SOU O LÉO</h2>
                             
                         <p>E aí, galera! Bão? Bora lá, vou me apresentar rapidinho...</p>
@@ -281,10 +281,6 @@
                             <i class="fa-brands fa-linkedin-in"></i>
                         </button></a>
         
-                        <a href="https://github.com/Lillnard" target="_blank"><button id="gh">
-                            <i class="fa-brands fa-github"></i>
-                        </button></a>
-                        
                         <a href="https://www.instagram.com/leo_fonseca00/" target="_blank"><button id="instagram">
                             <i class="fa-brands fa-instagram"></i>                
                         </button></a>
@@ -304,35 +300,40 @@
         </div><!-- interface -->
     </footer>
 
-    <!-- <button id="abrir-modal-saida">abrirModal</button> -->
+
+<!-- MODAL  SAIDA DO SITE -->
 
     <dialog>
-            <div class="saida">
-                <p>Já vai sair?</p>
+        <div class="fechar-modal-saida">
+            <button>X</button>
+        </div>
 
-                <p>Não quer aproveittar e entrar em contato comigo?</p>
+        <div class="saida">
+            <p>Já vai sair?</p>
 
-                <p>Clique em um dos botões abaixo e me chame</p>
+            <p>Não quer aproveittar e entrar em contato comigo?</p>
+
+            <p>Clique em um dos botões abaixo e me chame</p>
         
-                <div class="social social-modal">
-                    <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button id="linkedin">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </button></a>
+            <div class="social social-modal">
+                <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button id="linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </button></a>
 
-                    <a href="https://github.com/Lillnard" target="_blank"><button id="gh">
-                        <i class="fa-brands fa-github"></i>
-                    </button></a>
+                <a href="https://github.com/Lillnard" target="_blank"><button id="gh">
+                    <i class="fa-brands fa-github"></i>
+                </button></a>
                     
-                    <a href="https://www.instagram.com/leo_fonseca00/" target="_blank"><button id="instagram">
-                        <i class="fa-brands fa-instagram"></i>                
-                    </button></a>
+                <a href="https://www.instagram.com/leo_fonseca00/" target="_blank"><button id="instagram">
+                    <i class="fa-brands fa-instagram"></i>                
+                </button></a>
 
-                    <a href="https://wa.me/5511912809687" target="_blank"><button id="whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </button></a>
-                </div> <!-- social --> 
+                <a href="https://wa.me/5511912809687" target="_blank"><button id="whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button></a>
+            </div> <!-- social --> 
 
-            </div><!-- saida -->
+        </div><!-- saida -->
     </dialog>
 
     <script src="script.js"></script>

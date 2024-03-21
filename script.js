@@ -31,7 +31,9 @@ function toggleDarkMode() {
     botaoRepositorio.classList.toggle('dark');
 }
 
-//função visualizar habilidaddes
+
+
+//função visualizar section
 
 const visualizar = new IntersectionObserver((avistado)=>{
     avistado.forEach((visto)=>{
@@ -48,6 +50,8 @@ const visualizar = new IntersectionObserver((avistado)=>{
 const section = document.querySelectorAll('.hidden')
 
 section.forEach((elemento)=> visualizar.observe(elemento))
+
+
 
 //função menu selecionado no scroll
 
@@ -71,10 +75,15 @@ window.addEventListener('scroll', ()=>{
     })
 })
 
+
+
 //voltar ao home ao recarregar a pagina//
+
 window.onload = function() {
     window.scrollTo(0, 0);
 }
+
+
 
 //função para menu mobile abrir e fechar com toque em qualquer pate da tela
 
@@ -94,12 +103,21 @@ sombreado.addEventListener('click', ()=>{
     menu.classList.remove('menu-aberto')
 })
 
-//FUNÇÃO MODAL SAIDA DO SITE
+let modalDeSaida = document.querySelector('dialog')
+let btnFecharModal = document.querySelectorAll('dialog button')
+let contador = 0
 
-let abrirModal = document.querySelector('#abrir-modal-saida');
-let modalSaida = document.querySelector('dialog');
+document.addEventListener('mouseleave', () => {
 
-abrirModal.onclick = () => {
-    modalSaida.showModal()
-}
+    if(contador == 0){
+        modalDeSaida.showModal()
+    }
+})
+
+btnFecharModal.forEach(button => {
+    button.addEventListener('click', () => {
+        modalDeSaida.close()
+        contador = 1
+    })
+})
  
