@@ -85,39 +85,63 @@ window.onload = function() {
 
 
 
+//SLIDE BULLET
+
+let radio = document.querySelector('.manual-btn')
+contador = 1
+
+document.getElementById('radio1').checked = true
+
+setInterval(()=> {
+    nextImg()
+}, 3000)
+
+function nextImg(){
+    contador++
+
+    if (contador > 3){
+        contador = 1
+    }
+
+    document.getElementById('radio'+contador).checked = true
+
+}
+
+
+
 //função para menu mobile abrir e fechar com toque em qualquer pate da tela
 
-let abrirMenu = document.getElementById('abrir-menu')
-let menu = document.getElementById('menu-mobile')
-let sombreado = document.getElementById('sombreado-menu')
+// let abrirMenu = document.getElementById('abrir-menu')
+// let menu = document.getElementById('menu-mobile')
+// let sombreado = document.getElementById('sombreado-menu')
 
-abrirMenu.addEventListener('click', ()=>{
-    menu.classList.add('menu-aberto')
-})
+// abrirMenu.addEventListener('click', ()=>{
+//     menu.classList.add('menu-aberto')
+// })
 
-menu.addEventListener('click', ()=>{
-    menu.classList.remove('menu-aberto')
-})
+// menu.addEventListener('click', ()=>{
+//     menu.classList.remove('menu-aberto')
+// })
 
-sombreado.addEventListener('click', ()=>{
-    menu.classList.remove('menu-aberto')
-})
+// sombreado.addEventListener('click', ()=>{
+//     menu.classList.remove('menu-aberto')
+// })
 
-let modalDeSaida = document.querySelector('dialog')
-let btnFecharModal = document.querySelectorAll('dialog button')
-let contador = 0
+// let modalDeSaida = document.querySelector('dialog')
+// let btnFecharModal = document.querySelectorAll('dialog button')
+// let contador = 0
 
-document.addEventListener('mouseleave', () => {
+// document.addEventListener('mouseleave', () => {
 
-    if(contador == 0){
-        modalDeSaida.showModal()
-    }
-})
+//     if(contador == 0){
+//         modalDeSaida.showModal()
+//     }
+// })
 
-btnFecharModal.forEach(button => {
-    button.addEventListener('click', () => {
-        modalDeSaida.close()
-        contador = 1
-    })
-})
+// btnFecharModal.forEach(button => {
+//     button.addEventListener('click', () => {
+//         modalDeSaida.close()
+//         contador = 1
+//     })
+// })
  
