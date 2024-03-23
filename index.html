@@ -18,27 +18,27 @@
 
     <!-- css -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slide.css">
 
     <title>Portfólio</title>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="#inicio">
-                   <span></span>
-                </a>
-            </div> <!-- logo -->
-
+            
             <div class="menu-desktop">
                 <nav>
-                    <a href="#inicio" class="ativo js" >Inicio</a>
-                    <a href="#habilidades" class="js">Habilidades</a>
-                    <a href="#projetos" class="js">Projetos</a>
-                    <a href="#sobre" class="js">Sobre mim</a>
+                    <a href="#inicio" class="ativo js" ><i class="fa-solid fa-house-chimney"></i> Inicio</a>
+
+                    <a href="#habilidades" class="js"><i class="fa-solid fa-code"></i> Habilidades</a>
+
+                    <a href="#projetos" class="js"><i class="fa-solid fa-list-check"></i> Projetos</a>
+
+                    <a href="#sobre" class="js"><i class="fa-solid fa-id-badge"></i> Sobre</a>
+
+                    <a href="#faq" class="js"><i class="fa-solid fa-circle-question"></i> FAQ</a>
                 </nav>
             </div> <!-- menu-desktop -->
+
             <div class="social" id="social-header">
                 <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button id="linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
@@ -55,7 +55,6 @@
                 <a href="https://wa.me/5511912809687" target="_blank"><button id="whatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </button></a>
-
             </div> <!-- social -->
 
             <div class="dark-mode dark-desktop" id="dark-mode"> 
@@ -127,13 +126,18 @@
                         <p>Esta é a primeira versão do meu portfólio<br>
                         e ainda está passando por constantes alterações.</p>
 
-                        <p>Mas sinta-se a vontade para explora-lo e conhecer um <br> pouquinho sobre mim e sobre meus projetos</P>
-
-                            <a href="https://github.com/Lillnard/portfolio" target="_blank" class="Repositório-btn"><button>Repositório</button></a>
+                        <p>Sinta-se a vontade para explora-lo <br> e conhecer um pouco sobre mim</P>
+                        
+                        <p class="texto-topo-desktop">Ah, e se quiser ver o código do portfólio <br>
+                        É só clicar <a href="https://github.com/Lillnard/portfolio" target="_blank">AQUI</a> ou na foto desse BONITÃO aí do lado!</p>
+                        
+                        <p class="texto-topo-mobile">Ah, e se quiser ver o código do portfólio <br>
+                        É só clicar <a href="https://githubcom/Lillnard/portfolio"target="_blank">AQUI</a> ou na foto desse BONITÃO aí em baixo!</p>
+                            
                     </div> <!-- texto topo -->
 
                     <div class="img-topo hidden">
-                        <img src="img/foto portfolio.jpg">
+                        <a href="https://github.com/Lillnard/portfolio" target="_blank"><img src="img/foto portfolio.jpg"></a>
                     </div> <!-- img topo -->
 
                 </div> <!-- flex -->
@@ -269,42 +273,56 @@
             </div><!-- interface -->
         </section><!-- sobre -->
 
-        <section class="slide">
-            <div class="slide-content">
+        <section class="section faq-recrutadores" id="faq">
+            <div class="interface ">
+                <h2 class="titulo-faq">FAQ PARA RECRUTADORES</h2>
 
-                <input type="radio" name="btn-radio" id="radio1">
-                <input type="radio" name="btn-radio" id="radio2">
-                <input type="radio" name="btn-radio" id="radio3">
+                <div class="faq">
+                    <div class="questions-container flex">
+                        <div class="questions">
+                            <p>Pergunta 1</p>
+                        </div><!-- questions -->
+                        <div class="down">
+                            <div><i class="fa-solid     fa-chevron-down"></i>
+                            </div> <!-- down -->
+                        </div><!-- up-down -->
+                    </div><!-- questions-container -->
+                    <div class="answer">
+                        <p>Lorem ipsum dolor sit amet consectetur   adipisicing elit. Deleniti adipisci   delectus pariatur ipsa beatae vitae   consequatur maiores ab placeat aliquid    obcaecati quis quod labore suscipit autem,     veritatis facere nulla deserunt.</p>
+                    </div><!-- answer --> 
+                </div>   <!-- faq -->
 
-                <div class="slide-box primeiro">
-                    <img class="img-desktop" src="img/teste desktop 1.png" alt="">
-                    <img class="img-mobile" src="img/teste mobile.png" alt="">
-                </div> <!-- slide-box primeiro -->
+                <div class="faq">
+                    <div class="questions-container flex">
+                        <div class="questions">
+                            <p>Pergunta 2</p>
+                        </div><!-- questions -->
+                        <div class="down">
+                            <div><i class="fa-solid     fa-chevron-down"></i>
+                            </div> <!-- down -->
+                        </div><!-- up-down -->
+                    </div><!-- questions-container -->
+                    <div class="answer">
+                        <p>Lorem ipsum dolor sit amet consectetur   adipisicing elit. Deleniti adipisci   delectus pariatur ipsa beatae vitae   consequatur maiores ab placeat aliquid    obcaecati quis quod labore suscipit autem,     veritatis facere nulla deserunt.</p>
+                    </div><!-- answer --> 
+                </div>   <!-- faq -->
 
-                <div class="slide-box">
-                    <img class="img-desktop" src="img/teste desktop 2.png" alt="">
-                    <img class="img-mobile" src="img/teste mobile.png" alt="">
-                </div> <!-- slide-box -->
-
-                <div class="slide-box">
-                    <img class="img-desktop" src="img/teste desktop 3.png" alt="">
-                    <img class="img-mobile" src="img/teste mobile.png" alt="">
-                </div> <!-- slide-box -->
-
-                <div class="nav-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                </div><!-- nav-auto -->
-
-                <div class="nav-manual">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                </div><!-- nav-manual -->
-
-            </div> <!-- slide-content -->
-        </section> <!-- slide -->
+                <div class="faq">
+                    <div class="questions-container flex">
+                        <div class="questions">
+                            <p>Pergunta 3</p>
+                        </div><!-- questions -->
+                        <div class="down">
+                            <div><i class="fa-solid     fa-chevron-down"></i>
+                            </div> <!-- down -->
+                        </div><!-- up-down -->
+                    </div><!-- questions-container -->
+                    <div class="answer">
+                        <p>Lorem ipsum dolor sit amet consectetur   adipisicing elit. Deleniti adipisci   delectus pariatur ipsa beatae vitae   consequatur maiores ab placeat aliquid    obcaecati quis quod labore suscipit autem,     veritatis facere nulla deserunt.</p>
+                    </div><!-- answer --> 
+                </div>   <!-- faq -->
+            </div><!-- interface -->
+        </section>
 
     </main>
 
