@@ -1,14 +1,21 @@
 //função modo dark
 
 let body = document.querySelector('body');
-let sectionDark = document.querySelector('section');
+let sectionDark = document.querySelectorAll('section');
 let header = document.querySelector('header');
-let botaoRepositorio = document.querySelector('.topo .texto-topo button');
+let inicioHeader = document.querySelector('.menu-inicio');
+let habilidadesHeader = document.querySelector('.menu-habilidades');
+let projetosHeader = document.querySelector('.menu-projetos');
+let sobreHeader = document.querySelector('.menu-sobre');
+let faqHeader = document.querySelector('.menu-faq');
+let socialHeader = document.querySelectorAll('.social button');
+let darkMode = document.querySelector('dark-mode');
+let textoTopo = document.querySelector('.texto-topo');
 let habilidadesTitulo = document.querySelector('.habilidades h2 span');
-let logoHeader = document.querySelector('.logo a span');
-let social = document.querySelector('.social');
-let SocialMobile = document.getElementById('#social-mobile');
-let darkMode = document.getElementById('.dark-mode');
+let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
+let projetosTitulo = document.querySelector('.projetos h2 span');
+
+
 
 
 document.getElementById('dark-mode').addEventListener('click', () => {
@@ -22,13 +29,33 @@ document.getElementById('menu-mobile').querySelector('#dark-mode').addEventListe
 function toggleDarkMode() {
     document.getElementById('dark-mode').classList.toggle('dark');
     body.classList.toggle('dark');
-    sectionDark.classList.toggle('dark');
-    header.classList.toggle('dark');
-    logoHeader.classList.toggle('dark');
+    sectionDark.forEach(section => {
+        section.classList.toggle('dark');
+    });    header.classList.toggle('dark');
+    inicioHeader.classList.toggle('dark');
+    habilidadesHeader.classList.toggle('dark');
+    projetosHeader.classList.toggle('dark');
+    sobreHeader.classList.toggle('dark');
+    faqHeader.classList.toggle('dark');
+    textoTopo.classList.toggle('dark');
     habilidadesTitulo.classList.toggle('dark');
-    social.classList.toggle('dark');
+    
+    nomeTecnologia.forEach(nome => {
+        nome.classList.toggle('dark');
+    });
+
+    projetosTitulo.classList.toggle('dark');
+    SocialMobile.classList.toggle('dark');
+    
+    socialHeader.forEach(button => {
+        button.classList.toggle('dark');
+    });
     darkMode.classList.toggle('dark');
-    botaoRepositorio.classList.toggle('dark');
+
+    document.querySelectorAll('section p').forEach(p => {
+        p.classList.toggle('dark');
+    });
+
 }
 
 

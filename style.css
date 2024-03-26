@@ -25,7 +25,7 @@ body{
 }
 
 body.dark{
-    background: #000000;
+    background: #ffffff;
 }
 
 section{
@@ -34,7 +34,11 @@ section{
 }
 
 section.dark{
-    box-shadow: 0px 0px 3px #ffffff;
+    box-shadow: 0px 0px 3px #000000;
+}
+
+.dark p{
+    color: #636363;
 }
 
 .hidden{
@@ -77,8 +81,8 @@ header{
 }
 
 header.dark{
-    background-color: #000000;
-    box-shadow: 0px 0px 8px #ffffff;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px #000000;
 }
 
 .social{
@@ -106,13 +110,12 @@ header.dark{
 .menu-desktop nav a{
     color: #636363;
     text-decoration: none;
-    padding-right: 50px;
     font-size: 18px;
     font-weight: 400;
     position: relative;
     display: inline-block;
     transition: 0.2s;
-    margin-left: 20px;
+    margin: 0 50px 0 20px;
 }
 
 .menu-desktop nav a:hover{
@@ -152,11 +155,28 @@ header.dark{
     width: 52px;
 }
 
+.menu-inicio.dark:hover::after,
+.menu-habilidades.dark:hover::after,
+.menu-projetos.dark:hover::after,
+.menu-sobre.dark:hover::after,
+.menu-faq.dark:hover::after{
+    background-image: linear-gradient(45deg, #636363, #000000);
+
+}
 
 .menu-desktop nav a.ativo{
     color: #ffffff;
     font-weight: 600;
 }
+
+.menu-inicio.dark.ativo, 
+.menu-habilidades.dark.ativo, 
+.menu-projetos.dark.ativo, 
+.menu-sobre.dark.ativo, 
+.menu-faq.dark.ativo {
+    color: #000000; 
+}
+
 
 .menu-desktop nav .menu-inicio.ativo::after{
     content: " ";
@@ -235,12 +255,16 @@ header.dark{
 /* menu mobile */
 
 
+.abrir-menu{
+    display: none;
+}
 
 .abrir-menu i{
-    color: #fe4701;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 40px;
-    margin-top: 8px;
-    display: none;
 }
 
 .menu-mobile{
@@ -272,7 +296,10 @@ header.dark{
 }
 
 .menu-mobile .fechar i{
-    color: #fe4701;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 40px;
 }
 
@@ -293,7 +320,8 @@ header.dark{
 }
 
 .menu-mobile nav ul li a:hover{
-    background-color: #fe4701;
+    background: linear-gradient(45deg, #ff2500, #ff7100);
+    
     font-weight: 600;
     color: #000000;
 }
@@ -306,8 +334,8 @@ header.dark{
 }
 
 #social-mobile.dark{
-    background-color: #242424;
-    box-shadow: 0px 0px 8px #ffffff;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px #000000;
 }
 
 #social-mobile.dark i{
@@ -330,6 +358,10 @@ header.dark{
 /* REDES SOCIAIS */
 
 
+.social{
+    display: flex;
+    justify-content: end;
+}
 
 .social button i{
     font-size: 18px;
@@ -364,17 +396,17 @@ header.dark{
 }
 
 .social.dark button{
-    background-color: #242424;
-    box-shadow: 0px 0px 8px #ffffff;
+    background-color: #cccccc;
+    box-shadow: 0px 0px 8px #000000;
 }
 
 .social.dark button i{
-    color: #ffffff;
+    color: #000000;
 }
 
 
 #linkedin::before{
-    background-color: #0A66C2;
+    background-color: #0a66c2;
 }
 
 #gh::before{
@@ -382,7 +414,7 @@ header.dark{
 }
 
 #whatsapp::before{
-    background-color: #25D366;
+    background-color: #25d365;
 }
 
 #instagram::before{
@@ -435,19 +467,19 @@ header.dark{
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    margin-right: 50px;
+    margin: 0 20px 0 20px;
     transition: 0.2s;
     position: relative;
     overflow: hidden;
 }
 
 .dark-mode.dark{
-    background-color: #242424;
-    box-shadow: 0px 0px 8px #ffffff;
+    background-color: #cccccc;
+    box-shadow: 0px 0px 8px #000000;
 }
 
 .dark-mode.dark i{
-    color: #ffffff;
+    color: #000000;
 }
 
 .dark-mode i{
@@ -509,6 +541,10 @@ section.topo .flex{
     text-align: end;
 }
 
+.topo .texto-topo.dark h1{
+    color: #000000;
+}
+
 .topo .texto-topo h2{
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
     background-clip: text;
@@ -519,11 +555,15 @@ section.topo .flex{
     text-align: end;
 }
 
-h3{
+.topo .texto-topo h3{
     color: #cccccc;
     text-align: end;
     margin: 50px 0 0 0;
     text-transform: uppercase;
+}
+
+.topo .texto-topo.dark h3{
+    color: #636363;
 }
 
 .topo .texto-topo p{
@@ -534,8 +574,16 @@ h3{
     line-height: 30px;
 }
 
+.topo .texto-topo.dark p{
+    color: #636363;
+}
+
 .topo .texto-topo p a{
     color: #cccccc;
+}
+
+.topo .texto-topo.dark p a{
+    color: #636363;
 }
 
 .topo .texto-topo p a:hover{
@@ -615,7 +663,7 @@ section.habilidades .interface{
 }
 
 .habilidades h2 span.dark::after{
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 
@@ -640,7 +688,7 @@ section.habilidades .interface{
     }
 }
 
-.habilidades p{
+.habilidades > p{
     color: #cccccc;
     font-weight: 700;
     padding: 20px;
@@ -713,6 +761,11 @@ section.habilidades .interface{
     transition: .5s;
     align-items: end;
     justify-content: center;
+}
+
+.sombreado-habil.dark{
+    color: #636363;
+    font-weight: 600;
 }
 
 .delay1{
@@ -789,7 +842,7 @@ section.sobre .texto-sobre p{
 }
 
 .projetos h2 span.dark::after{
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 
@@ -862,6 +915,11 @@ section.projetos .flex{
     align-items: center;
 }
 
+.projeto-content.dark p{
+    color: #242424;
+}
+
+
 .img-proj:hover{
     background-position: 100% 100%;
 }
@@ -927,7 +985,7 @@ section.projetos .flex{
 }
 
 .faq{
-   max-width: 800px;
+   width: 800px;
    margin: 30px auto 0;
    padding: 0 0 15px 0;
    border-bottom: 2px solid #636363;
@@ -937,7 +995,6 @@ section.projetos .flex{
 
 .faq:hover{
     border-bottom: 2px solid #cccccc;
-
 }
 
 .questions-container{
@@ -1116,9 +1173,14 @@ dialog::backdrop{
 
 @media screen and (max-width: 1200px){
 
+    .abrir-menu{
+        display: block ;
+        text-align: left;
+    }
+    
     .abrir-menu i{
-        display: block;
-        margin-left: 350px;
+        display: inline-block;
+        justify-content: end;
     }
 
     .menu-desktop, .dark-desktop, #social-header {
@@ -1265,6 +1327,23 @@ dialog::backdrop{
     .texto-sobre h2{
         font-size: 10px;
         line-height: 50px;
+    }
+
+    .faq{
+        width: 350px;
+    }
+
+    .questions p{
+        font-size: 20px;
+    }
+
+    .down{
+        width: 25px;
+        height: 25px;
+    }
+
+    .down i{
+        font-size: 15px;
     }
 
     .social button{
