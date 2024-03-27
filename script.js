@@ -8,14 +8,15 @@ let habilidadesHeader = document.querySelector('.menu-habilidades');
 let projetosHeader = document.querySelector('.menu-projetos');
 let sobreHeader = document.querySelector('.menu-sobre');
 let faqHeader = document.querySelector('.menu-faq');
-let socialHeader = document.querySelectorAll('.social button');
-let darkMode = document.querySelector('dark-mode');
+let faqSincerao = document.querySelector('.menu-sincerao');
+let darkMode = document.querySelector('.dark-mode');
 let textoTopo = document.querySelector('.texto-topo');
+let imgTopo = document.querySelector('.img-topo');
 let habilidadesTitulo = document.querySelector('.habilidades h2 span');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
 let projetosTitulo = document.querySelector('.projetos h2 span');
-
-
+let sinceraoBtn = document.querySelector('.sincerao-btn');
+let footer = document.querySelector('footer');
 
 
 document.getElementById('dark-mode').addEventListener('click', () => {
@@ -37,20 +38,17 @@ function toggleDarkMode() {
     projetosHeader.classList.toggle('dark');
     sobreHeader.classList.toggle('dark');
     faqHeader.classList.toggle('dark');
+    faqSincerao.classList.toggle('dark');
     textoTopo.classList.toggle('dark');
+    imgTopo.classList.toggle('dark');
     habilidadesTitulo.classList.toggle('dark');
-    
+    projetosTitulo.classList.toggle('dark');
+    sinceraoBtn.classList.toggle('dark');
+    footer.classList.toggle('dark');
+
     nomeTecnologia.forEach(nome => {
         nome.classList.toggle('dark');
     });
-
-    projetosTitulo.classList.toggle('dark');
-    SocialMobile.classList.toggle('dark');
-    
-    socialHeader.forEach(button => {
-        button.classList.toggle('dark');
-    });
-    darkMode.classList.toggle('dark');
 
     document.querySelectorAll('section p').forEach(p => {
         p.classList.toggle('dark');
@@ -60,24 +58,43 @@ function toggleDarkMode() {
 
 
 
-//função visualizar section
+//FUNÇÃO SECTION ENTRANDO PELA ESQUERDA
 
 const visualizar = new IntersectionObserver((avistado)=>{
     avistado.forEach((visto)=>{
         if(visto.isIntersecting){
             setTimeout(() => {
-                visto.target.classList.add('show');
+                visto.target.classList.add('show-left');
             }, 250); 
         } else {
-            visto.target.classList.remove('show');
+            visto.target.classList.remove('show-left');
         }
     });
 });
 
-const section = document.querySelectorAll('.hidden')
+const section = document.querySelectorAll('.hidden-left')
 
 section.forEach((elemento)=> visualizar.observe(elemento))
 
+
+
+//FUNÇÃO SECTION ENTRANDO PELA DIREITA
+
+const visualizarDireita = new IntersectionObserver((avistado)=>{
+    avistado.forEach((visto)=>{
+        if(visto.isIntersecting){
+            setTimeout(() => {
+                visto.target.classList.add('show-right');
+            }, 250); 
+        } else {
+            visto.target.classList.remove('show-right');
+        }
+    });
+});
+
+const sectionhiddenright = document.querySelectorAll('.hidden-right')
+
+sectionhiddenright.forEach((elemento)=> visualizarDireita.observe(elemento))
 
 
 //função menu selecionado no scroll
@@ -143,6 +160,22 @@ faq.forEach((faq) => {
 });
 
 
+//BOTÃO SINCERÃO
+
+function move(){
+
+let naoGostei = document.getElementById('nao-gostei')
+let sectionWidth = window.innerWidth;
+let sectionHeight = window.innerHeight;
+let maxX = sectionWidth - naoGostei.offsetWidth;
+let maxY = sectionHeight - naoGostei.offsetHeight;
+let randomX = Math.floor(Math.random() * maxX);
+let randomY = Math.floor(Math.random() * maxY);
+
+naoGostei.style.left = randomX + "px";
+naoGostei.style.top = randomY + "px";
+
+}
 //MODAL SAIDA DO SITE
 
 // let modalDeSaida = document.querySelector('dialog')

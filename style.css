@@ -28,8 +28,11 @@ body.dark{
     background: #ffffff;
 }
 
-section{
+.full-screen{
     min-height: 100vh;
+}
+
+section{
     box-shadow: 0px 0px 3px #ffffff;
 }
 
@@ -38,22 +41,37 @@ section.dark{
 }
 
 .dark p{
-    color: #636363;
+    color: #242424;
 }
 
-.hidden{
+.hidden-left{
     opacity: 0;
     filter: blur(15px);
     transform: translateX(-100%);
     transition: all 0s;
 }
 
-.show{
+.show-left{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0%);
+    transition: all .5s;
+}
+
+.hidden-right{
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(100%);
+    transition: all 0s;
+}
+
+.show-right{
     opacity: 1;
     filter: blur(0);
     transform: translateX(0%);
     transition: all 1s;
 }
+
 
 .container{
     max-width: 100vw;
@@ -115,7 +133,7 @@ header.dark{
     position: relative;
     display: inline-block;
     transition: 0.2s;
-    margin: 0 50px 0 20px;
+    margin: 0 20px 0;
 }
 
 .menu-desktop nav a:hover{
@@ -155,11 +173,11 @@ header.dark{
     width: 52px;
 }
 
-.menu-inicio.dark:hover::after,
-.menu-habilidades.dark:hover::after,
-.menu-projetos.dark:hover::after,
-.menu-sobre.dark:hover::after,
-.menu-faq.dark:hover::after{
+.menu-desktop nav .menu-sincerao:hover::after{
+    width: 103px;
+}
+
+.menu-desktop nav a:hover::after{
     background-image: linear-gradient(45deg, #636363, #000000);
 
 }
@@ -173,12 +191,13 @@ header.dark{
 .menu-habilidades.dark.ativo, 
 .menu-projetos.dark.ativo, 
 .menu-sobre.dark.ativo, 
-.menu-faq.dark.ativo {
+.menu-faq.dark.ativo,
+.menu-sincerao.dark.ativo{
     color: #000000; 
 }
 
 
-.menu-desktop nav .menu-inicio.ativo::after{
+.menu-desktop nav a.ativo::after{
     content: " ";
     width: 0px;
     height: 4px;
@@ -190,52 +209,28 @@ header.dark{
     transition: width 0.5s;
 }
 
+.menu-desktop nav .menu-inicio.ativo::after{
+    width: 66px;
+}
+
 .menu-desktop nav .menu-habilidades.ativo::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    position: absolute;
-    top: 22px;
-    left: 0;
     width: 113px;
-    transition: width 0.5s;
 }
 
 .menu-desktop nav .menu-projetos.ativo::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    position: absolute;
-    top: 22px;
-    left: 0;
     width: 84px;
-    transition: width 0.5s;
 }
 
 .menu-desktop nav .menu-sobre.ativo::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    position: absolute;
-    top: 22px;
-    left: 0;
     width: 61px;
-    transition: width 0.5s;
 }
 
 .menu-desktop nav .menu-faq.ativo::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    position: absolute;
-    top: 22px;
-    left: 0;
     width: 52px;
-    transition: width 0.5s;
+}
+
+.menu-desktop nav .menu-sincerao.ativo::after{
+    width: 103px;
 }
 
 .menu-desktop nav a i{
@@ -330,7 +325,6 @@ header.dark{
     display: flex;
     gap: 15px;
     margin: 15px;
-    background-color: #242424;
 }
 
 #social-mobile.dark{
@@ -374,7 +368,7 @@ header.dark{
 
 .social button:hover i{
     color: #ffffff;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #gh i:hover{
@@ -383,7 +377,7 @@ header.dark{
 
 .social button{
     background-color: #242424;
-    box-shadow: 0px 0px 8px #ffffff;
+    box-shadow: 0px 0px 15px #ffffff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -395,12 +389,12 @@ header.dark{
     overflow: hidden;
 }
 
-.social.dark button{
+header.dark button{
     background-color: #cccccc;
-    box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 15px #000000;
 }
 
-.social.dark button i{
+header.dark button i{
     color: #000000;
 }
 
@@ -461,7 +455,7 @@ header.dark{
 
 .dark-mode{
     background-color: #242424;
-    box-shadow: 0px 0px 8px #ffffff;
+    box-shadow: 0px 0px 15px #ffffff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -475,7 +469,7 @@ header.dark{
 
 .dark-mode.dark{
     background-color: #cccccc;
-    box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 15px #000000;
 }
 
 .dark-mode.dark i{
@@ -541,7 +535,7 @@ section.topo .flex{
     text-align: end;
 }
 
-.topo .texto-topo.dark h1{
+.topo.dark h1{
     color: #000000;
 }
 
@@ -563,7 +557,7 @@ section.topo .flex{
 }
 
 .topo .texto-topo.dark h3{
-    color: #636363;
+    color: #242424;
 }
 
 .topo .texto-topo p{
@@ -575,7 +569,7 @@ section.topo .flex{
 }
 
 .topo .texto-topo.dark p{
-    color: #636363;
+    color: #242424;
 }
 
 .topo .texto-topo p a{
@@ -615,6 +609,14 @@ section.topo .flex{
     box-shadow: 0px 0px 20px #ffffff;
 }
 
+.topo .img-topo.dark img{
+    box-shadow: 0px 0px 10px #000000;
+}
+
+.topo .img-topo.dark img:hover{
+    box-shadow: 0px 0px 20px #000000;
+}
+
 
 
 /* HABILIDADES */
@@ -632,10 +634,27 @@ section.habilidades .interface{
     justify-content: center;
 }
 
-.habilidades h2{
-    font-size: 40px;
+.habilidades h2 span{
+    font-size: 50PX;
+}
+.habilidades h2:nth-child(5){
+    transition-delay: 200ms;
+}
+.habilidades h2 span:nth-child(4){
+    transition-delay: 400ms;
+}
+.habilidades h2 span:nth-child(3){
+    transition-delay: 600ms;
+}
+.habilidades h2 span:nth-child(2){
+    transition-delay: 800ms;
+}
+.habilidades h2 span:nth-child(1){
+    transition-delay: 1s;
 }
 
+
+/* 
 .habilidades h2 span{
     position: relative;
 }
@@ -655,7 +674,7 @@ section.habilidades .interface{
     position: absolute;
     height: 42px;
     bottom: 4px;
-    border-left: 2px solid #838383;
+    border-left: 2px solid #636363;
     right: -10px;
     animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
     width: calc(100% + 12px);
@@ -678,7 +697,7 @@ section.habilidades .interface{
 
 @keyframes ponteiroi{
     0%{
-        border-left: 2px solid #1D1717;
+        border-left: 2px solid #636363;
     }
 }
 
@@ -686,12 +705,17 @@ section.habilidades .interface{
     0%,100%{
         content: "<MINHAS> </HABILIDADES>" ;
     }
+} */
+
+.habilidades p{
+    color: #cccccc;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px;
 }
 
-.habilidades > p{
-    color: #cccccc;
-    font-weight: 700;
-    padding: 20px;
+.habilidades.dark p{
+    color: #242424;
 }
 
 .lista {
@@ -754,7 +778,7 @@ section.habilidades .interface{
     width: 100px;
     height: 100px;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 600;
     color: #cccccc;
     border-radius: 20px;
     margin-top: 35PX;
@@ -764,7 +788,7 @@ section.habilidades .interface{
 }
 
 .sombreado-habil.dark{
-    color: #636363;
+    color: #242424;
     font-weight: 600;
 }
 
@@ -845,6 +869,9 @@ section.sobre .texto-sobre p{
     background-color: #ffffff;
 }
 
+.projeto-content.dark p{
+    color: #242424;
+}
 
 @keyframes digitar {
     10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
@@ -901,7 +928,7 @@ section.projetos .flex{
     background-size: cover;
     background-position: 100% 0%;
     position: relative;
-    transition: 5s;
+    transition: 1s;
     margin: 50px 0 0 50px;
 }
 
@@ -932,7 +959,7 @@ section.projetos .flex{
     height: 100%;
     background-color: #00000098;
     color: #ffffff;
-    border-radius: 35px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1057,6 +1084,128 @@ section.projetos .flex{
 
 
 
+/* SINCERÃO */
+
+
+
+.sincerao{
+    padding: 60px 0 0 0;
+    position: relative;
+    height: 400px;
+}
+
+.sincerao-container{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.sincerao h2{
+    font-size: 40px;
+    padding: 10px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.sincerao p{
+    padding: 20px;
+    text-align: center;
+}
+
+.sincerao-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.sincerao-btn button{
+    background-color: #242424;
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: 0px 0px 8px #ffffff;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.sincerao-btn.dark button{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 15px #000000;
+}
+
+.sincerao-btn.dark button i{
+    color: #000000;
+}
+
+
+.sincerao-btn button:hover{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.sincerao-btn button:hover i{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.nao-btn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#nao-gostei{
+    position: absolute;
+    margin: 0 auto;
+}
+
+#gostei::before{
+    background: linear-gradient(#189e54 , #4cb622 , #77d728);
+}
+
+.sincerao-btn button::before{
+    content: "";
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    position: absolute;
+    left: -100;
+    top: 100%;
+    background-color: #555555e3;
+}
+
+.sincerao-btn button:hover::before{
+    animation: deslocamento .6s;
+    left: 0;
+    top: 0;
+}
+
+@keyframes deslocamento {
+    0%{
+        left: -100;
+        top: 100%;
+    }
+    50%{
+        left: 15%;
+        top: -25%;
+    }
+    100%{
+        left: 0;
+        top: 0;
+    }
+}
+
+
 /* FOOTER */
 
 
@@ -1083,6 +1232,15 @@ footer.flex{
     text-align: end;
 }
 
+footer.dark button{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 15px #000000;
+}
+
+footer.dark button i{
+    color: #000000;
+}
+
 footer .divisa-footer{
     padding: 20px 0;
 }
@@ -1098,9 +1256,24 @@ footer p a{
     color: #cccccc;
 }
 
+footer.dark .divisa-footer p{
+    color: #242424;
+    font-weight: 300;
+    text-align: center;
+}
+
+footer.dark p a{
+    font-weight: 600;
+    color: #000000;
+}
+
 .divisa span{
     font-weight: 600;
     color: #cccccc;
+}
+
+footer.dark .divisa span{
+    color: #000000;
 }
 
 .divisa{
