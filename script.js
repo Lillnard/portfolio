@@ -16,6 +16,7 @@ let habilidadesTitulo = document.querySelector('.habilidades h2 span');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
 let projetosTitulo = document.querySelector('.projetos h2 span');
 let sinceraoBtn = document.querySelector('.sincerao-btn');
+let obrigadoDark = document.querySelector('.obrigado');
 let footer = document.querySelector('footer');
 
 
@@ -44,6 +45,7 @@ function toggleDarkMode() {
     habilidadesTitulo.classList.toggle('dark');
     projetosTitulo.classList.toggle('dark');
     sinceraoBtn.classList.toggle('dark');
+    obrigadoDark.classList.toggle('dark');
     footer.classList.toggle('dark');
 
     nomeTecnologia.forEach(nome => {
@@ -160,7 +162,7 @@ faq.forEach((faq) => {
 });
 
 
-//BOTÃO SINCERÃO
+//BOTÃO SINCERÃO MOVENDO
 
 function move(){
 
@@ -176,6 +178,47 @@ naoGostei.style.left = randomX + "px";
 naoGostei.style.top = randomY + "px";
 
 }
+
+//FUNÇÃO DE CLICK NA AVALIAÇÃP
+
+function obrigado() {
+    let btnGostei = document.getElementById('gostei');
+    let btnNaoGostei = document.getElementById('nao-gostei');
+    let obrigado = document.getElementById('obrigado');
+    let fecharObrigado = document.getElementById('fechar-obrigado');
+    let counter = 0;
+
+    btnGostei.addEventListener('click', () => {
+        if (counter === 0) {
+            obrigado.classList.add('block');
+            btnGostei.classList.add('hide');
+            btnNaoGostei.classList.add('hide');
+            counter = 1;
+        }
+    });
+
+    btnNaoGostei.addEventListener('click', () => {
+        if (counter === 0) {
+            obrigado.classList.add('block');
+            btnGostei.classList.add('hide');
+            btnNaoGostei.classList.add('hide');
+            counter = 1;
+        }
+    });
+
+    fecharObrigado.addEventListener('click', () => {
+        if (counter === 1) {
+            obrigado.classList.remove('block');
+            btnGostei.classList.remove('hide');
+            btnNaoGostei.classList.remove('hide');
+            counter = 0;
+        }
+    });
+}
+
+obrigado();
+
+
 //MODAL SAIDA DO SITE
 
 // let modalDeSaida = document.querySelector('dialog')
