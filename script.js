@@ -135,40 +135,54 @@ window.onload = function() {
 function trocarProjetos() {
     let switchBtn1 = document.getElementById('switch-btn1');
     let switchBtn2 = document.getElementById('switch-btn2');
+    let switchBtn3 = document.getElementById('switch-btn3');
     let projetos1 = document.getElementById('projetos1');
     let projetos2 = document.getElementById('projetos2');
-    let pagina = 1
+    let projetos3 = document.getElementById('projetos3');
+    let pagina = 1;
 
-    // Adicionar event listener para mostrar projetos2
+    // Adicionar event listener para mostrar projetos1
     switchBtn1.addEventListener('click', () => {
-        if (pagina !== 1) {
-            projetos1.classList.remove('hide');
+        if (pagina === 2 || pagina === 3) {
             projetos2.classList.add('hide');
+            projetos3.classList.add('hide');
+            projetos1.classList.remove('hide');
             switchBtn1.classList.add('ativo');
             switchBtn2.classList.remove('ativo');
+            switchBtn3.classList.remove('ativo');
             pagina = 1;
         }
     });
 
-    // Adicionar event listener para mostrar projetos1
+    // Adicionar event listener para mostrar projetos2
     switchBtn2.addEventListener('click', () => {
-        if (pagina !== 2) {
-            projetos2.classList.remove('hide');
+        if (pagina === 1 || pagina === 3) {
             projetos1.classList.add('hide');
+            projetos3.classList.add('hide');
+            projetos2.classList.remove('hide');
             switchBtn2.classList.add('ativo');
             switchBtn1.classList.remove('ativo');
+            switchBtn3.classList.remove('ativo');
             pagina = 2;
         }
     });
 
-    // Adicionar event listener para mostrar projetos2 ao carregar a página
-    window.addEventListener('DOMContentLoaded', () => {
-        projetos2.classList.add('hide');
-        switchBtn2.classList.remove('ativo');
+    // Adicionar event listener para mostrar projetos3
+    switchBtn3.addEventListener('click', () => {
+        if (pagina === 1 || pagina === 2) {
+            projetos1.classList.add('hide');
+            projetos2.classList.add('hide');
+            projetos3.classList.remove('hide');
+            switchBtn3.classList.add('ativo');
+            switchBtn2.classList.remove('ativo');
+            switchBtn1.classList.remove('ativo');
+            pagina = 3;
+        }
     });
 }
 
 trocarProjetos();
+
 
 
 
