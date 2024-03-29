@@ -356,7 +356,7 @@ header.dark{
     justify-content: end;
 }
 
-.social button i{
+.button button i{
     font-size: 18px;
     color: #ffffff;
     display: flex;
@@ -365,7 +365,7 @@ header.dark{
     transition: 0.2s;
 }
 
-.social button:hover i{
+.button button:hover i{
     color: #ffffff;
     transform: scale(1.05);
 }
@@ -374,7 +374,7 @@ header.dark{
     color: #000000;
 }
 
-.social button{
+.button button{
     background-color: #242424;
     box-shadow: 0px 0px 15px #ffffff;
     width: 30px;
@@ -414,7 +414,7 @@ header.dark button i{
     background: linear-gradient(#F9CE34 , #EE2A7B , #6228D7);
 }
 
-.social button::before{
+.button button::before{
     content: "";
     width: 30px;
     height: 30px;
@@ -425,7 +425,7 @@ header.dark button i{
     background-color: #242424e3;
 }
 
-.social button:hover::before{
+.button button:hover::before{
     animation: deslocamento .6s;
     left: 0;
     top: 0;
@@ -911,6 +911,11 @@ section.projetos .flex{
     text-align: end;
 }
 
+.projeto{
+    display: flex;
+    flex-direction: column;
+}
+
 .projeto-container{
     display: flex;
     justify-content: center;
@@ -918,6 +923,7 @@ section.projetos .flex{
 
 .img-proj, .projeto-content{
     width: 50%;
+    animation: fade 1.2s ease-in-out;
 }
 
 .img-proj{
@@ -980,7 +986,6 @@ section.projetos .flex{
     cursor: pointer;
     margin: 20px;
     transition: 0.2s;
-    position: relative;
     overflow: hidden;
 }
 
@@ -988,6 +993,17 @@ section.projetos .flex{
     background: linear-gradient(45deg, #ff4800, #ff9e20);
     font-weight: 600;
     color: #ffffff;
+}
+
+.ver-mais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ver-mais button.ativo{
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+
 }
 
 
@@ -1096,6 +1112,7 @@ section.projetos .flex{
 .sincerao-container{
     margin: 0 auto;
     width: 50%;
+    display: block;
 }
 
 .sincerao h2{
@@ -1131,7 +1148,7 @@ section.projetos .flex{
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    margin: 0 auto 30px;
+    margin: 110px auto 20px;
     transition: 0.2s;
     position: relative;
     overflow: hidden;
@@ -1165,7 +1182,7 @@ section.projetos .flex{
 
 #nao-gostei{
     position: absolute;
-    margin: 0 auto;
+    margin: 35px auto;
 }
 
 #gostei::before{
@@ -1186,7 +1203,9 @@ section.projetos .flex{
 
 .obrigado p{
     font-size: 20px;
-    padding: 0 0 px 0;
+    padding: 0 0 20px 0;
+    animation: fade 1.2s ease-in-out;
+
 }
 
 .block {
@@ -1246,6 +1265,55 @@ section.projetos .flex{
         top: 0;
     }
 }
+
+
+
+/* SINCERÃO NOTA */
+
+
+
+.rate p{
+    font-size: 30px;
+    animation: fade 1.2s ease-in-out;
+}
+
+.rate-container{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.rate-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    width: 90px;
+    height: 40px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.rate-container div:hover{
+    background: linear-gradient(45deg, #ff2500, #ff7100);
+}
+
+.rate-container div p:hover{
+    font-weight: 600;
+    color: #000000;
+}
+
+
+
+
+
 
 
 /* FOOTER */

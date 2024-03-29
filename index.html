@@ -43,7 +43,7 @@
                 </nav>
             </div> <!-- menu-desktop -->
 
-            <div class="social social-header" id="social-header">
+            <div class="social social-header button" id="social-header">
                 
                 <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button class="linkedin btn-header" id="linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
@@ -88,7 +88,7 @@
                         </ul>
                     </nav>
 
-                    <div class="social social-mobile" id="social-mobile">
+                    <div class="social social-mobile button" id="social-mobile">
                         <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button class="linkedin social-btn" id="linkedin">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </button></a>
@@ -228,8 +228,7 @@
             <div class="interface">
                 <h2 class="titulo"><span></span><img width="50" height="50" src="https://img.icons8.com/ios/50/developer-mode--v1.png" alt="developer-mode--v1"/></h2>
 
-                <div class="flex">
-
+                <div class="projeto flex" id="projetos1">
                     <div class="projeto-container">
                         <div class="img-proj hidden-left" style="background-image: url(img/Wreck-It_Ralph_logo\ 3.png);">
                             <div class="sombreado">
@@ -241,7 +240,6 @@
 
                         <div class="projeto-content hidden-right">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iure quas exercitationem quod eos earum, aliquam facilis facere non quibusdam distinctio repellendus ipsa deleniti quos nostrum eum illo doloribus deserunt!</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi facere modi repellat pariatur at repellendus facilis commodi incidunt natus eos consectetur, necessitatibus harum nemo hic sapiente laboriosam dolorem nostrum esse!</p>
                         </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
 
@@ -257,10 +255,20 @@
                         <div class="projeto-content hidden-left">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quasi repudiandae! Fugit laudantium earum aperiam iusto eligendi ratione saepe nulla, enim sit atque, quas beatae harum iste quae? Autem, quisquam!</p>
                         </div><!-- projeto-content -->
+
+        
                     </div><!-- projeto-container -->
 
+                    <div class="ver-mais button " id="ver-mais-projetos">
+                        <button class="ativo" id="switch-btn1" onclick="scrollToSection('projetos')"><i class="fa-solid fa-1"></i></button>
+                        <button class="switch-btn2" id="switch-btn2" onclick="scrollToSection('projetos')"><i class="fa-solid fa-2"></i></button>
+                    </div><!-- ver mais  -->
+
+                </div><!-- projeto flex -->
+
+                <div class="projeto flex hide" id="projetos2">                
                     <div class="projeto-container">
-                        <div class="img-proj hidden-left" style="background-image: url(img/Wreck-It_Ralph_logo\ 3.png);">
+                        <div class="img-proj hidden-left" style="background-image: url(img/jogo\ da\ memória\ 2.png);">
                             <div class="sombreado">
                                 <a href="https://github.com/Lillnard/game-detona-ralph-js" target="_blank"><button class="btn-projeto">Código</button></a>
 
@@ -269,11 +277,31 @@
                         </div><!-- img-proj -->
 
                         <div class="projeto-content hidden-right">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste itaque non temporibus rerum laboriosam, quae odio, neque culpa esse consequuntur assumenda vel dolorum enim vitae maxime odit voluptatibus ipsum voluptatum.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iure quas exercitationem quod eos earum, aliquam facilis facere non quibusdam distinctio repellendus ipsa deleniti quos nostrum eum illo doloribus deserunt!</p>
                         </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
 
-                </div><!-- flex -->
+                    <div class="projeto-container reverse">
+                        <div class="img-proj hidden-right" style="background-image: url(img/jogo\ da\ memória\ 2.png);">
+                            <div class="sombreado">
+                                <a href="https://github.com/Lillnard/game-detona-ralph-js" target="_blank"><button class="btn-projeto">Código</button></a>
+
+                                <a href="https://lillnard.github.io/game-detona-ralph-js/" target="_blank"><button class="btn-projeto">Abrir projeto</button></a>
+                            </div><!-- sombreado -->
+                        </div><!-- img-proj -->
+
+                        <div class="projeto-content hidden-left">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quasi repudiandae! Fugit laudantium earum aperiam iusto eligendi ratione saepe nulla, enim sit atque, quas beatae harum iste quae? Autem, quisquam!</p>
+                        </div><!-- projeto-content -->
+                    </div><!-- projeto-container -->
+
+                    <div class="ver-mais button" id="voltar-projetos">
+                        <button class="switch-btn1" id="switch-btn1" onclick="scrollToSection('projetos')"><i class="fa-solid fa-1"></i></button>
+                        <button class="switch-btn2" id="switch-btn2" onclick="scrollToSection('projetos')"><i class="fa-solid fa-2"></i></button>
+                    </div><!-- ver-mais -->
+
+                </div><!-- projeto flex -->
+
             </div><!-- interface -->
         </section><!-- projetos -->
 
@@ -358,19 +386,41 @@
                 <P>Agora quero a sua opinião sincera sobre o que achou do meu Portfólio</P>
 
                 <div class="sincerao-btn">
-                    <button id="gostei" class="feedback-button"><i class="fa-solid fa-thumbs-up"></i></button>
-                    <div class="obrigado" id="obrigado">
-                        <div class="fechar-obrigado" id="fechar-obrigado">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div><!-- fechar-obrigado -->
-                        <p> feliz que tenha gostado! <br>
-                        Obrigado pela sua avaliação sincerona</p>
-                    </div><!-- obrigado -->
                     <div class="nao-btn">
                         <button id="nao-gostei" class="feedback-button" onmouseover="move()"><i class="fa-solid fa-thumbs-down"></i></button>
-                    </div>
-                </div><!-- sincerao- <p>Fico feliz que tenha gostado!</p>
-                    <p>Obrigado pela sua avaliação sincerona</p>btn -->
+                    </div><!-- nao-btn -->
+
+                    <button id="gostei" class="feedback-button"><i class="fa-solid fa-thumbs-up"></i></button>
+
+                </div><!-- sincerao-btn -->
+
+                <div class="rate hide" id="rate">
+                    <p>Qual nota você dá para o visual geral do portfólio?</p>
+
+                    <div class="rate-container low-rate" id="low-rate">
+                        <div><p>1</p></div>
+                        <div><p>2</p></div>
+                        <div><p>3</p></div>
+                        <div><p>4</p></div>
+                        <div><p>5</p></div>
+                    </div><!-- low-rate -->
+                      
+                    <div class="rate-container high-rate" id="high-rate">
+                        <div><p>6</p></div>
+                        <div><p>7</p></div>
+                        <div><p>8</p></div>
+                        <div><p>9</p></div>
+                        <div><p>10</p></div>
+                    </div><!-- high-rate -->
+                </div><!-- rate -->
+
+                <div class="obrigado" id="obrigado">
+                    <div class="fechar-obrigado" id="fechar-obrigado">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div><!-- fechar-obrigado -->
+                    <p> Fico muito feliz que tenha gostado! <br>
+                    Obrigado pela sua avaliação sincerona</p>
+                </div><!-- obrigado -->
                 
             </div><!-- sincerao-container -->
         </section>
@@ -384,7 +434,7 @@
                     <div class="logo-footer">
                         <img src="#" alt="">
                     </div> <!-- logo-footer -->
-                    <div class="social social-footer">
+                    <div class="social social-footer button">
                         <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button id="linkedin">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </button></a>
@@ -423,7 +473,7 @@
 
             <p>Clique em um dos botões abaixo e me chame</p>
 
-            <div class="social social-modal">
+            <div class="social social-modal button">
                 <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank"><button id="linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </button></a>

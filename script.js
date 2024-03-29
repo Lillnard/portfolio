@@ -130,6 +130,58 @@ window.onload = function() {
 }
 
 
+//FUNÇÃO VER MAIS PROJETOS
+
+function trocarProjetos() {
+    let switchBtn1 = document.getElementById('switch-btn1');
+    let switchBtn2 = document.getElementById('switch-btn2');
+    let projetos1 = document.getElementById('projetos1');
+    let projetos2 = document.getElementById('projetos2');
+    let pagina = 1
+
+    // Adicionar event listener para mostrar projetos2
+    switchBtn1.addEventListener('click', () => {
+        if (pagina !== 1) {
+            projetos1.classList.remove('hide');
+            projetos2.classList.add('hide');
+            switchBtn1.classList.add('ativo');
+            switchBtn2.classList.remove('ativo');
+            pagina = 1;
+        }
+    });
+
+    // Adicionar event listener para mostrar projetos1
+    switchBtn2.addEventListener('click', () => {
+        if (pagina !== 2) {
+            projetos2.classList.remove('hide');
+            projetos1.classList.add('hide');
+            switchBtn2.classList.add('ativo');
+            switchBtn1.classList.remove('ativo');
+            pagina = 2;
+        }
+    });
+
+    // Adicionar event listener para mostrar projetos2 ao carregar a página
+    window.addEventListener('DOMContentLoaded', () => {
+        projetos2.classList.add('hide');
+        switchBtn2.classList.remove('ativo');
+    });
+}
+
+trocarProjetos();
+
+
+
+//FUNÇÃO PARA AO CLICAR NO BOTÃO DOS PROJETOS, VOLTAR AO TOPO DA SECTION PROJETOS
+
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+
 
 //função para menu mobile abrir e fechar com toque em qualquer pate da tela
 
@@ -166,57 +218,68 @@ faq.forEach((faq) => {
 
 function move(){
 
-let naoGostei = document.getElementById('nao-gostei')
-let sectionWidth = window.innerWidth;
-let sectionHeight = window.innerHeight;
-let maxX = sectionWidth - naoGostei.offsetWidth;
-let maxY = sectionHeight - naoGostei.offsetHeight;
-let randomX = Math.floor(Math.random() * maxX);
-let randomY = Math.floor(Math.random() * maxY);
+    let naoGostei = document.getElementById('nao-gostei')
+    let sectionWidth = window.innerWidth;
+    let sectionHeight = window.innerHeight;
+    let maxX = sectionWidth - naoGostei.offsetWidth;
+    let maxY = sectionHeight - naoGostei.offsetHeight;
+    let randomX = Math.floor(Math.random() * maxX);
+    let randomY = Math.floor(Math.random() * maxY);
 
-naoGostei.style.left = randomX + "px";
-naoGostei.style.top = randomY + "px";
+        naoGostei.style.left = randomX + "px";
+        naoGostei.style.top = randomY + "px";
 
 }
 
 //FUNÇÃO DE CLICK NA AVALIAÇÃP
 
-function obrigado() {
+function avaliar() {
+
     let btnGostei = document.getElementById('gostei');
     let btnNaoGostei = document.getElementById('nao-gostei');
     let obrigado = document.getElementById('obrigado');
     let fecharObrigado = document.getElementById('fechar-obrigado');
+    let rate = document.getElementById('rate');
+    let lowRate = document.getElementById('low-rate');
+    let highRate = document.getElementById('high-rate');
     let counter = 0;
 
+    //CLICAR NO BOTÃO E ABIR AVALIAÇÃO COM NOTAS
     btnGostei.addEventListener('click', () => {
         if (counter === 0) {
-            obrigado.classList.add('block');
             btnGostei.classList.add('hide');
             btnNaoGostei.classList.add('hide');
+            rate.classList.remove('hide');
             counter = 1;
         }
     });
 
-    btnNaoGostei.addEventListener('click', () => {
-        if (counter === 0) {
+    lowRate.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
             obrigado.classList.add('block');
-            btnGostei.classList.add('hide');
-            btnNaoGostei.classList.add('hide');
-            counter = 1;
+            counter = 2;
+        }
+    });
+    
+    highRate.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigado.classList.add('block');
+            counter = 3;
         }
     });
 
     fecharObrigado.addEventListener('click', () => {
-        if (counter === 1) {
+        if (counter >= 2) {
             obrigado.classList.remove('block');
-            btnGostei.classList.remove('hide');
-            btnNaoGostei.classList.remove('hide');
-            counter = 0;
+            counter = 4;
         }
     });
+
 }
 
-obrigado();
+avaliar();
 
 
 //MODAL SAIDA DO SITE
