@@ -99,6 +99,24 @@ const sectionhiddenright = document.querySelectorAll('.hidden-right')
 sectionhiddenright.forEach((elemento)=> visualizarDireita.observe(elemento))
 
 
+//FUNÇÃO PARA APLICAR ANIMAÇÃO FADE NA SECTION OCULTA
+
+const fade = new IntersectionObserver((avistado)=>{
+    avistado.forEach((visto)=>{
+        if(visto.isIntersecting){
+            setTimeout(() => {
+                visto.target.classList.add('fade');
+            }, 250); 
+        } else {
+            visto.target.classList.remove('fade');
+        }
+    });
+});
+
+const ocult = document.querySelectorAll('.ocult')
+
+ocult.forEach((elemento)=> fade.observe(elemento))
+
 //função menu selecionado no scroll
 
 const links = document.querySelectorAll('.js')
@@ -140,11 +158,9 @@ function trocarHabilidades() {
     let tecnologias2 = document.getElementById('tecnologias2');
     let tecnologias3 = document.getElementById('tecnologias3');
     let tecnologias4 = document.getElementById('tecnologias4');
-    let tecno = 1;
 
     // Adicionar event listener para mostrar projetos1
     switchHaabilidadesBtn1.addEventListener('click', () => {
-        if (tecno === 2 || tecno === 3 || tecno === 4) {
             tecnologias2.classList.add('hide');
             tecnologias3.classList.add('hide');
             tecnologias4.classList.add('hide');
@@ -153,13 +169,10 @@ function trocarHabilidades() {
             switchHaabilidadesBtn3.classList.remove('ativo');
             switchHaabilidadesBtn4.classList.remove('ativo');
             switchHaabilidadesBtn1.classList.add('ativo');
-            tecno = 1;
-        }
     });
 
     // Adicionar event listener para mostrar projetos2
     switchHaabilidadesBtn2.addEventListener('click', () => {
-        if (tecno === 1 || tecno === 3 || tecno === 4) {
             tecnologias1.classList.add('hide');
             tecnologias3.classList.add('hide');
             tecnologias4.classList.add('hide');
@@ -168,12 +181,9 @@ function trocarHabilidades() {
             switchHaabilidadesBtn3.classList.remove('ativo');
             switchHaabilidadesBtn4.classList.remove('ativo');
             switchHaabilidadesBtn2.classList.add('ativo');
-            tecno = 2;
-        }
     });
     // Adicionar event listener para mostrar projetos3
     switchHaabilidadesBtn3.addEventListener('click', () => {
-        if (tecno === 1 || tecno === 2 || tecno === 4) {
             tecnologias1.classList.add('hide');
             tecnologias2.classList.add('hide');
             tecnologias4.classList.add('hide');
@@ -182,12 +192,9 @@ function trocarHabilidades() {
             switchHaabilidadesBtn2.classList.remove('ativo');
             switchHaabilidadesBtn4.classList.remove('ativo');
             switchHaabilidadesBtn3.classList.add('ativo');
-            tecno = 3;
-        }
     });
 
     switchHaabilidadesBtn4.addEventListener('click', () => {
-        if (tecno === 1 || tecno === 2 || tecno === 3) {
             tecnologias1.classList.add('hide');
             tecnologias2.classList.add('hide');
             tecnologias3.classList.add('hide');
@@ -196,8 +203,6 @@ function trocarHabilidades() {
             switchHaabilidadesBtn2.classList.remove('ativo');
             switchHaabilidadesBtn3.classList.remove('ativo');
             switchHaabilidadesBtn4.classList.add('ativo');
-            tecno = 4;
-        }
     });
 }
 
@@ -215,45 +220,35 @@ function trocarProjetos() {
     let projetos1 = document.getElementById('projetos1');
     let projetos2 = document.getElementById('projetos2');
     let projetos3 = document.getElementById('projetos3');
-    let pagina = 1;
 
     // Adicionar event listener para mostrar projetos1
     switchBtn1.addEventListener('click', () => {
-        if (pagina === 2 || pagina === 3) {
             projetos2.classList.add('hide');
             projetos3.classList.add('hide');
             projetos1.classList.remove('hide');
             switchBtn1.classList.add('ativo');
             switchBtn2.classList.remove('ativo');
             switchBtn3.classList.remove('ativo');
-            pagina = 1;
-        }
     });
 
     // Adicionar event listener para mostrar projetos2
     switchBtn2.addEventListener('click', () => {
-        if (pagina === 1 || pagina === 3) {
             projetos1.classList.add('hide');
             projetos3.classList.add('hide');
             projetos2.classList.remove('hide');
             switchBtn2.classList.add('ativo');
             switchBtn1.classList.remove('ativo');
             switchBtn3.classList.remove('ativo');
-            pagina = 2;
-        }
     });
 
     // Adicionar event listener para mostrar projetos3
     switchBtn3.addEventListener('click', () => {
-        if (pagina === 1 || pagina === 2) {
             projetos1.classList.add('hide');
             projetos2.classList.add('hide');
             projetos3.classList.remove('hide');
             switchBtn3.classList.add('ativo');
             switchBtn2.classList.remove('ativo');
             switchBtn1.classList.remove('ativo');
-            pagina = 3;
-        }
     });
 }
 
