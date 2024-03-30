@@ -414,7 +414,7 @@ header.dark button i{
     background: linear-gradient(#F9CE34 , #EE2A7B , #6228D7);
 }
 
-.button button::before{
+.social button::before{
     content: "";
     width: 30px;
     height: 30px;
@@ -425,7 +425,7 @@ header.dark button i{
     background-color: #242424e3;
 }
 
-.button button:hover::before{
+.social button:hover::before{
     animation: deslocamento .6s;
     left: 0;
     top: 0;
@@ -758,7 +758,7 @@ section.habilidades .interface{
 }
 
 #angular-icon{
-    width: 90px;
+    width: 80px;
     height: 85px;
 }
 
@@ -799,6 +799,72 @@ section.habilidades .interface{
     transition-delay: 600ms;
 }
 
+.tecnologias{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.tec-container{
+    display: flex;
+    animation: fade 1.2s ease-in-out;
+
+}
+
+.card-content{
+    height: 200px;
+    width: 70%;
+}
+
+.card-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 30%;
+}
+
+.card-image img{
+    height: 85px;
+    height: 85px;
+}
+
+#card-image-html, #card-image-js{
+    margin-top: -40px;
+}
+
+#card-image-css{
+    margin-bottom: -40px;
+}
+
+#card-image-angular, #card-image-bs{
+    margin-top: -40px;
+}
+
+#card-image-angular, #card-image-react{
+    height: 75px;
+    width: 80px;
+}
+
+#card-image-react{
+    margin-bottom: -40px;
+}
+
+#card-image-py, #card-image-ts{
+    margin-top: -40px;
+}
+
+#card-image-sql{
+    margin-bottom: -40px;
+}
+
+section.dark .ver-mais button{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 20px #000000;
+}
+
+section.dark .ver-mais button i{
+    color: #000000;
+}
 
 
 /* SOBRE */

@@ -129,6 +129,82 @@ window.onload = function() {
     window.scrollTo(0, 0);
 }
 
+//FUNÇÃO TROCAR PAGINA DA SECTION HABILIDADES
+
+function trocarHabilidades() {
+    let switchHaabilidadesBtn1 = document.getElementById('switch-habilidades-btn1');
+    let switchHaabilidadesBtn2 = document.getElementById('switch-habilidades-btn2');
+    let switchHaabilidadesBtn3 = document.getElementById('switch-habilidades-btn3');
+    let switchHaabilidadesBtn4 = document.getElementById('switch-habilidades-btn4');
+    let tecnologias1 = document.getElementById('tecnologias1');
+    let tecnologias2 = document.getElementById('tecnologias2');
+    let tecnologias3 = document.getElementById('tecnologias3');
+    let tecnologias4 = document.getElementById('tecnologias4');
+    let tecno = 1;
+
+    // Adicionar event listener para mostrar projetos1
+    switchHaabilidadesBtn1.addEventListener('click', () => {
+        if (tecno === 2 || tecno === 3 || tecno === 4) {
+            tecnologias2.classList.add('hide');
+            tecnologias3.classList.add('hide');
+            tecnologias4.classList.add('hide');
+            tecnologias1.classList.remove('hide');
+            switchHaabilidadesBtn2.classList.remove('ativo');
+            switchHaabilidadesBtn3.classList.remove('ativo');
+            switchHaabilidadesBtn4.classList.remove('ativo');
+            switchHaabilidadesBtn1.classList.add('ativo');
+            tecno = 1;
+        }
+    });
+
+    // Adicionar event listener para mostrar projetos2
+    switchHaabilidadesBtn2.addEventListener('click', () => {
+        if (tecno === 1 || tecno === 3 || tecno === 4) {
+            tecnologias1.classList.add('hide');
+            tecnologias3.classList.add('hide');
+            tecnologias4.classList.add('hide');
+            tecnologias2.classList.remove('hide');
+            switchHaabilidadesBtn1.classList.remove('ativo');
+            switchHaabilidadesBtn3.classList.remove('ativo');
+            switchHaabilidadesBtn4.classList.remove('ativo');
+            switchHaabilidadesBtn2.classList.add('ativo');
+            tecno = 2;
+        }
+    });
+    // Adicionar event listener para mostrar projetos3
+    switchHaabilidadesBtn3.addEventListener('click', () => {
+        if (tecno === 1 || tecno === 2 || tecno === 4) {
+            tecnologias1.classList.add('hide');
+            tecnologias2.classList.add('hide');
+            tecnologias4.classList.add('hide');
+            tecnologias3.classList.remove('hide');
+            switchHaabilidadesBtn1.classList.remove('ativo');
+            switchHaabilidadesBtn2.classList.remove('ativo');
+            switchHaabilidadesBtn4.classList.remove('ativo');
+            switchHaabilidadesBtn3.classList.add('ativo');
+            tecno = 3;
+        }
+    });
+
+    switchHaabilidadesBtn4.addEventListener('click', () => {
+        if (tecno === 1 || tecno === 2 || tecno === 3) {
+            tecnologias1.classList.add('hide');
+            tecnologias2.classList.add('hide');
+            tecnologias3.classList.add('hide');
+            tecnologias4.classList.remove('hide');
+            switchHaabilidadesBtn1.classList.remove('ativo');
+            switchHaabilidadesBtn2.classList.remove('ativo');
+            switchHaabilidadesBtn3.classList.remove('ativo');
+            switchHaabilidadesBtn4.classList.add('ativo');
+            tecno = 4;
+        }
+    });
+}
+
+trocarHabilidades();
+
+
+
 
 //FUNÇÃO VER MAIS PROJETOS
 
@@ -189,7 +265,7 @@ trocarProjetos();
 //FUNÇÃO PARA AO CLICAR NO BOTÃO DOS PROJETOS, VOLTAR AO TOPO DA SECTION PROJETOS
 
 function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
+    let section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
