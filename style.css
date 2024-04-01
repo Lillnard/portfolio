@@ -21,11 +21,11 @@ html{
 }
 
 body{
-    background: #000000;
+    background: #111217;
 }
 
 body.dark{
-    background: #ffffff;
+    background: #e9e9e9;
 }
 
 .full-screen{
@@ -98,7 +98,7 @@ section.dark{
 
 header{
     position: fixed;
-    background-color: #000000f6;
+    background-color: #111217f6;
     width: 100%;
     height: 65px;
     padding: 10px;
@@ -107,7 +107,7 @@ header{
 }
 
 header.dark{
-    background-color: #ffffff;
+    background-color: #e9e9e9f6;
     box-shadow: 0px 0px 8px #000000;
 }
 
@@ -187,7 +187,6 @@ header.dark{
 
 .menu-desktop nav a:hover::after{
     background-image: linear-gradient(45deg, #ffffff, #aaaaaa);
-
 }
 
 .menu-desktop nav a.ativo{
@@ -202,6 +201,10 @@ header.dark{
 .menu-faq.dark.ativo,
 .menu-sincerao.dark.ativo{
     color: #000000; 
+}
+
+header.dark .menu-desktop nav a:hover::after{
+    background-image: linear-gradient(45deg, #cccccc, #000000);
 }
 
 
@@ -642,78 +645,14 @@ section.habilidades .interface{
     justify-content: center;
 }
 
-.habilidades h2 span{
+.habilidades h2{
     font-size: 50PX;
-}
-.habilidades h2:nth-child(5){
-    transition-delay: 200ms;
-}
-.habilidades h2 span:nth-child(4){
-    transition-delay: 400ms;
-}
-.habilidades h2 span:nth-child(3){
-    transition-delay: 600ms;
-}
-.habilidades h2 span:nth-child(2){
-    transition-delay: 800ms;
-}
-.habilidades h2 span:nth-child(1){
-    transition-delay: 1s;
-}
-
-
-/* 
-.habilidades h2 span{
-    position: relative;
-}
-
-.habilidades h2 span::before{
-    content: "";
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 50px;
-    animation: hab 5s infinite;
+    padding: 10PX;
 }
-
-.habilidades h2 span::after{
-    content: "";
-    position: absolute;
-    height: 42px;
-    bottom: 4px;
-    border-left: 2px solid #636363;
-    right: -10px;
-    animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
-    width: calc(100% + 12px);
-    background-color: #000000;
-}
-
-.habilidades h2 span.dark::after{
-    background-color: #ffffff;
-}
-
-
-@keyframes digitar {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
-        width: 0;
-    }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 90%{
-        width: calc(100% + 12px);
-    }
-}
-
-@keyframes ponteiroi{
-    0%{
-        border-left: 2px solid #636363;
-    }
-}
-
-@keyframes hab{
-    0%,100%{
-        content: "<MINHAS> </HABILIDADES>" ;
-    }
-} */
 
 .habilidades p{
     color: #cccccc;
@@ -913,68 +852,18 @@ section.sobre .texto-sobre p{
 
 
 
-.projetos h2 span{
-    position: relative;
-}
-
-.projetos h2 span::before{
-    content: "";
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 50px;
-    animation: projetos 5s infinite;
-}
-
-.projetos h2 span::after{
-    content: "";
-    position: absolute;
-    height: 42px;
-    bottom: 4px;
-    border-left: 2px solid #838383;
-    right: -10px;
-    animation: ponteiroi .7s infinite, digitar 20s steps(15) infinite;
-    width: calc(100% + 12px);
-    background-color: #000000;
-}
-
-.projetos h2 span.dark::after{
-    background-color: #ffffff;
-}
-
-.projeto-content.dark p{
-    color: #242424;
-}
-
-@keyframes digitar {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
-        width: 0;
-    }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 90%{
-        width: calc(100% + 12px);
-    }
-}
-
-@keyframes ponteiroi{
-    0%{
-        border-left: 2px solid #1D1717;
-    }
-}
-
-@keyframes projetos{
-    0%,100%{
-        content: "<MEUS> </PROJETOS>" ;
-    }
-}
-
 section.projetos{
     padding: 60px 20px 40px 20px;
 }
 
 section.projetos h2{
-    font-size: 40px;
     text-align: center;
+    font-size: 50PX;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10PX;
 }
 
 section.projetos .flex{
@@ -1066,8 +955,6 @@ section.projetos .flex{
 
 .btn-projeto:hover{
     background: linear-gradient(45deg, #ff4800, #ff9e20);
-    font-weight: 600;
-    color: #ffffff;
 }
 
 .ver-mais{
@@ -1088,11 +975,11 @@ section.projetos .flex{
 
 
 .faq-recrutadores{
-    padding: 60px 0 0 0;
+    padding: 60px 0 20px 0;
 }
 
 .titulo-faq{
-    font-size: 40px;
+    font-size: 50px;
     padding: 10px;
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
     background-clip: text;
@@ -1105,8 +992,8 @@ section.projetos .flex{
    width: 800px;
    margin: 30px auto 0;
    padding: 0 0 15px 0;
-   border-bottom: 2px solid #636363;
    cursor: pointer;
+   border-bottom: 2px solid #636363;
    transition: .2s;
 }
 
@@ -1116,6 +1003,7 @@ section.projetos .flex{
 
 .questions-container{
    padding: 10px;
+   height: 30px;
    justify-content: space-between;
    align-items: center;
 }
@@ -1135,6 +1023,10 @@ section.projetos .flex{
    transition: transform .2s ease-in;
 }
 
+.down:hover{
+    background-image: linear-gradient(45deg, #ff5031, #ff8018);  
+}
+
 .down i{
     font-size: 18px;
     font-weight: 600px;
@@ -1147,18 +1039,26 @@ section.projetos .flex{
 
 .answer p{
     padding: 15px;
-    line-height: 1.6;
+    line-height: 20px;
     font-size: 18px;
     font-weight: 300;
 }
 
+.line{
+    text-decoration: line-through white;
+}
+
 .faq.active .answer{
-    max-height: 300px;
+    max-height: 400px;
     animation: fade 1.2s ease-in-out;
 }
 
 .faq.active .down{
     transform: rotate(180deg);
+}
+
+.faq-btn{
+    margin: 40px 0 0 0;
 }
 
 @keyframes fade{
@@ -1182,7 +1082,7 @@ section.projetos .flex{
 .sincerao{
     padding: 60px 0 0 0;
     position: relative;
-    height: 400px;
+    height: 360px;
 }
 
 .sincerao-container{
@@ -1192,8 +1092,8 @@ section.projetos .flex{
 }
 
 .sincerao h2{
-    font-size: 40px;
-    padding: 10px;
+    font-size: 50px;
+    padding: 15px;
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
     background-clip: text;
     -webkit-background-clip: text;
@@ -1224,7 +1124,7 @@ section.projetos .flex{
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    margin: 110px auto 20px;
+    margin: 10px auto 20px;
     transition: 0.2s;
     position: relative;
     overflow: hidden;
@@ -1258,7 +1158,7 @@ section.projetos .flex{
 
 #nao-gostei{
     position: absolute;
-    margin: 35px auto;
+    margin: 10px auto;
 }
 
 #gostei::before{
@@ -1266,11 +1166,10 @@ section.projetos .flex{
 }
 
 .obrigado {
-    margin: 0 auto;
+    margin: 30PX auto 0;
     width: 400px;
     box-shadow: 0px 0px 8px #ffffff;
     border-radius: 20px;
-    display: none;
 }
 
 .obrigado.dark{
@@ -1281,7 +1180,6 @@ section.projetos .flex{
     font-size: 20px;
     padding: 0 0 20px 0;
     animation: fade 1.2s ease-in-out;
-
 }
 
 .block {
@@ -1349,26 +1247,25 @@ section.projetos .flex{
 
 
 .rate p{
-    font-size: 30px;
+    margin: 10px auto ;
+    font-size: 25px;
     animation: fade 1.2s ease-in-out;
 }
 
 .rate-container{
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
     width: 400px;
     height: 50px;
-    border-radius: 20px;
 }
 
 .rate-container div{
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 30px;
 
     width: 90px;
@@ -1388,6 +1285,49 @@ section.projetos .flex{
 
 
 
+/* RETURN BUTTON */
+
+
+
+.return-container{
+    margin: 30px auto;
+}
+
+.reset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242424;
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: 0px 0px 8px #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin: 20px auto 10px;
+    transition: 0.2s;
+}
+
+.reset.dark{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 15px #000000;
+}
+
+.reset button i{
+    font-size: 25px;
+}
+
+.reset.dark i{
+    color: #000000;
+}
+
+.return-container p{
+    margin: auto;
+    cursor: pointer;
+}
+
 
 
 
@@ -1404,8 +1344,8 @@ footer.flex{
     justify-content: space-between;
 }
 
-.logo-footer, .social-footer{
-    width: 50%;
+.logo-footer, .footer, .social-footer{
+    width: 33%;
 }
 
 .logo-footer img{
@@ -1453,17 +1393,19 @@ footer.dark p a{
     color: #000000;
 }
 
-.divisa span{
+.footer span{
     font-weight: 600;
     color: #cccccc;
 }
 
-footer.dark .divisa span{
+footer.dark .footer span{
     color: #000000;
 }
 
 .divisa{
     border-top: 2px solid #636363;
+    text-align: center;
+    font-weight: 400;
 }
 
 

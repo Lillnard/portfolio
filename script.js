@@ -8,15 +8,16 @@ let habilidadesHeader = document.querySelector('.menu-habilidades');
 let projetosHeader = document.querySelector('.menu-projetos');
 let sobreHeader = document.querySelector('.menu-sobre');
 let faqHeader = document.querySelector('.menu-faq');
-let faqSincerao = document.querySelector('.menu-sincerao');
+let sincerao = document.querySelector('.menu-sincerao');
 let darkMode = document.querySelector('.dark-mode');
 let textoTopo = document.querySelector('.texto-topo');
 let imgTopo = document.querySelector('.img-topo');
-let habilidadesTitulo = document.querySelector('.habilidades h2 span');
+let githubIconWhite = document.getElementById('gh-icon');
+let githubIconBlack = document.getElementById('gh-ocult');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
-let projetosTitulo = document.querySelector('.projetos h2 span');
 let sinceraoBtn = document.querySelector('.sincerao-btn');
 let obrigadoDark = document.querySelector('.obrigado');
+let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
 
 
@@ -33,19 +34,21 @@ function toggleDarkMode() {
     body.classList.toggle('dark');
     sectionDark.forEach(section => {
         section.classList.toggle('dark');
-    });    header.classList.toggle('dark');
+    });    
+    header.classList.toggle('dark');
     inicioHeader.classList.toggle('dark');
     habilidadesHeader.classList.toggle('dark');
     projetosHeader.classList.toggle('dark');
     sobreHeader.classList.toggle('dark');
     faqHeader.classList.toggle('dark');
-    faqSincerao.classList.toggle('dark');
+    sincerao.classList.toggle('dark');
     textoTopo.classList.toggle('dark');
     imgTopo.classList.toggle('dark');
-    habilidadesTitulo.classList.toggle('dark');
-    projetosTitulo.classList.toggle('dark');
+    githubIconWhite.classList.toggle('hide');
+    githubIconBlack.classList.toggle('hide');
     sinceraoBtn.classList.toggle('dark');
     obrigadoDark.classList.toggle('dark');
+    resetBtn.classList.toggle('dark');
     footer.classList.toggle('dark');
 
     nomeTecnologia.forEach(nome => {
@@ -299,6 +302,51 @@ faq.forEach((faq) => {
 });
 
 
+//FUNÇÃO TROCA DE PAGINA FAQ
+
+function trocarFaq() {
+
+    let faq1 = document.getElementById('faq1');
+    let faq2 = document.getElementById('faq2');
+    let faq3 = document.getElementById('faq3');
+    let switchFaqBtn1 = document.getElementById('switch-faq-btn1');
+    let switchFaqBtn2 = document.getElementById('switch-faq-btn2');
+    let switchFaqBtn3 = document.getElementById('switch-faq-btn3');
+
+    switchFaqBtn1.addEventListener('click', () =>{
+        faq2.classList.add('hide');
+        faq3.classList.add('hide');
+        faq1.classList.remove('hide');
+        
+        switchFaqBtn2.classList.remove('ativo');
+        switchFaqBtn3.classList.remove('ativo');
+        switchFaqBtn1.classList.add('ativo');
+    });
+
+    switchFaqBtn2.addEventListener('click', () =>{
+        faq1.classList.add('hide');
+        faq3.classList.add('hide');
+        faq2.classList.remove('hide');
+
+        switchFaqBtn1.classList.remove('ativo');
+        switchFaqBtn3.classList.remove('ativo');
+        switchFaqBtn2.classList.add('ativo');
+    });
+
+    switchFaqBtn3.addEventListener('click', () =>{
+        faq2.classList.add('hide');
+        faq1.classList.add('hide');
+        faq3.classList.remove('hide');
+
+        switchFaqBtn2.classList.remove('ativo');
+        switchFaqBtn1.classList.remove('ativo');
+        switchFaqBtn3.classList.add('ativo');
+    });
+}
+
+trocarFaq()
+
+
 //BOTÃO SINCERÃO MOVENDO
 
 function move(){
@@ -327,6 +375,7 @@ function avaliar() {
     let rate = document.getElementById('rate');
     let lowRate = document.getElementById('low-rate');
     let highRate = document.getElementById('high-rate');
+    let returnBack = document.getElementById('return-back');
     let counter = 0;
 
     //CLICAR NO BOTÃO E ABIR AVALIAÇÃO COM NOTAS
@@ -342,7 +391,7 @@ function avaliar() {
     lowRate.addEventListener('click', () => {
         if (counter === 1) {
             rate.classList.add('hide');
-            obrigado.classList.add('block');
+            obrigado.classList.remove('hide');
             counter = 2;
         }
     });
@@ -350,15 +399,25 @@ function avaliar() {
     highRate.addEventListener('click', () => {
         if (counter === 1) {
             rate.classList.add('hide');
-            obrigado.classList.add('block');
+            obrigado.classList.remove('hide');
             counter = 3;
         }
     });
 
     fecharObrigado.addEventListener('click', () => {
-        if (counter >= 2) {
-            obrigado.classList.remove('block');
+        if (counter === 2 || counter === 3) {
+            obrigado.classList.add('hide');
+            returnBack.classList.remove('hide')
             counter = 4;
+        }
+    });
+
+    returnBack.addEventListener('click', () => {
+        if (counter === 4) {
+            returnBack.classList.add('hide');
+            btnGostei.classList.remove('hide');
+            btnNaoGostei.classList.remove('hide');
+            counter = 0;
         }
     });
 
