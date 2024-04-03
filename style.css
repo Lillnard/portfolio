@@ -194,13 +194,13 @@ header.dark{
     font-weight: 600;
 }
 
-.menu-inicio.dark.ativo, 
-.menu-habilidades.dark.ativo, 
-.menu-projetos.dark.ativo, 
-.menu-sobre.dark.ativo, 
+.menu-inicio.dark.ativo,
+.menu-habilidades.dark.ativo,
+.menu-projetos.dark.ativo,
+.menu-sobre.dark.ativo,
 .menu-faq.dark.ativo,
 .menu-sincerao.dark.ativo{
-    color: #000000; 
+    color: #000000;
 }
 
 header.dark .menu-desktop nav a:hover::after{
@@ -327,7 +327,7 @@ header.dark .menu-desktop nav a:hover::after{
 
 .menu-mobile nav ul li a:hover{
     background: linear-gradient(45deg, #ff2500, #ff7100);
-    
+
     font-weight: 600;
     color: #000000;
 }
@@ -1024,7 +1024,7 @@ section.projetos .flex{
 }
 
 .down:hover{
-    background-image: linear-gradient(45deg, #ff5031, #ff8018);  
+    background-image: linear-gradient(45deg, #ff5031, #ff8018);
 }
 
 .down i{
@@ -1478,7 +1478,7 @@ dialog::backdrop{
         display: block ;
         text-align: left;
     }
-    
+
     .abrir-menu i{
         display: inline-block;
         justify-content: end;
@@ -1573,17 +1573,14 @@ dialog::backdrop{
         text-align: center;
     }
 
-    h3{
+    .topo .texto-topo h3{
         text-align: center;
-        margin: 60px 0 40px;
+        margin: 60px auto 20px;
     }
 
     .topo .texto-topo p{
         text-align: center;
-    }
-
-    .topo .texto-topo button{
-        margin: 60px 0 0 120px;
+        font-weight: 300;
     }
 
     .topo .img-topo img{
@@ -1593,33 +1590,45 @@ dialog::backdrop{
         margin: 0 auto;
     }
 
-    .abrir-menu i{
-        margin-left: 0px;
-    }
-
-    .logo{
-        margin-right: 150px;
-    }
-
-    .logo span::before{
-        font-size: 25px;
-    }
+/* MENU MOBILE */
 
     .abrir-menu{
-        margin-left: 70px;
+        margin-left: 320px;
     }
 
     .dark-mode{
         margin-left: 15px;
     }
 
-    .habilidades h2 span::before{
+    /* HABILIDADES */
+
+    .habilidades h2{
         font-size: 28px;
+    }
+
+    .habilidades p{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
     }
 
     .habs li{
        width: 55px;
     }
+
+
+    .tec-container{
+        flex-direction: column;
+    }
+
+    .card-content{
+        padding: 30px;
+        width: 350px;
+        height: 100px;
+        border: #0a66c2 1px solid;
+    }
+
+    /* PROJETOS */
 
     .projetos h2 span::before{
         font-size: 28px;
