@@ -44,7 +44,7 @@ section.dark{
     color: #242424;
 }
 
-.hidden-left{
+/* .hidden-left{
     opacity: 0;
     filter: blur(15px);
     transform: translateX(-100%);
@@ -56,12 +56,12 @@ section.dark{
     filter: blur(0);
     transform: translateX(0%);
     transition: all .5s;
-}
+} */
 
-.hidden-right{
+/* .hidden-right{
     opacity: 0;
     filter: blur(15px);
-    transform: translateX(100%);
+    transform: translateX(0%);
     transition: all 0s;
 }
 
@@ -70,7 +70,7 @@ section.dark{
     filter: blur(0);
     transform: translateX(0%);
     transition: all 1s;
-}
+} */
 
 .ocult{
     opacity: 0;
@@ -853,7 +853,7 @@ section.sobre .texto-sobre p{
 
 
 section.projetos{
-    padding: 60px 20px 40px 20px;
+    padding: 60px 0 40px ;
 }
 
 section.projetos h2{
@@ -898,17 +898,16 @@ section.projetos .flex{
     background-position: 100% 0%;
     position: relative;
     transition: 1s;
-    margin: 50px 0 0 50px;
+    margin: 50px 20px;
 }
 
 .projeto-container .projeto-content{
-    border: 1px solid red;
-    margin: 50px;
-    padding: 50px;
+    margin: 50px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: 300;
 }
 
 .projeto-content.dark p{
@@ -1082,12 +1081,11 @@ section.projetos .flex{
 .sincerao{
     padding: 60px 0 0 0;
     position: relative;
-    height: 360px;
+    height: 400px;
 }
 
 .sincerao-container{
     margin: 0 auto;
-    width: 50%;
     display: block;
 }
 
@@ -1257,7 +1255,6 @@ section.projetos .flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
     width: 400px;
     height: 50px;
 }
@@ -1330,14 +1327,15 @@ section.projetos .flex{
 
 
 
-
-
 /* FOOTER */
 
 
 
 footer{
     padding: 20px 4%;
+}
+.footer-mobile{
+    display: none;
 }
 
 footer.flex{
@@ -1610,79 +1608,249 @@ dialog::backdrop{
         text-align: center;
         font-size: 18px;
         font-weight: 300;
+        margin: 10px auto;
     }
 
     .habs li{
        width: 55px;
     }
 
-
     .tec-container{
+        width: 350px;
         flex-direction: column;
+        justify-content: center;
+        margin: 0 0 0 -53px;
     }
 
     .card-content{
-        padding: 30px;
         width: 350px;
         height: 100px;
-        border: #0a66c2 1px solid;
+    }
+
+    .card-content h2{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .card-content p{
+        font-size: 15px;
+    }
+
+    .card-image{
+        margin: 50px auto 0;
     }
 
     /* PROJETOS */
 
-    .projetos h2 span::before{
-        font-size: 28px;
+    .projetos .titulo{
+        font-size: 30px;
     }
 
-    .texto-sobre h2{
-        font-size: 10px;
-        line-height: 50px;
+    .projeto-container{
+        flex-direction: column;
     }
+
+    .reverse{
+        text-align: center;
+    }
+
+    .img-proj{
+        margin: 25px auto 0;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+
+    .projeto-content{
+        width: 350px;
+        align-items: center;
+    }
+
+
+    .btn-projeto{
+        display: none;
+    }
+
+
+    /* SOBRE */
+
+    section.sobre .texto-sobre h2{
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    /* FAQ */
 
     .faq{
         width: 350px;
     }
 
+    .questions-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .questions p{
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .down{
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
 
     .down i{
         font-size: 15px;
     }
 
-    .social button{
-        margin-right: 5px;
+    .answer p{
+        font-size: 15px;
     }
 
-    .social-footer{
-        display: inline;
-        margin-left: 160px;
-        margin-top: -55px;
+    .faq.active .answer{
+        max-height: 600px;
     }
 
-    .logo-footer{
-        width: 50px;
+    /* SINCERÃO */
+
+    .sincerao{
+        width: 100vw;
+        height: 400px;
+    }
+
+    .sincerao h2{
+        font-size: 35px;
+    }
+
+    .sincerao p{
+        font-size: 15px;
+        width: 300px;
+        margin: 0 auto;
+    }    
+
+    .rate p{
+        font-size: 20px;
+    }
+    
+    .rate-container{
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        height: 30px;
+    }
+    
+    .rate-container div{
+        margin: 0 auto;   
+        
+        width: 60px;
+        height: 40px;
+        transition: .2s;
+        cursor: pointer;
+    }
+    
+    .obrigado {
+        margin: 30PX auto 0;
+        width: 300px;
+        box-shadow: 0px 0px 8px #ffffff;
+        border-radius: 20px;
+    }
+    
+    .obrigado p{
+        font-size: 20px;
+        padding: 0 0 20px 0;
+        animation: fade 1.2s ease-in-out;
+    }
+
+
+    /* FOOTER */
+
+    .footer-desktop{
+        display: none;
+    }
+
+    .footer-mobile{
+        display: block;
+    }
+
+    .logo-footer-mobile, .social-footer-mobile{
+        width: 50%;
+    }
+
+    .logo-footer-mobile img{
+        width: 100px;
+        height: 40px;
+    }
+
+    .social-footer-mobile{
+        margin: -45px 0 0 180px;
+    }
+
+    .social-footer-mobile button{
+        margin-left: 10px;
+    }
+
+    .footer-mbl{
+        margin-top: 5px;
+        color: #cccccc;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .footer-mbl span{
+        font-weight: 600;
+    }
+
+    footer.dark .footer-mbl span{
+        color: #000000;
+    }    
+
+    .divisa-footer-mobile{
+        border-top: 2px solid #636363;
+        text-align: center;
+        font-weight: 400;    
     }
 }
 
 @media screen and (max-width: 330px){
 
     .abrir-menu i{
-        margin-left: 100px;
+        margin-right:50px;
     }
 
-    .habilidades h2 span::before{
-        font-size: 24px;
+    .topo .texto-topo h1{
+        font-size: 35px;
+        margin: 60px 0 10px 0;
     }
 
+    .topo .texto-topo h2{
+        font-size: 25px;
+    }
+
+    .habilidades h2{
+        font-size: 28px;
+    }
+    
     .habs li{
        width: 48px;
+    }
+
+    .card-content{
+        width: 300px;
+    }
+
+    .projeto-content{
+        width: 280px;
+    }
+
+    .faq{
+        width: 280px;
+    }
+
+    .faq.active .answer{
+        max-height: 630px;
     }
 
     .logo-footer img{
@@ -1690,14 +1858,16 @@ dialog::backdrop{
         width: 120px;
     }
 
-    .social button{
-        margin-right: 5px;
+    .social-footer-mobile{
+        margin: -45px 0 0 150px;
     }
 
-    .social-footer{
-        justify-content: end;
-        margin-left: 140px;
-        margin-top: -55px;
-        margin-right: 2;
+    .social-footer-mobile button{
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-footer-mobile button{
+        margin-left: 10px;
     }
 }
