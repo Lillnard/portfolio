@@ -123,6 +123,10 @@ header.dark{
     margin-top: 15px;
 }
 
+.btn-hover:hover{
+    background-image: linear-gradient(45deg, #252525, #585858);  
+}
+
 
 
 /* MENU-DESKTOP */
@@ -645,7 +649,7 @@ section.habilidades .interface{
     justify-content: center;
 }
 
-.habilidades h2{
+.habilidades .titulo{
     font-size: 50PX;
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
     background-clip: text;
@@ -761,6 +765,15 @@ section.habilidades .interface{
 .card-content{
     height: 200px;
     width: 70%;
+}
+
+.tec-title{
+    font-size: 40px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10PX;
 }
 
 .card-image{
