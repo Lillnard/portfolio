@@ -426,6 +426,19 @@ function avaliar() {
 avaliar();
 
 
+const listaMenu = document.querySelectorAll('.lista-menu')
+
+function ativaLink(){
+    for(let i of listaMenu){
+        i.classList.remove('ativo')
+    }
+    this.classList.add('ativo')
+}
+
+for(let i of listaMenu){
+    i.addEventListener('click', ativaLink)
+}
+
 //MODAL SAIDA DO SITE
 
 // let modalDeSaida = document.querySelector('dialog')
