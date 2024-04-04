@@ -19,7 +19,7 @@ let sinceraoBtn = document.querySelector('.sincerao-btn');
 let obrigadoDark = document.querySelector('.obrigado');
 let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
-
+let mobileMagic = document.getElementById('mobile-magic');
 
 document.getElementById('dark-mode').addEventListener('click', () => {
     toggleDarkMode();
@@ -46,6 +46,7 @@ function toggleDarkMode() {
     obrigadoDark.classList.toggle('dark');
     resetBtn.classList.toggle('dark');
     footer.classList.toggle('dark');
+    mobileMagic.classList.toggle('dark');
 
     nomeTecnologia.forEach(nome => {
         nome.classList.toggle('dark');
