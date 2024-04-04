@@ -25,10 +25,6 @@ document.getElementById('dark-mode').addEventListener('click', () => {
     toggleDarkMode();
 });
 
-document.getElementById('menu-mobile').querySelector('#dark-mode').addEventListener('click', () => {
-    toggleDarkMode();
-});
-
 function toggleDarkMode() {
     document.getElementById('dark-mode').classList.toggle('dark');
     body.classList.toggle('dark');
@@ -268,27 +264,6 @@ function scrollToSection(sectionId) {
       section.scrollIntoView({ behavior: "smooth" });
     }
   }
-
-
-
-//função para menu mobile abrir e fechar com toque em qualquer pate da tela
-
-let abrirMenu = document.getElementById('abrir-menu')
-let menu = document.getElementById('menu-mobile')
-let sombreado = document.getElementById('sombreado-menu')
-
-abrirMenu.addEventListener('click', ()=>{
-    menu.classList.add('menu-aberto')
-})
-
-menu.addEventListener('click', ()=>{
-    menu.classList.remove('menu-aberto')
-})
-
-sombreado.addEventListener('click', ()=>{
-    menu.classList.remove('menu-aberto')
-})
-
 
 
 // FAQ RECRUTADORES
