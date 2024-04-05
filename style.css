@@ -286,7 +286,7 @@ header.dark .menu-desktop nav a:hover::after{
     transform: scale(1.05);
 }
 
-#gh i:hover{
+#gh:hover i{
     color: #000000;
 }
 
@@ -738,6 +738,7 @@ section.sobre{
 
 section.sobre .flex{
     align-items: center;
+    flex-direction: column;
 }
 
 section.sobre .texto-sobre h2{
@@ -758,6 +759,48 @@ section.sobre .texto-sobre{
 section.sobre .texto-sobre p{
     margin: 0 40px 30px;
 }
+
+.cv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cv button{
+    background-color: #242424;
+    box-shadow: 0px 0px 15px #ffffff;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cv button i{
+    font-size: 15px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.cv button:hover i{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.cv.dark button{
+    background: #cccccc;
+    box-shadow: 0px 0px 8px #000000;
+}
+
+.cv.dark button i{
+    color: #242424;
+}
+
 
 
 
@@ -1043,7 +1086,7 @@ section.projetos .flex{
 
 .sincerao-btn.dark button{
     background-color: #cccccc;
-    box-shadow: 0px 0px 15px #000000;
+    box-shadow: 0px 0px 8px #000000;
 }
 
 .sincerao-btn.dark button i{
@@ -1406,6 +1449,10 @@ dialog::backdrop{
         box-shadow: 0px 0px 8px #000000;
     }
 
+    .menu-mobile-magic.dark ul li a .icone-menu{
+        color: #242424;
+    }
+
 
     .menu-mobile-magic ul{
         width: 360px;
@@ -1678,6 +1725,15 @@ dialog::backdrop{
     .social button{
         width: 25px; 
     }
+
+    .social button::before{
+        display: none;
+    }
+
+    .social button:hover::before{
+        display: none;
+    }
+
 
     .topo .texto-topo h1{
         font-size: 45px;

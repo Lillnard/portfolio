@@ -15,11 +15,12 @@ let imgTopo = document.querySelector('.img-topo');
 let githubIconWhite = document.getElementById('gh-icon');
 let githubIconBlack = document.getElementById('gh-ocult');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
+let curriculo = document.querySelector('.cv');
 let sinceraoBtn = document.querySelector('.sincerao-btn');
 let obrigadoDark = document.querySelector('.obrigado');
 let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
-let mobileMagic = document.getElementById('mobile-magic');
+let mobileMagic = document.querySelector('.menu-mobile-magic');
 
 document.getElementById('dark-mode').addEventListener('click', () => {
     toggleDarkMode();
@@ -42,6 +43,7 @@ function toggleDarkMode() {
     imgTopo.classList.toggle('dark');
     githubIconWhite.classList.toggle('hide');
     githubIconBlack.classList.toggle('hide');
+    curriculo.classList.toggle('dark');
     sinceraoBtn.classList.toggle('dark');
     obrigadoDark.classList.toggle('dark');
     resetBtn.classList.toggle('dark');
@@ -134,8 +136,9 @@ window.addEventListener('scroll', ()=>{
                 link.classList.remove('ativo');
 
                 document.querySelector(`header nav a[href*='${idSection}']`).classList.add('ativo');
-            })
-        }
+                document.querySelector(`.menu-mobile-magic nav ul li a[href*='${idSection}']`).classList.add('ativo');
+            });
+        };
     })
 })
 
