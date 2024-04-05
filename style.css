@@ -286,7 +286,7 @@ header.dark .menu-desktop nav a:hover::after{
     transform: scale(1.05);
 }
 
-#gh:hover i{
+#gh i:hover{
     color: #000000;
 }
 
@@ -1491,7 +1491,7 @@ dialog::backdrop{
         transition: .5s;
     }
 
-    .menu-mobile-magic ul li.ativo a .icone-menu{
+    .menu-mobile-magic ul li a.ativo .icone-menu{
         transform: translateY(-35px);
         background-image: linear-gradient(45deg, #ff2500, #ff7100);
         background-clip: text;
@@ -1499,7 +1499,7 @@ dialog::backdrop{
         -webkit-text-fill-color: transparent;
     }
 
-    .menu-mobile-magic ul li.ativo a .texto-menu{
+    .menu-mobile-magic ul li a.ativo .texto-menu{
         transform: translateY(-55px);
         font-weight: 600;
         opacity: 1;
@@ -1877,7 +1877,7 @@ dialog::backdrop{
 
     .sincerao{
         width: 100vw;
-        height: 400px;
+        height: 500px;
     }
 
     .sincerao h2{
