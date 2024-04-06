@@ -298,10 +298,17 @@ header.dark .menu-desktop nav a:hover::after{
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    margin-right: 20px;
     transition: 0.2s;
     position: relative;
     overflow: hidden;
+}
+
+.social button{
+    margin-right: 20px;
+}
+
+.button button:not(:last-child){
+    margin-right: 20px;
 }
 
 header.dark button{
@@ -727,6 +734,10 @@ section.dark .ver-mais button i{
     color: #000000;
 }
 
+.switch-habilidades-btn4{
+    margin-right: -20px;
+}
+
 
 /* SOBRE */
 
@@ -863,7 +874,7 @@ section.projetos .flex{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .projeto-content.dark p{
@@ -1035,9 +1046,9 @@ section.projetos .flex{
 
 
 .sincerao{
-    padding: 60px 0 0 0;
+    padding: 100px 0 0 0;
     position: relative;
-    height: 400px;
+    height: 100vh;
 }
 
 .sincerao-container{
@@ -1120,29 +1131,36 @@ section.projetos .flex{
 }
 
 .obrigado-container{
-    width: 600px;
+    max-width: 70%;
+    padding: 0 20px;
     height: 200px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px #ffffff;
     margin: 0 auto;
-    font-weight: 300;
+    font-weight: 400;
+}
+
+.obrigado-container span{
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.obrigado-container.dark{
+    box-shadow: 0px 0px 5px #000000;
+}
+
+.obrigado-container.dark p{
+    color: #242424;
 }
 
 .obrigado {
-    margin: 0 auto;
-    width: 400px;
+    text-align: center;
 }
 
-.obrigado.dark{
-    box-shadow: 0px 0px 8px #000000;
-}
-
-.obrigado p{
-    font-size: 20px;
-    font-weight: 300;
-    padding: 0 0 20px 0;
-    animation: fade 1.2s ease-in-out;
-}
 
 .block {
     display: block;
@@ -1457,7 +1475,7 @@ dialog::backdrop{
         box-shadow: 0px 0px 8px #000000;
     }
 
-    .menu-mobile-magic.dark ul li a .icone-menu{
+    .menu-mobile-magic.dark span i{
         color: #242424;
     }
 
@@ -1533,6 +1551,10 @@ dialog::backdrop{
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .icone-meu.dark{
+        color: #242424;
     }
 
     .menu-desktop{
@@ -1614,7 +1636,8 @@ dialog::backdrop{
         width: 350px;
         flex-direction: column;
         justify-content: center;
-        margin: 0 0 0 -53px;
+        align-items: center; 
+        margin: 0 auto;      
     }
 
     .card-content{
@@ -1643,6 +1666,8 @@ dialog::backdrop{
 
     .projeto-container{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .reverse{
@@ -1656,10 +1681,8 @@ dialog::backdrop{
         border-radius: 50%;
     }
 
-    .projeto-content{
-        width: 350px;
-        align-items: center;
-        margin: 0 auto;
+    .projeto-content p{
+        text-align: center;
     }
 
 
@@ -1884,8 +1907,9 @@ dialog::backdrop{
     /* SINCERÃO */
 
     .sincerao{
+        padding: 100px 0 0 0;
         width: 100vw;
-        height: 500px;
+        height: 600px;
     }
 
     .sincerao h2{
@@ -1899,7 +1923,7 @@ dialog::backdrop{
     }
 
     .rate p{
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .rate-container{
@@ -1908,7 +1932,7 @@ dialog::backdrop{
         align-items: center;
         justify-content: space-between;
         width: 300px;
-        height: 30px;
+        height: 40px;
     }
 
     .rate-container div{
@@ -1920,18 +1944,29 @@ dialog::backdrop{
         cursor: pointer;
     }
 
-    .obrigado {
-        margin: 30PX auto 0;
-        width: 300px;
-        box-shadow: 0px 0px 8px #ffffff;
-        border-radius: 20px;
+    .obrigado-container{
+        max-width: 90%;
+
+    }    
+
+    .obrigado-container p{
+        padding: 0 0 10px;
+        font-size: 15px;
+        margin-bottom: 5px;
     }
 
-    .obrigado p{
-        font-size: 20px;
-        padding: 0 0 20px 0;
-        animation: fade 1.2s ease-in-out;
+    .obrigado-container span{
+        font-size: 18px;
     }
+
+
+    .obrigado{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
 
 
     /* FOOTER */

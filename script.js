@@ -17,6 +17,7 @@ let githubIconBlack = document.getElementById('gh-ocult');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
 let curriculo = document.querySelector('.cv');
 let sinceraoBtn = document.querySelector('.sincerao-btn');
+let obrigadoContainerDark = document.querySelector('.obrigado-container');
 let obrigadoDark = document.querySelector('.obrigado');
 let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
@@ -45,11 +46,12 @@ function toggleDarkMode() {
     githubIconBlack.classList.toggle('hide');
     curriculo.classList.toggle('dark');
     sinceraoBtn.classList.toggle('dark');
+    obrigadoContainerDark.classList.toggle('dark');
     obrigadoDark.classList.toggle('dark');
     resetBtn.classList.toggle('dark');
     footer.classList.toggle('dark');
     mobileMagic.classList.toggle('dark');
-
+    
     nomeTecnologia.forEach(nome => {
         nome.classList.toggle('dark');
     });
@@ -353,25 +355,25 @@ function avaliar() {
     let obrigadoConteudo= document.getElementById('obrigado-conteudo');
     let fecharObrigado = document.getElementById('fechar-obrigado');
     let rate = document.getElementById('rate');
-    let nota1 = "Poxa 😥 Ficou tão ruim assim? <br/>Então me chama em uma das minhas redes sociais e diga o que não gostou, para que eu possa aprimorar nas próximas atualizações <br/> <b>Valeu pela sua opinião Sincerona!</b>"
+    let nota1 = "<p>Poxa 😥 Ficou tão ruim assim? <br/>Então me chama em uma das minhas redes sociais e diga o que não gostou, para que eu possa aprimorar nas próximas atualizações<br/> <span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota2 = "2? É sério isso? Bom.. pelo menos 2 é melhor que 1 <br/>Não esqueça de me dar um feedback dos pontos negativos, assim eu consigo me aperfeiçoar cada vez mais <br/><b>Valeu pela sua opinião Sincerona!</b>"
+    let nota2 = "<p>2? É sério isso? Bom.. pelo menos 2 é melhor que 1 <br/>Não esqueça de me dar um feedback dos pontos negativos, assim eu consigo me aperfeiçoar cada vez mais <br/><span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota3 = "Deve ter algo muito errado mesmo, poderia ter arredondado pra 5, né? <br/>Então diz aí, o que tem de tão errado que te fez dar uma nota tão especifica assim? <br/><b>Valeu pela sua opinião Sincerona!</b>"
+    let nota3 = "<p>Deve ter algo muito errado mesmo, poderia ter arredondado pra 5, né? <br/>Então diz aí, o que tem de tão errado que te fez dar uma nota tão especifica assim? <br/><span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota4 = "Essa nota é o pavor da minha adolescência<br/> “Sem video-game pro resto do mês” <br/> <b>Obrigado mesmo viu!</b>"
+    let nota4 = "<p>Essa nota é o pavor da minha adolescência<br/> “Sem video-game pro resto do mês” <br/> Obrigado mesmo viu! <br><span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota5 = "Bom… se fosse numa escola pública dava pra passar de ano <br/>Mesmo assim, ainda tem muita coisa pra melhorar <br/>Me ajuda ai… me conta o que vc não gostou<br> <b>Valeu pela sua opinião Sincerona!</b>"
+    let nota5 = "<p>Bom… se fosse numa escola pública dava pra passar de ano <br/>Mesmo assim, ainda tem muita coisa pra melhorar <br/>Me ajuda ai… me conta o que vc não gostou<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota6 = "Não tá ruim, mas também não tá bom<br> 6 é uma nota que não diz muita coisa <br> Então clica em um dos meus contatos e deixe um comentário com sugestões de melhorias <br> <b>Valeu pela sua opinião Sincerona!</b>"
+    let nota6 = "<p>Não tá ruim, mas também não tá bom<br> 6 é uma nota que não diz muita coisa <br> Então clica em um dos meus contatos e deixe um comentário com sugestões de melhorias <br> <span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota7 = "Aí sim… dá até pra passar de ano em colégio particular com essa nota<br> Não é aquela coisa que se diga “nossa, mas que notão”, mas pelo menos não passo tanta vergonha<br> <b>Valeu pela sua opinião Sincerona!</b> "
+    let nota7 = "<p>Aí sim… dá até pra passar de ano em colégio particular com essa nota<br> Não é aquela coisa que se diga “nossa, mas que notão”, mas pelo menos não passo tanta vergonha<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota8 = "Então quer dizer que você gostou?<br> Que ótimo! <br>Então me chama em alguma das minhas redes sociais e vamos conversar<br> <b>Valeu pela sua opinião Sincerona!</b>"
+    let nota8 = "<p>Então quer dizer que você gostou?<br> Que ótimo! <br>Então me chama em alguma das minhas redes sociais e vamos conversar<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota9 = "Opa, que notona boa! <br>Que bom que gostou, mas me diz uma coisa… pq 9 e não 10? <br>Me conta o que ficou faltando pra gabaritar a prova?<br><b>Valeu pela sua opinião Sincerona!</b>"
+    let nota9 = "<p>Opa, que notona boa! <br>Que bom que gostou, mas me diz uma coisa… pq 9 e não 10? <br>Me conta o que ficou faltando pra gabaritar a prova?<br><span> Valeu pela sua opinião Sincerona!</span></p>"
 
-    let nota10 = "AEEEEEEEEWWWWWWEEEEWWEWEW <br> É sempre bom ganhar uma nota 10!!! <br>Muito obrigado e fico muito feliz que tenha gostado<br> Clica ai em uma das minhas redes sociais pra eu poder te agradecer pessoalmete (ou quase)<br><b>Valeu pela sua opinião Sincerona!❤</b>"
+    let nota10 = "<p>AEEEEEEEEWWWWWWEEEEWWEWEW <br> É sempre bom ganhar uma nota 10!!! <br>Muito obrigado e fico muito feliz que tenha gostado<br> Clica ai nas minhas redes sociais pra eu te agradecer pessoalmete...Ou quase!<br><span> Valeu pela sua opinião Sincerona!</span></p>"
 
     let rate1 = document.getElementById('nota1');
     let rate2 = document.getElementById('nota2');
