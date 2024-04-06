@@ -349,11 +349,40 @@ function avaliar() {
 
     let btnGostei = document.getElementById('gostei');
     let btnNaoGostei = document.getElementById('nao-gostei');
-    let obrigado = document.getElementById('obrigado');
+    let obrigadoContainer = document.getElementById('obrigado-container');
+    let obrigadoConteudo= document.getElementById('obrigado-conteudo');
     let fecharObrigado = document.getElementById('fechar-obrigado');
     let rate = document.getElementById('rate');
-    let lowRate = document.getElementById('low-rate');
-    let highRate = document.getElementById('high-rate');
+    let nota1 = "Poxa 😥 Ficou tão ruim assim? <br/>Então me chama em uma das minhas redes sociais e diga o que não gostou, para que eu possa aprimorar nas próximas atualizações <br/> <b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota2 = "2? É sério isso? Bom.. pelo menos 2 é melhor que 1 <br/>Não esqueça de me dar um feedback dos pontos negativos, assim eu consigo me aperfeiçoar cada vez mais <br/><b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota3 = "Deve ter algo muito errado mesmo, poderia ter arredondado pra 5, né? <br/>Então diz aí, o que tem de tão errado que te fez dar uma nota tão especifica assim? <br/><b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota4 = "Essa nota é o pavor da minha adolescência<br/> “Sem video-game pro resto do mês” <br/> <b>Obrigado mesmo viu!</b>"
+
+    let nota5 = "Bom… se fosse numa escola pública dava pra passar de ano <br/>Mesmo assim, ainda tem muita coisa pra melhorar <br/>Me ajuda ai… me conta o que vc não gostou<br> <b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota6 = "Não tá ruim, mas também não tá bom<br> 6 é uma nota que não diz muita coisa <br> Então clica em um dos meus contatos e deixe um comentário com sugestões de melhorias <br> <b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota7 = "Aí sim… dá até pra passar de ano em colégio particular com essa nota<br> Não é aquela coisa que se diga “nossa, mas que notão”, mas pelo menos não passo tanta vergonha<br> <b>Valeu pela sua opinião Sincerona!</b> "
+
+    let nota8 = "Então quer dizer que você gostou?<br> Que ótimo! <br>Então me chama em alguma das minhas redes sociais e vamos conversar<br> <b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota9 = "Opa, que notona boa! <br>Que bom que gostou, mas me diz uma coisa… pq 9 e não 10? <br>Me conta o que ficou faltando pra gabaritar a prova?<br><b>Valeu pela sua opinião Sincerona!</b>"
+
+    let nota10 = "AEEEEEEEEWWWWWWEEEEWWEWEW <br> É sempre bom ganhar uma nota 10!!! <br>Muito obrigado e fico muito feliz que tenha gostado<br> Clica ai em uma das minhas redes sociais pra eu poder te agradecer pessoalmete (ou quase)<br><b>Valeu pela sua opinião Sincerona!❤</b>"
+
+    let rate1 = document.getElementById('nota1');
+    let rate2 = document.getElementById('nota2');
+    let rate3 = document.getElementById('nota3');
+    let rate4 = document.getElementById('nota4');
+    let rate5 = document.getElementById('nota5');
+    let rate6 = document.getElementById('nota6');
+    let rate7 = document.getElementById('nota7');
+    let rate8 = document.getElementById('nota8');
+    let rate9 = document.getElementById('nota9');
+    let rate10 = document.getElementById('nota10');
     let returnBack = document.getElementById('return-back');
     let counter = 0;
 
@@ -367,36 +396,121 @@ function avaliar() {
         }
     });
 
-    lowRate.addEventListener('click', () => {
+    rate1.addEventListener('click', () => {
         if (counter === 1) {
             rate.classList.add('hide');
-            obrigado.classList.remove('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota1
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate2.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota2
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate3.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota3
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate4.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota4
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate5.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota5
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate6.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota6
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate7.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota7
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate8.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota8
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate9.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota9
+            returnBack.classList.remove('hide')
+            counter = 2;
+        }
+    });
+
+    rate10.addEventListener('click', () => {
+        if (counter === 1) {
+            rate.classList.add('hide');
+            obrigadoContainer.classList.remove('hide');
+            obrigadoConteudo.innerHTML = nota10
+            returnBack.classList.remove('hide')
             counter = 2;
         }
     });
     
-    highRate.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigado.classList.remove('hide');
-            counter = 3;
-        }
-    });
-
     fecharObrigado.addEventListener('click', () => {
         if (counter === 2 || counter === 3) {
-            obrigado.classList.add('hide');
-            returnBack.classList.remove('hide')
-            counter = 4;
+            obrigadoContainer.classList.add('hide');
+            returnBack.classList.add('hide')
+            rate.classList.remove('hide');
+            counter = 1;
         }
     });
 
     returnBack.addEventListener('click', () => {
-        if (counter === 4) {
+        if (counter === 2) {
             returnBack.classList.add('hide');
-            btnGostei.classList.remove('hide');
-            btnNaoGostei.classList.remove('hide');
-            counter = 0;
+            obrigadoContainer.classList.add('hide');
+            rate.classList.remove('hide');
+            counter = 1;
         }
     });
 
