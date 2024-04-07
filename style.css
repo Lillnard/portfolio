@@ -659,19 +659,25 @@ section.habilidades .interface{
 }
 
 .tecnologias{
-    width: 70%;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 .tec-container{
     display: flex;
+    flex-direction: column;
     animation: fade 1.2s ease-in-out;
 
 }
 
 .card-content{
-    height: 200px;
-    width: 70%;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.card-content p{
+    text-align: center;
+    font-size: 18px;
+    margin: 0 0 10px 0;
 }
 
 .tec-title{
@@ -681,14 +687,12 @@ section.habilidades .interface{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 10PX;
+    text-align: center;
 }
 
 .card-image{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    width: 30%;
+    margin: 40px auto;
 }
 
 .card-image img{
@@ -704,7 +708,7 @@ section.habilidades .interface{
     margin-bottom: -40px;
 }
 
-#card-image-angular, #card-image-bs{
+#card-image-angular, #card-image-react{
     margin-top: -40px;
 }
 
@@ -713,7 +717,7 @@ section.habilidades .interface{
     width: 80px;
 }
 
-#card-image-react{
+#card-image-bs{
     margin-bottom: -40px;
 }
 
@@ -732,10 +736,6 @@ section.dark .ver-mais button{
 
 section.dark .ver-mais button i{
     color: #000000;
-}
-
-.switch-habilidades-btn4{
-    margin-right: -20px;
 }
 
 
@@ -1632,20 +1632,15 @@ dialog::backdrop{
     }
 
     .tec-container{
-        width: 350px;
+        width: 90%;
         flex-direction: column;
         justify-content: center;
         align-items: center; 
         margin: 0 auto;      
     }
 
-    .card-content{
-        width: 350px;
-        height: 100px;
-    }
-
     .card-content h2{
-        font-size: 20px;
+        font-size: 25px;
         text-align: center;
     }
 
@@ -1816,15 +1811,9 @@ dialog::backdrop{
     }
 
     .tec-container{
-        width: 350px;
+        width: 90%;
         flex-direction: column;
         justify-content: center;
-        margin: 0 0 0 -53px;
-    }
-
-    .card-content{
-        width: 350px;
-        height: 100px;
     }
 
     .card-content h2{
@@ -1837,7 +1826,7 @@ dialog::backdrop{
     }
 
     .card-image{
-        margin: 50px auto 0;
+        margin: 50px auto 30px;
     }
 
     /* PROJETOS */
