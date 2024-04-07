@@ -1131,9 +1131,8 @@ section.projetos .flex{
 }
 
 .obrigado-container{
-    max-width: 70%;
-    padding: 0 20px;
-    height: 200px;
+    max-width: 60%;
+    padding: 0 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px #ffffff;
     margin: 0 auto;
@@ -1146,7 +1145,7 @@ section.projetos .flex{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 20px;;
 }
 
 .obrigado-container.dark{
@@ -1725,6 +1724,10 @@ dialog::backdrop{
         font-weight: 400;
         margin-bottom: 70px;
     }
+
+    .nao-btn button:hover::before{
+        display: none;
+    }    
 }
 
 
@@ -1907,7 +1910,7 @@ dialog::backdrop{
     /* SINCERÃO */
 
     .sincerao{
-        padding: 100px 0 0 0;
+        padding: 80px 0 0 0;
         width: 100vw;
         height: 600px;
     }
@@ -1946,13 +1949,13 @@ dialog::backdrop{
 
     .obrigado-container{
         max-width: 90%;
-
     }    
 
     .obrigado-container p{
         padding: 0 0 10px;
         font-size: 15px;
-        margin-bottom: 5px;
+        align-items: center;
+        margin: auto;
     }
 
     .obrigado-container span{
