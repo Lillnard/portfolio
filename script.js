@@ -3,6 +3,8 @@
 let body = document.querySelector('body');
 let sectionDark = document.querySelectorAll('section');
 let header = document.querySelector('header');
+let logoDark = document.querySelectorAll('.logo-black');
+let logoLight = document.querySelectorAll('.logo-light');
 let inicioHeader = document.querySelector('.menu-inicio');
 let habilidadesHeader = document.querySelector('.menu-habilidades');
 let projetosHeader = document.querySelector('.menu-projetos');
@@ -59,6 +61,15 @@ function toggleDarkMode() {
     document.querySelectorAll('section p').forEach(p => {
         p.classList.toggle('dark');
     });
+
+    logoDark.forEach(logo => {
+        logo.classList.toggle('hide');
+    });
+
+    logoLight.forEach(logo => {
+        logo.classList.toggle('hide');
+    });
+
 
 }
 

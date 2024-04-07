@@ -45,6 +45,10 @@ section.dark{
     color: #242424;
 }
 
+.dark p span{
+    color: #242424;
+}
+
 /* .hidden-left{
     opacity: 0;
     filter: blur(15px);
@@ -1011,7 +1015,7 @@ section.projetos .flex{
 }
 
 .line{
-    text-decoration: line-through white;
+    text-decoration: line-through #cccccc;
 }
 
 .faq.active .answer{
