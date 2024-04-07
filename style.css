@@ -1126,6 +1126,10 @@ section.projetos .flex{
     margin: 10px auto;
 }
 
+#nao-gostei::before{
+    background: linear-gradient(#ff0000 , #af1717 , #6b2525);
+}
+
 #gostei::before{
     background: linear-gradient(#189e54 , #4cb622 , #77d728);
 }
@@ -1720,9 +1724,6 @@ dialog::backdrop{
         margin-bottom: 70px;
     }
 
-    .nao-btn button:hover::before{
-        display: none;
-    }    
 }
 
 
