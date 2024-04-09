@@ -17,6 +17,7 @@ let imgTopo = document.querySelector('.img-topo');
 let githubIconWhite = document.getElementById('gh-icon');
 let githubIconBlack = document.getElementById('gh-ocult');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
+let projetoButtons= document.querySelectorAll('.projeto-buttons');
 let curriculo = document.querySelector('.cv');
 let sinceraoBtn = document.querySelector('.sincerao-btn');
 let obrigadoContainerDark = document.querySelector('.obrigado-container');
@@ -56,6 +57,10 @@ function toggleDarkMode() {
     
     nomeTecnologia.forEach(nome => {
         nome.classList.toggle('dark');
+    });
+    
+    projetoButtons.forEach(button => {
+        button.classList.toggle('dark');
     });
 
     document.querySelectorAll('section p').forEach(p => {
