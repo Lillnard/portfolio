@@ -1921,6 +1921,10 @@ dialog::backdrop{
         flex-direction: column;
     }
 
+    .projeto-content h3{
+        text-align: center;
+    }
+
     .reverse{
         text-align: center;
     }
