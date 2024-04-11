@@ -890,7 +890,7 @@ section.projetos .flex{
 .img-proj{
     width: 360px;
     height: 360px;
-    border-radius: 50%;
+    border-radius: 10px;
     background-size: cover;
     background-position: 100% 0%;
     position: relative;
@@ -907,8 +907,37 @@ section.projetos .flex{
     font-weight: 600;
 }
 
-.projeto-tecnologias img{
+.projeto-content h3{
+    font-size: 30px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10PX;
+}
+
+.projeto-content p{
+    justify-content: left;
+}
+
+.projeto-tecnologias{
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-tecnologias h3{
+    margin-top: 20px;
+    font-size: 25px;
+}    
+.projeto-tecnologias-images{
+    display: flex;
+    margin: 0 auto;
+} 
+
+.projeto-tecnologias-images img{
     height: 80px;
+    width: 80px;
+
 }
 
 .projeto-content.dark p{
@@ -928,7 +957,7 @@ section.projetos .flex{
     height: 100%;
     background-color: #00000057;
     color: #ffffff;
-    border-radius: 50%;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1725,10 +1754,9 @@ dialog::backdrop{
         margin: 25px auto 0;
         width: 250px;
         height: 250px;
-        border-radius: 50%;
+        border-radius: 10px;
     }
 
-    
 
     .projeto-content p{
         text-align: center;
@@ -1895,13 +1923,6 @@ dialog::backdrop{
 
     .reverse{
         text-align: center;
-    }
-
-    .img-proj{
-        margin: 25px auto 0;
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
     }
 
     .projeto-content{
