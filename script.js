@@ -297,7 +297,7 @@ function trocaFotoProjetos(baseId, totalProjetos) {
             projeto.intervalo = setInterval(() => {
                 projeto.cont = projeto.cont % 3 + 1;
                 projeto.trocaImagem(projeto.cont);
-            }, 3000); // Troca a cada 3 segundos (3000 milissegundos)
+            }, 6000);
         };
 
         projeto.reiniciarIntervalo = function() {
