@@ -276,6 +276,89 @@ function trocarProjetos() {
 trocarProjetos();
 
 
+//FUNÇÃO PARA MUDAR AS IMAGENS DOS PROJETOS
+
+function trocaFotoProjetos(baseId, totalProjetos) {
+    const projetos = [];
+
+    for (let i = 1; i <= totalProjetos; i++) {
+        const projeto = {
+            img1: document.getElementById(`${baseId}${i}-img1`),
+            img2: document.getElementById(`${baseId}${i}-img2`),
+            img3: document.getElementById(`${baseId}${i}-img3`),
+            btn1: document.getElementById(`${baseId}${i}-btn1`),
+            btn2: document.getElementById(`${baseId}${i}-btn2`),
+            btn3: document.getElementById(`${baseId}${i}-btn3`),
+            cont: 1,
+            intervalo: null
+        };
+
+        projeto.iniciarIntervalo = function() {
+            projeto.intervalo = setInterval(() => {
+                projeto.cont = projeto.cont % 3 + 1;
+                projeto.trocaImagem(projeto.cont);
+            }, 3000); // Troca a cada 3 segundos (3000 milissegundos)
+        };
+
+        projeto.reiniciarIntervalo = function() {
+            clearInterval(projeto.intervalo);
+            projeto.iniciarIntervalo();
+        };
+
+        projeto.btn1.addEventListener('click', () => {
+            projeto.trocaImagem(1);
+            projeto.reiniciarIntervalo();
+        });
+
+        projeto.btn2.addEventListener('click', () => {
+            projeto.trocaImagem(2);
+            projeto.reiniciarIntervalo();
+        });
+
+        projeto.btn3.addEventListener('click', () => {
+            projeto.trocaImagem(3);
+            projeto.reiniciarIntervalo();
+        });
+
+        projeto.trocaImagem = function(numero) {
+            projeto.img1.classList.add('hide');
+            projeto.img2.classList.add('hide');
+            projeto.img3.classList.add('hide');
+            projeto.btn1.classList.remove('ativo');
+            projeto.btn2.classList.remove('ativo');
+            projeto.btn3.classList.remove('ativo');
+
+            if (numero === 1) {
+                projeto.img1.classList.remove('hide');
+                projeto.btn1.classList.add('ativo');
+            } else if (numero === 2) {
+                projeto.img2.classList.remove('hide');
+                projeto.btn2.classList.add('ativo');
+            } else if (numero === 3) {
+                projeto.img3.classList.remove('hide');
+                projeto.btn3.classList.add('ativo');
+            }
+
+            projeto.cont = numero;
+        };
+
+        projetos.push(projeto);
+    }
+
+    return projetos;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const projetos = trocaFotoProjetos('projeto', 6);
+
+    projetos.forEach(projeto => {
+        projeto.iniciarIntervalo();
+    });
+});
+
+
+
+
 
 
 //FUNÇÃO PARA AO CLICAR NO BOTÃO DOS PROJETOS, VOLTAR AO TOPO DA SECTION PROJETOS
