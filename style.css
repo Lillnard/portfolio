@@ -9,6 +9,7 @@
     color: #cccccc;
     user-select: none;
 }
+
 html{
     scroll-behavior: smooth;
 }
@@ -339,7 +340,7 @@ header.dark button i{
 }
 
 #instagram::before{
-    background: linear-gradient(#F9CE34 , #EE2A7B , #6228D7);
+    background: linear-gradient(#6228D7, #EE2A7B, #F9CE34 );
 }
 
 .social button::before{
@@ -862,10 +863,6 @@ section.projetos .flex{
     flex-direction: column;
 }
 
-.reverse{
-    flex-direction: row-reverse;
-    text-align: end;
-}
 
 .line-up{
     border-top: 2px solid #636363;
@@ -881,41 +878,14 @@ section.projetos .flex{
 .projeto-container{
     display: flex;
     justify-content: center;
+    width: 80%;
+    margin: auto
 }
 
-.img-proj, .projeto-content{
+.images-content, .projeto-content{
     width: 50%;
     animation: fade 1.2s ease-in-out;
 }
-
-.img-proj{
-    width: 360px;
-    height: 360px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: 100% 0%;
-    position: relative;
-    transition: 1s;
-    margin: 50px 20px;
-}
-
-
-
-.images-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#avanca, #volta{
-    font-size: 50px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 10PX;
-    cursor: pointer;
-}    
 
 .images-content{
     display: flex;
@@ -960,9 +930,6 @@ section.projetos .flex{
     margin: 50px 20px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     font-weight: 600;
 }
 
@@ -972,17 +939,17 @@ section.projetos .flex{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 10PX;
+    padding: 10PX 0;
 }
 
 .projeto-content p{
-    justify-content: left;
+    text-align: start;
 }
 
 .projeto-tecnologias{
     display: flex;
     flex-direction: column;
-    margin: 0 auto 20px;
+    margin-bottom: 20px;
 }
 
 .projeto-tecnologias h3{
@@ -991,13 +958,21 @@ section.projetos .flex{
 }    
 .projeto-tecnologias-images{
     display: flex;
-    margin: 0 auto;
 } 
 
 .projeto-tecnologias-images img{
     height: 80px;
     width: 80px;
 
+}
+
+.reverse{
+    flex-direction: row-reverse;
+    text-align: end;
+}
+
+.reverse p{
+    text-align: end;
 }
 
 .projeto-content.dark p{
@@ -1788,10 +1763,11 @@ dialog::backdrop{
 
     .card-content p{
         font-size: 15px;
+        text-align: start;
     }
 
     .card-image{
-        margin: 50px auto 0;
+        margin: 50px auto;
     }
 
     /* PROJETOS */
@@ -1802,12 +1778,10 @@ dialog::backdrop{
 
     .projeto-container{
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .reverse{
-        text-align: center;
+        text-align: start;
     }
 
     .img-proj{
@@ -1824,7 +1798,7 @@ dialog::backdrop{
 
 
     .projeto-content p{
-        text-align: center;
+        text-align: start;
     }
 
 
@@ -1960,7 +1934,6 @@ dialog::backdrop{
     .tec-container{
         width: 90%;
         flex-direction: column;
-        justify-content: center;
     }
 
     .card-content h2{
@@ -1970,6 +1943,7 @@ dialog::backdrop{
 
     .card-content p{
         font-size: 15px;
+        text-align: start;
     }
 
     .card-image{
