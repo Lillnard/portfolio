@@ -943,7 +943,7 @@ section.projetos .flex{
 }
 
 .projeto-content p{
-    text-align: start;
+    text-align: justify;
 }
 
 .projeto-tecnologias{
@@ -980,34 +980,10 @@ section.projetos .flex{
 }
 
 
-.img-proj:hover{
-    background-position: 100% 100%;
-}
-
-.sombreado{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000057;
-    color: #ffffff;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.sombreado:hover{
-    opacity: 1;
-}
-
 .projeto-buttons{
     display: flex;
     gap: 30px;
-    }
+}
 
 .btn-projeto{
     background-color: #242424;
@@ -1016,6 +992,7 @@ section.projetos .flex{
     height: 50px;
     border-radius: 10px;
     border: none;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.2s;
     overflow: hidden;
@@ -1965,13 +1942,29 @@ dialog::backdrop{
     }
 
     .reverse{
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .projeto-content{
         width: 80%;
         align-items: center;
     }
+
+    .projeto-tecnologias{
+        margin: 0 auto 20px;
+    }
+
+    .projeto-tecnologias-images{
+        margin: 0 auto;
+    }
+
+    .projeto-buttons{
+        margin: auto;
+        gap: 30px;
+    }
+
 
 
 
