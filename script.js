@@ -450,6 +450,8 @@ function avaliar() {
 
     let btnGostei = document.getElementById('gostei');
     let btnNaoGostei = document.getElementById('nao-gostei');
+    let tituloLike = document.getElementById('like-title');
+    let tituloAvaliar = document.getElementById('rate-title');
     let obrigadoContainer = document.getElementById('obrigado-container');
     let obrigadoConteudo= document.getElementById('obrigado-conteudo');
     let fecharObrigado = document.getElementById('fechar-obrigado');
@@ -490,6 +492,7 @@ function avaliar() {
     //CLICAR NO BOTÃO E ABIR AVALIAÇÃO COM NOTAS
     btnGostei.addEventListener('click', () => {
         if (counter === 0) {
+            tituloLike.classList.add('hide');
             btnGostei.classList.add('hide');
             btnNaoGostei.classList.add('hide');
             rate.classList.remove('hide');
@@ -598,8 +601,9 @@ function avaliar() {
     });
     
     fecharObrigado.addEventListener('click', () => {
-        if (counter === 2 || counter === 3) {
+        if (counter === 2) {
             obrigadoContainer.classList.add('hide');
+            tituloAvaliar.classList.add('hide');
             returnBack.classList.add('hide')
             rate.classList.remove('hide');
             counter = 1;
@@ -610,6 +614,7 @@ function avaliar() {
         if (counter === 2) {
             returnBack.classList.add('hide');
             obrigadoContainer.classList.add('hide');
+            tituloAvaliar.classList.add('hide');
             rate.classList.remove('hide');
             counter = 1;
         }
