@@ -388,40 +388,40 @@ function trocarFaq() {
 
     let faq1 = document.getElementById('faq1');
     let faq2 = document.getElementById('faq2');
-    let faq3 = document.getElementById('faq3');
+    //let faq3 = document.getElementById('faq3');
     let switchFaqBtn1 = document.getElementById('switch-faq-btn1');
     let switchFaqBtn2 = document.getElementById('switch-faq-btn2');
-    let switchFaqBtn3 = document.getElementById('switch-faq-btn3');
+    //let switchFaqBtn3 = document.getElementById('switch-faq-btn3');
 
     switchFaqBtn1.addEventListener('click', () =>{
         faq2.classList.add('hide');
-        faq3.classList.add('hide');
+        //faq3.classList.add('hide');
         faq1.classList.remove('hide');
         
         switchFaqBtn2.classList.remove('ativo');
-        switchFaqBtn3.classList.remove('ativo');
+        //switchFaqBtn3.classList.remove('ativo');
         switchFaqBtn1.classList.add('ativo');
     });
 
     switchFaqBtn2.addEventListener('click', () =>{
         faq1.classList.add('hide');
-        faq3.classList.add('hide');
+        //faq3.classList.add('hide');
         faq2.classList.remove('hide');
 
         switchFaqBtn1.classList.remove('ativo');
-        switchFaqBtn3.classList.remove('ativo');
+        //switchFaqBtn3.classList.remove('ativo');
         switchFaqBtn2.classList.add('ativo');
     });
 
-    switchFaqBtn3.addEventListener('click', () =>{
-        faq2.classList.add('hide');
-        faq1.classList.add('hide');
-        faq3.classList.remove('hide');
+    //switchFaqBtn3.addEventListener('click', () =>{
+    //    faq2.classList.add('hide');
+    //    faq1.classList.add('hide');
+    //    faq3.classList.remove('hide');
 
-        switchFaqBtn2.classList.remove('ativo');
-        switchFaqBtn1.classList.remove('ativo');
-        switchFaqBtn3.classList.add('ativo');
-    });
+    //   switchFaqBtn2.classList.remove('ativo');
+    //    switchFaqBtn1.classList.remove('ativo');
+    //    switchFaqBtn3.classList.add('ativo');
+    //});
 }
 
 trocarFaq()

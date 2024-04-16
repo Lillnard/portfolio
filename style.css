@@ -64,6 +64,14 @@ section.dark{
     color: #242424;
 }
 
+.sep{
+    font-size: 18px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* .hidden-left{
     opacity: 0;
     filter: blur(15px);
@@ -698,13 +706,6 @@ section.habilidades .interface{
     font-size: 18px;
     margin: 0 0 10px 0;
 }
-.card-content span{
-    font-size: 20px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 .tec-title{
     font-size: 40px;
@@ -799,13 +800,6 @@ section.sobre .texto-sobre{
 
 section.sobre .texto-sobre p{
     margin: 0 40px 30px;
-}
-
-.texto-sobre span {
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .cv{
@@ -975,14 +969,6 @@ section.projetos .flex{
 
 .projeto-content p{
     text-align: justify;
-}
-
-.projeto-content span{
-    font-size: 20px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .projeto-tecnologias{
@@ -2046,7 +2032,7 @@ dialog::backdrop{
     }
 
     .faq.active .answer{
-        max-height: 600px;
+        max-height: 620px;
     }
 
     /* SINCERÃO */
