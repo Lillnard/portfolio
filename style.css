@@ -698,13 +698,13 @@ section.habilidades .interface{
 
 .card-content{
     margin: 0 auto;
-    width: 90%;
+    width: 70%;
 }
 
 .card-content p{
-    text-align: center;
+    text-align: justify;
     font-size: 18px;
-    margin: 0 0 10px 0;
+    margin: 15px 0 25px 0;
 }
 
 .tec-title{
@@ -800,6 +800,7 @@ section.sobre .texto-sobre{
 
 section.sobre .texto-sobre p{
     margin: 0 40px 30px;
+    text-align: justify;
 }
 
 .cv{
@@ -1932,6 +1933,10 @@ dialog::backdrop{
         flex-direction: column;
     }
 
+    .card-content{
+        width: 90%;
+    }
+
     .card-content h2{
         font-size: 20px;
         text-align: center;
@@ -2001,6 +2006,8 @@ dialog::backdrop{
         font-size: 28px;
         line-height: 30px;
     }
+
+
 
     /* FAQ */
 
