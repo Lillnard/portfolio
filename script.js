@@ -99,26 +99,6 @@ const section = document.querySelectorAll('.hidden-left')
 section.forEach((elemento)=> visualizar.observe(elemento))
 
 
-
-//FUNÇÃO SECTION ENTRANDO PELA DIREITA
-
-const visualizarDireita = new IntersectionObserver((avistado)=>{
-    avistado.forEach((visto)=>{
-        if(visto.isIntersecting){
-            setTimeout(() => {
-                visto.target.classList.add('show-right');
-            }, 250); 
-        } else {
-            visto.target.classList.remove('show-right');
-        }
-    });
-});
-
-const sectionhiddenright = document.querySelectorAll('.hidden-right')
-
-sectionhiddenright.forEach((elemento)=> visualizarDireita.observe(elemento))
-
-
 //FUNÇÃO PARA APLICAR ANIMAÇÃO FADE NA SECTION OCULTA
 
 const fade = new IntersectionObserver((avistado)=>{

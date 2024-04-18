@@ -72,7 +72,7 @@ section.dark{
     -webkit-text-fill-color: transparent;
 }
 
-/* .hidden-left{
+.hidden-left{
     opacity: 0;
     filter: blur(15px);
     transform: translateX(-100%);
@@ -86,7 +86,7 @@ section.dark{
     transition: all .5s;
 } */
 
-/* .hidden-right{
+.hidden-right{
     opacity: 0;
     filter: blur(15px);
     transform: translateX(0%);
@@ -1787,13 +1787,6 @@ dialog::backdrop{
         text-align: start;
     }
 
-    .img-proj{
-        margin: 25px auto 0;
-        width: 250px;
-        height: 250px;
-        border-radius: 10px;
-    }
-
     .images-content img{
         height: 300px;
         width: 300px;
@@ -1976,6 +1969,10 @@ dialog::backdrop{
     .projeto-content{
         width: 80%;
         align-items: center;
+    }
+
+    .projeto-content p{
+        width: 100%;
     }
 
     .projeto-tecnologias{
