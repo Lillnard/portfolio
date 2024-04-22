@@ -319,19 +319,19 @@ header.dark .menu-desktop nav a:hover::after{
 
 .button button{
     background-color: #242424;
-    box-shadow: 0px 0px 15px #ffffff;
+    box-shadow: 0px 0px 5px #ffffff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     transition: 0.2s;
-    position: relative;
-    overflow: hidden;
 }
 
 .social button{
     margin-right: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .button button:not(:last-child){
@@ -340,7 +340,7 @@ header.dark .menu-desktop nav a:hover::after{
 
 header.dark button{
     background-color: #cccccc;
-    box-shadow: 0px 0px 15px #000000;
+    box-shadow: 0px 0px 5px #000000;
 }
 
 header.dark button i{
@@ -404,7 +404,7 @@ header.dark button i{
 
 .dark-mode{
     background-color: #242424;
-    box-shadow: 0px 0px 15px #ffffff;
+    box-shadow: 0px 0px 5px #ffffff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -418,7 +418,7 @@ header.dark button i{
 
 .dark-mode.dark{
     background-color: #cccccc;
-    box-shadow: 0px 0px 15px #000000;
+    box-shadow: 0px 0px 5px #000000;
 }
 
 .dark-mode.dark i{
@@ -758,7 +758,7 @@ section.habilidades .interface{
 
 section.dark .ver-mais button{
     background-color: #cccccc;
-    box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 5px #000000;
 }
 
 section.dark .ver-mais button i{
@@ -953,7 +953,7 @@ section.projetos .flex{
 }
 
 .projeto-container .projeto-content{
-    margin: 50px 20px 30px;
+    margin: 50px auto 30px;
     display: flex;
     flex-direction: column;
     font-weight: 600;
@@ -1047,7 +1047,10 @@ section.projetos .flex{
 
 .ver-mais button.ativo{
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
+}
 
+.ver-mais button i{
+    font-size: 10px;
 }
 
 
@@ -1098,21 +1101,14 @@ section.projetos .flex{
    display: flex;
    justify-content: center;
    align-items: center;
-   background-image: linear-gradient(45deg, #ff2500, #ff7100);
-   height: 35px;
-   width: 35px;
-   border-radius: 50%;
    transition: transform .2s ease-in;
-}
-
-.down:hover{
-    background-image: linear-gradient(45deg, #ff5031, #ff8018);
 }
 
 .down i{
     font-size: 18px;
     font-weight: 600px;
 }
+
 .answer{
     max-height: 0;
     overflow: hidden;
@@ -1951,6 +1947,7 @@ dialog::backdrop{
         margin: 50px auto 30px;
     }
 
+
     /* PROJETOS */
 
     .projetos .titulo{
@@ -1972,7 +1969,8 @@ dialog::backdrop{
     }
 
     .projeto-content{
-        width: 80%;
+        width: 100%;
+        justify-content: center;
         align-items: center;
     }
 
