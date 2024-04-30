@@ -496,6 +496,7 @@ section.topo .flex{
     font-size: 40px;
     margin-top: 30px;
     text-align: end;
+    padding: 10px;
 }
 
 .topo .texto-topo h3{
@@ -522,11 +523,18 @@ section.topo .flex{
 }
 
 .topo .texto-topo p a{
-    color: #cccccc;
-}
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 2px;}
 
 .topo .texto-topo.dark p a{
-    color: #636363;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
 }
 
 .topo .texto-topo p a:hover{
