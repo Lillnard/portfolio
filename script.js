@@ -17,6 +17,7 @@ let imgTopo = document.querySelector('.img-topo');
 let githubIconWhite = document.getElementById('gh-icon');
 let githubIconBlack = document.getElementById('gh-ocult');
 let nomeTecnologia = document.querySelectorAll('.sombreado-habil');
+let btnHover = document.querySelectorAll('.btn-hover');
 let projetoButtons= document.querySelectorAll('.projeto-buttons');
 let curriculo = document.querySelector('.cv');
 let sinceraoBtn = document.querySelector('.sincerao-btn');
@@ -33,38 +34,45 @@ document.getElementById('dark-mode').addEventListener('click', () => {
 function toggleDarkMode() {
     document.getElementById('dark-mode').classList.toggle('dark');
     body.classList.toggle('dark');
+
     sectionDark.forEach(section => {
         section.classList.toggle('dark');
-    });    
+    });
+
     header.classList.toggle('dark');
-    inicioHeader.classList.toggle('dark');
-    habilidadesHeader.classList.toggle('dark');
-    projetosHeader.classList.toggle('dark');
-    sobreHeader.classList.toggle('dark');
-    faqHeader.classList.toggle('dark');
-    sincerao.classList.toggle('dark');
-    textoTopo.classList.toggle('dark');
-    imgTopo.classList.toggle('dark');
-    githubIconWhite.classList.toggle('hide');
-    githubIconBlack.classList.toggle('hide');
-    curriculo.classList.toggle('dark');
-    sinceraoBtn.classList.toggle('dark');
-    obrigadoContainerDark.classList.toggle('dark');
-    obrigadoDark.classList.toggle('dark');
-    resetBtn.classList.toggle('dark');
-    footer.classList.toggle('dark');
-    mobileMagic.classList.toggle('dark');
-    
+
+    if(inicioHeader) inicioHeader.classList.toggle('dark');
+    if(habilidadesHeader) habilidadesHeader.classList.toggle('dark');
+    if(projetosHeader) projetosHeader.classList.toggle('dark');
+    if(sobreHeader) sobreHeader.classList.toggle('dark');
+    if(faqHeader) faqHeader.classList.toggle('dark');
+    if(sincerao) sincerao.classList.toggle('dark');
+
+    if(textoTopo) textoTopo.classList.toggle('dark');
+    if(imgTopo) imgTopo.classList.toggle('dark');
+
+    if(githubIconWhite) githubIconWhite.classList.toggle('hide');
+    if(githubIconBlack) githubIconBlack.classList.toggle('hide');
+
+    if(curriculo) curriculo.classList.toggle('dark');
+    if(sinceraoBtn) sinceraoBtn.classList.toggle('dark');
+    if(obrigadoContainerDark) obrigadoContainerDark.classList.toggle('dark');
+    if(obrigadoDark) obrigadoDark.classList.toggle('dark');
+    if(resetBtn) resetBtn.classList.toggle('dark');
+    if(footer) footer.classList.toggle('dark');
+    if(mobileMagic) mobileMagic.classList.toggle('dark');
+
     nomeTecnologia.forEach(nome => {
         nome.classList.toggle('dark');
     });
-    
-    projetoButtons.forEach(button => {
-        button.classList.toggle('dark');
+
+    // ✅ corrigido: btnHover é NodeList, precisa forEach
+    btnHover.forEach(btn => {
+        btn.classList.toggle('dark');
     });
 
-    document.querySelectorAll('section p').forEach(p => {
-        p.classList.toggle('dark');
+    projetoButtons.forEach(button => {
+        button.classList.toggle('dark');
     });
 
     logoDark.forEach(logo => {
@@ -74,8 +82,6 @@ function toggleDarkMode() {
     logoLight.forEach(logo => {
         logo.classList.toggle('hide');
     });
-
-
 }
 
 
@@ -133,8 +139,11 @@ window.addEventListener('scroll', ()=>{
             links.forEach(link =>{
                 link.classList.remove('ativo');
 
-                document.querySelector(`header nav a[href*='${idSection}']`).classList.add('ativo');
-                document.querySelector(`.menu-mobile-magic nav ul li a[href*='${idSection}']`).classList.add('ativo');
+                const headerLink = document.querySelector(`header nav a[href*='${idSection}']`);
+                const mobileLink = document.querySelector(`.menu-mobile-magic nav ul li a[href*='${idSection}']`);
+
+                if(headerLink) headerLink.classList.add('ativo');
+                if(mobileLink) mobileLink.classList.add('ativo');
             });
         };
     })
@@ -160,7 +169,6 @@ function trocarHabilidades() {
     let tecnologias3 = document.getElementById('tecnologias3');
     let tecnologias4 = document.getElementById('tecnologias4');
 
-    // Adicionar event listener para mostrar projetos1
     switchHaabilidadesBtn1.addEventListener('click', () => {
             tecnologias2.classList.add('hide');
             tecnologias3.classList.add('hide');
@@ -172,7 +180,6 @@ function trocarHabilidades() {
             switchHaabilidadesBtn1.classList.add('ativo');
     });
 
-    // Adicionar event listener para mostrar projetos2
     switchHaabilidadesBtn2.addEventListener('click', () => {
             tecnologias1.classList.add('hide');
             tecnologias3.classList.add('hide');
@@ -183,7 +190,7 @@ function trocarHabilidades() {
             switchHaabilidadesBtn4.classList.remove('ativo');
             switchHaabilidadesBtn2.classList.add('ativo');
     });
-    // Adicionar event listener para mostrar projetos3
+
     switchHaabilidadesBtn3.addEventListener('click', () => {
             tecnologias1.classList.add('hide');
             tecnologias2.classList.add('hide');
@@ -222,7 +229,6 @@ function trocarProjetos() {
     let projetos2 = document.getElementById('projetos2');
     let projetos3 = document.getElementById('projetos3');
 
-    // Adicionar event listener para mostrar projetos1
     switchBtn1.addEventListener('click', () => {
             projetos2.classList.add('hide');
             projetos3.classList.add('hide');
@@ -232,7 +238,6 @@ function trocarProjetos() {
             switchBtn3.classList.remove('ativo');
     });
 
-    // Adicionar event listener para mostrar projetos2
     switchBtn2.addEventListener('click', () => {
             projetos1.classList.add('hide');
             projetos3.classList.add('hide');
@@ -242,7 +247,6 @@ function trocarProjetos() {
             switchBtn3.classList.remove('ativo');
     });
 
-    // Adicionar event listener para mostrar projetos3
     switchBtn3.addEventListener('click', () => {
             projetos1.classList.add('hide');
             projetos2.classList.add('hide');
@@ -368,40 +372,24 @@ function trocarFaq() {
 
     let faq1 = document.getElementById('faq1');
     let faq2 = document.getElementById('faq2');
-    //let faq3 = document.getElementById('faq3');
     let switchFaqBtn1 = document.getElementById('switch-faq-btn1');
     let switchFaqBtn2 = document.getElementById('switch-faq-btn2');
-    //let switchFaqBtn3 = document.getElementById('switch-faq-btn3');
 
     switchFaqBtn1.addEventListener('click', () =>{
         faq2.classList.add('hide');
-        //faq3.classList.add('hide');
         faq1.classList.remove('hide');
         
         switchFaqBtn2.classList.remove('ativo');
-        //switchFaqBtn3.classList.remove('ativo');
         switchFaqBtn1.classList.add('ativo');
     });
 
     switchFaqBtn2.addEventListener('click', () =>{
         faq1.classList.add('hide');
-        //faq3.classList.add('hide');
         faq2.classList.remove('hide');
 
         switchFaqBtn1.classList.remove('ativo');
-        //switchFaqBtn3.classList.remove('ativo');
         switchFaqBtn2.classList.add('ativo');
     });
-
-    //switchFaqBtn3.addEventListener('click', () =>{
-    //    faq2.classList.add('hide');
-    //    faq1.classList.add('hide');
-    //    faq3.classList.remove('hide');
-
-    //   switchFaqBtn2.classList.remove('ativo');
-    //    switchFaqBtn1.classList.remove('ativo');
-    //    switchFaqBtn3.classList.add('ativo');
-    //});
 }
 
 trocarFaq()
@@ -469,7 +457,6 @@ function avaliar() {
     let returnBack = document.getElementById('return-back');
     let counter = 0;
 
-    //CLICAR NO BOTÃO E ABIR AVALIAÇÃO COM NOTAS
     btnGostei.addEventListener('click', () => {
         if (counter === 0) {
             tituloLike.classList.add('hide');
@@ -637,4 +624,3 @@ for(let i of listaMenu){
 //         contador = 1
 //     })
 // })
- 

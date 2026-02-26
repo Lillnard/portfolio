@@ -159,6 +159,11 @@ header.dark{
     background-image: linear-gradient(45deg, #252525, #585858);
 }
 
+/* ✅ HOVER CLARO NO MODO DARK (ver mais / botões com .btn-hover) */
+body.dark .btn-hover:hover{
+    background-image: linear-gradient(45deg, #ffffff, #d9d9d9);
+}
+
 
 
 /* MENU-DESKTOP */
@@ -177,7 +182,7 @@ header.dark{
     position: relative;
     display: inline-block;
     transition: 0.2s;
-    margin: 0 20px 0;
+    margin: 10px 50px;
 }
 
 .menu-desktop nav a:hover{
@@ -297,6 +302,7 @@ header.dark .menu-desktop nav a:hover::after{
 .social{
     display: flex;
     justify-content: end;
+    margin-top: 10px;
 }
 
 .button button i{
@@ -519,7 +525,15 @@ section.topo .flex{
 }
 
 .topo .texto-topo.dark p{
+    color: #1f1f1f;
+}
+
+/* ✅ GARANTIA: NO MODO DARK, H3 e P DO TOPO SEMPRE ESCUROS */
+body.dark .topo .texto-topo h3{
     color: #242424;
+}
+body.dark .topo .texto-topo p{
+    color: #1f1f1f;
 }
 
 .topo .texto-topo p a{
@@ -685,6 +699,11 @@ section.habilidades .interface{
     font-weight: 600;
 }
 
+/* ✅ GARANTIA: se o BODY estiver em dark, o sombreado fica escuro */
+body.dark .sombreado-habil{
+    color: #242424;
+}
+
 .delay1{
     transition-delay: 300ms;
 }
@@ -773,6 +792,12 @@ section.dark .ver-mais button i{
     color: #000000;
 }
 
+/* ✅ HOVER CLARO PARA "VER MAIS" NO MODO DARK */
+section.dark .ver-mais button:hover{
+    background-image: linear-gradient(45deg, #ffffff, #d9d9d9);
+}
+
+
 
 /* SOBRE */
 
@@ -829,8 +854,9 @@ section.sobre .texto-sobre p{
     cursor: pointer;
 }
 
+/* ✅ CV CLARO NO MODO DARK */
 .cv.dark button{
-    background: #cccccc;
+    background: #f5f5f5;
     box-shadow: 0px 0px 8px #000000;
 }
 
@@ -1032,8 +1058,9 @@ section.projetos .flex{
     overflow: hidden;
 }
 
+/* ✅ BOTÕES "VER PROJETO / VER CÓDIGO" CLAROS NO MODO DARK */
 .projeto-buttons.dark button{
-    background-color: #cccccc;
+    background-color: #f5f5f5;
     box-shadow: 0px 0px 5px #000000;
     color: #242424;
 }
@@ -1215,8 +1242,9 @@ section.projetos .flex{
     overflow: hidden;
 }
 
+/* ✅ BOTÕES DO SINCERÃO CLAROS NO MODO DARK (mantendo seu padrão) */
 .sincerao-btn.dark button{
-    background-color: #cccccc;
+    background-color: #f5f5f5;
     box-shadow: 0px 0px 8px #000000;
 }
 
@@ -1413,8 +1441,9 @@ section.projetos .flex{
     transition: 0.2s;
 }
 
+/* ✅ RESET CLARO NO MODO DARK */
 .reset.dark{
-    background-color: #cccccc;
+    background-color: #f5f5f5;
     box-shadow: 0px 0px 15px #000000;
 }
 
@@ -1462,8 +1491,9 @@ footer.flex{
     text-align: end;
 }
 
+/* ✅ BOTÕES DO FOOTER CLAROS NO MODO DARK */
 footer.dark button{
-    background-color: #cccccc;
+    background-color: #f5f5f5;
     box-shadow: 0px 0px 15px #000000;
 }
 
@@ -1494,7 +1524,7 @@ footer.dark .divisa-footer p{
 
 footer.dark p a{
     font-weight: 600;
-    color: #000000;
+    color: #242424;
 }
 
 .footer span{
@@ -1503,7 +1533,7 @@ footer.dark p a{
 }
 
 footer.dark .footer span{
-    color: #000000;
+    color: #242424;
 }
 
 .divisa{
@@ -1594,6 +1624,7 @@ dialog::backdrop{
         z-index: 2;
     }
 
+    /* ✅ FUNDO DO MENU MOBILE MAGIC CLARO NO MODO DARK */
     .menu-mobile-magic.dark{
         background-color: #e9e9e9f6;
         box-shadow: 0px 0px 8px #000000;
@@ -1829,7 +1860,7 @@ dialog::backdrop{
     }
 
     footer.dark .footer-mbl span{
-        color: #000000;
+        color: #242424;
     }
 
     .divisa-footer-mobile{
@@ -2114,7 +2145,7 @@ dialog::backdrop{
 
 }
 
-@media screen and (max-width: 330px){
+@media screen and (max-width: 600px){
 
     .abrir-menu i{
         margin-right:50px;
