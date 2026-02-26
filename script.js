@@ -160,6 +160,7 @@ window.onload = function() {
 //FUNÇÃO TROCAR PAGINA DA SECTION HABILIDADES
 
 function trocarHabilidades() {
+    let tituloHabilidades = document.getElementById('titulo-habilidades');
     let switchHaabilidadesBtn1 = document.getElementById('switch-habilidades-btn1');
     let switchHaabilidadesBtn2 = document.getElementById('switch-habilidades-btn2');
     let switchHaabilidadesBtn3 = document.getElementById('switch-habilidades-btn3');
@@ -170,6 +171,7 @@ function trocarHabilidades() {
     let tecnologias4 = document.getElementById('tecnologias4');
 
     switchHaabilidadesBtn1.addEventListener('click', () => {
+            tituloHabilidades.classList.remove('hide');
             tecnologias2.classList.add('hide');
             tecnologias3.classList.add('hide');
             tecnologias4.classList.add('hide');
@@ -181,6 +183,7 @@ function trocarHabilidades() {
     });
 
     switchHaabilidadesBtn2.addEventListener('click', () => {
+            tituloHabilidades.classList.add('hide');
             tecnologias1.classList.add('hide');
             tecnologias3.classList.add('hide');
             tecnologias4.classList.add('hide');
@@ -192,6 +195,7 @@ function trocarHabilidades() {
     });
 
     switchHaabilidadesBtn3.addEventListener('click', () => {
+            tituloHabilidades.classList.add('hide');
             tecnologias1.classList.add('hide');
             tecnologias2.classList.add('hide');
             tecnologias4.classList.add('hide');
@@ -203,6 +207,7 @@ function trocarHabilidades() {
     });
 
     switchHaabilidadesBtn4.addEventListener('click', () => {
+            tituloHabilidades.classList.add('hide');
             tecnologias1.classList.add('hide');
             tecnologias2.classList.add('hide');
             tecnologias3.classList.add('hide');
