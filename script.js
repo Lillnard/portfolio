@@ -27,12 +27,53 @@ let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
 let mobileMagic = document.querySelector('.menu-mobile-magic');
 
-document.getElementById('dark-mode').addEventListener('click', () => {
-    toggleDarkMode();
+/* ✅ NOVO: elementos do hambúrguer */
+let hambBtn = document.getElementById('hambBtn');
+let hambPanel = document.getElementById('hambPanel');
+let hambOverlay = document.getElementById('hambOverlay');
+let hambClose = document.getElementById('hambClose');
+let darkModeMobileBtn = document.getElementById('dark-mode-mobile');
+
+function abrirHamb() {
+    if (!hambPanel || !hambOverlay) return;
+    hambPanel.classList.add('open');
+    hambOverlay.classList.remove('hide');
+    hambPanel.setAttribute('aria-hidden', 'false');
+}
+
+function fecharHamb() {
+    if (!hambPanel || !hambOverlay) return;
+    hambPanel.classList.remove('open');
+    hambOverlay.classList.add('hide');
+    hambPanel.setAttribute('aria-hidden', 'true');
+}
+
+if (hambBtn) hambBtn.addEventListener('click', abrirHamb);
+if (hambClose) hambClose.addEventListener('click', fecharHamb);
+if (hambOverlay) hambOverlay.addEventListener('click', fecharHamb);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') fecharHamb();
 });
 
+/* ✅ Dark Mode: clique no desktop e no mobile */
+let darkModeDesktopEl = document.getElementById('dark-mode');
+if (darkModeDesktopEl) {
+    darkModeDesktopEl.addEventListener('click', () => {
+        toggleDarkMode();
+    });
+}
+if (darkModeMobileBtn) {
+    darkModeMobileBtn.addEventListener('click', () => {
+        toggleDarkMode();
+    });
+}
+
 function toggleDarkMode() {
-    document.getElementById('dark-mode').classList.toggle('dark');
+
+    // ✅ deixa os dois botões (desktop e mobile) “sincronizados”
+    if (darkModeDesktopEl) darkModeDesktopEl.classList.toggle('dark');
+
     body.classList.toggle('dark');
 
     sectionDark.forEach(section => {
@@ -66,7 +107,6 @@ function toggleDarkMode() {
         nome.classList.toggle('dark');
     });
 
-    // ✅ corrigido: btnHover é NodeList, precisa forEach
     btnHover.forEach(btn => {
         btn.classList.toggle('dark');
     });
@@ -93,7 +133,7 @@ const visualizar = new IntersectionObserver((avistado)=>{
         if(visto.isIntersecting){
             setTimeout(() => {
                 visto.target.classList.add('show-left');
-            }, 250); 
+            }, 250);
         } else {
             visto.target.classList.remove('show-left');
         }
@@ -101,9 +141,7 @@ const visualizar = new IntersectionObserver((avistado)=>{
 });
 
 const section = document.querySelectorAll('.hidden-left')
-
 section.forEach((elemento)=> visualizar.observe(elemento))
-
 
 //FUNÇÃO PARA APLICAR ANIMAÇÃO FADE NA SECTION OCULTA
 
@@ -112,7 +150,7 @@ const fade = new IntersectionObserver((avistado)=>{
         if(visto.isIntersecting){
             setTimeout(() => {
                 visto.target.classList.add('fade');
-            }, 250); 
+            }, 250);
         } else {
             visto.target.classList.remove('fade');
         }
@@ -120,7 +158,6 @@ const fade = new IntersectionObserver((avistado)=>{
 });
 
 const ocult = document.querySelectorAll('.ocult')
-
 ocult.forEach((elemento)=> fade.observe(elemento))
 
 //função menu selecionado no scroll
@@ -169,6 +206,8 @@ function trocarHabilidades() {
     let tecnologias2 = document.getElementById('tecnologias2');
     let tecnologias3 = document.getElementById('tecnologias3');
     let tecnologias4 = document.getElementById('tecnologias4');
+
+    if(!switchHaabilidadesBtn1 || !switchHaabilidadesBtn2 || !switchHaabilidadesBtn3 || !switchHaabilidadesBtn4) return;
 
     switchHaabilidadesBtn1.addEventListener('click', () => {
             tituloHabilidades.classList.remove('hide');
@@ -234,6 +273,8 @@ function trocarProjetos() {
     let projetos2 = document.getElementById('projetos2');
     let projetos3 = document.getElementById('projetos3');
 
+    if(!switchBtn1 || !switchBtn2 || !switchBtn3) return;
+
     switchBtn1.addEventListener('click', () => {
             projetos2.classList.add('hide');
             projetos3.classList.add('hide');
@@ -282,6 +323,11 @@ function trocaFotoProjetos(baseId, totalProjetos) {
             intervalo: null
         };
 
+        // se o projeto não existir na página, pula
+        if (!projeto.img1 || !projeto.btn1) {
+            continue;
+        }
+
         projeto.iniciarIntervalo = function() {
             projeto.intervalo = setInterval(() => {
                 projeto.cont = projeto.cont % 3 + 1;
@@ -294,38 +340,44 @@ function trocaFotoProjetos(baseId, totalProjetos) {
             projeto.iniciarIntervalo();
         };
 
-        projeto.btn1.addEventListener('click', () => {
-            projeto.trocaImagem(1);
-            projeto.reiniciarIntervalo();
-        });
+        if (projeto.btn1) {
+            projeto.btn1.addEventListener('click', () => {
+                projeto.trocaImagem(1);
+                projeto.reiniciarIntervalo();
+            });
+        }
 
-        projeto.btn2.addEventListener('click', () => {
-            projeto.trocaImagem(2);
-            projeto.reiniciarIntervalo();
-        });
+        if (projeto.btn2) {
+            projeto.btn2.addEventListener('click', () => {
+                projeto.trocaImagem(2);
+                projeto.reiniciarIntervalo();
+            });
+        }
 
-        projeto.btn3.addEventListener('click', () => {
-            projeto.trocaImagem(3);
-            projeto.reiniciarIntervalo();
-        });
+        if (projeto.btn3) {
+            projeto.btn3.addEventListener('click', () => {
+                projeto.trocaImagem(3);
+                projeto.reiniciarIntervalo();
+            });
+        }
 
         projeto.trocaImagem = function(numero) {
-            projeto.img1.classList.add('hide');
-            projeto.img2.classList.add('hide');
-            projeto.img3.classList.add('hide');
-            projeto.btn1.classList.remove('ativo');
-            projeto.btn2.classList.remove('ativo');
-            projeto.btn3.classList.remove('ativo');
+            if (projeto.img1) projeto.img1.classList.add('hide');
+            if (projeto.img2) projeto.img2.classList.add('hide');
+            if (projeto.img3) projeto.img3.classList.add('hide');
+            if (projeto.btn1) projeto.btn1.classList.remove('ativo');
+            if (projeto.btn2) projeto.btn2.classList.remove('ativo');
+            if (projeto.btn3) projeto.btn3.classList.remove('ativo');
 
             if (numero === 1) {
-                projeto.img1.classList.remove('hide');
-                projeto.btn1.classList.add('ativo');
+                if (projeto.img1) projeto.img1.classList.remove('hide');
+                if (projeto.btn1) projeto.btn1.classList.add('ativo');
             } else if (numero === 2) {
-                projeto.img2.classList.remove('hide');
-                projeto.btn2.classList.add('ativo');
+                if (projeto.img2) projeto.img2.classList.remove('hide');
+                if (projeto.btn2) projeto.btn2.classList.add('ativo');
             } else if (numero === 3) {
-                projeto.img3.classList.remove('hide');
-                projeto.btn3.classList.add('ativo');
+                if (projeto.img3) projeto.img3.classList.remove('hide');
+                if (projeto.btn3) projeto.btn3.classList.add('ativo');
             }
 
             projeto.cont = numero;
@@ -339,16 +391,10 @@ function trocaFotoProjetos(baseId, totalProjetos) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const projetos = trocaFotoProjetos('projeto', 6);
-
     projetos.forEach(projeto => {
         projeto.iniciarIntervalo();
     });
 });
-
-
-
-
-
 
 //FUNÇÃO PARA AO CLICAR NO BOTÃO DOS PROJETOS, VOLTAR AO TOPO DA SECTION PROJETOS
 
@@ -357,8 +403,7 @@ function scrollToSection(sectionId) {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  }
-
+}
 
 // FAQ RECRUTADORES
 
@@ -370,7 +415,6 @@ faq.forEach((faq) => {
     });
 });
 
-
 //FUNÇÃO TROCA DE PAGINA FAQ
 
 function trocarFaq() {
@@ -380,10 +424,12 @@ function trocarFaq() {
     let switchFaqBtn1 = document.getElementById('switch-faq-btn1');
     let switchFaqBtn2 = document.getElementById('switch-faq-btn2');
 
+    if(!switchFaqBtn1 || !switchFaqBtn2 || !faq1 || !faq2) return;
+
     switchFaqBtn1.addEventListener('click', () =>{
         faq2.classList.add('hide');
         faq1.classList.remove('hide');
-        
+
         switchFaqBtn2.classList.remove('ativo');
         switchFaqBtn1.classList.add('ativo');
     });
@@ -399,12 +445,13 @@ function trocarFaq() {
 
 trocarFaq()
 
-
 //BOTÃO SINCERÃO MOVENDO
 
 function move(){
 
     let naoGostei = document.getElementById('nao-gostei')
+    if(!naoGostei) return;
+
     let sectionWidth = window.innerWidth;
     let sectionHeight = window.innerHeight;
     let maxX = sectionWidth - naoGostei.offsetWidth;
@@ -412,9 +459,8 @@ function move(){
     let randomX = Math.floor(Math.random() * maxX);
     let randomY = Math.floor(Math.random() * maxY);
 
-        naoGostei.style.left = randomX + "px";
-        naoGostei.style.top = randomY + "px";
-
+    naoGostei.style.left = randomX + "px";
+    naoGostei.style.top = randomY + "px";
 }
 
 //FUNÇÃO DE CLICK NA AVALIAÇÃP
@@ -429,24 +475,18 @@ function avaliar() {
     let obrigadoConteudo= document.getElementById('obrigado-conteudo');
     let fecharObrigado = document.getElementById('fechar-obrigado');
     let rate = document.getElementById('rate');
+
+    if(!btnGostei || !btnNaoGostei || !tituloLike || !tituloAvaliar || !obrigadoContainer || !obrigadoConteudo || !fecharObrigado || !rate) return;
+
     let nota1 = "<p>Poxa 😥 Ficou tão ruim assim? <br/>Então me chama em uma das minhas redes sociais e diga o que não gostou, para que eu possa aprimorar nas próximas atualizações<br/> <span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota2 = "<p>2? É sério isso? Bom.. pelo menos 2 é melhor que 1 <br/>Não esqueça de me dar um feedback dos pontos negativos, assim eu consigo me aperfeiçoar cada vez mais <br/><span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota3 = "<p>Deve ter algo muito errado mesmo, poderia ter arredondado pra 5, né? <br/>Então diz aí, o que tem de tão errado que te fez dar uma nota tão especifica assim? <br/><span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota4 = "<p>Essa nota é o pavor da minha adolescência<br/> “Sem video-game pro resto do mês” <br/> Obrigado mesmo viu! <br><span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota5 = "<p>Bom… se fosse numa escola pública dava pra passar de ano <br/>Mesmo assim, ainda tem muita coisa pra melhorar <br/>Me ajuda ai… me conta o que vc não gostou<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota6 = "<p>Não tá ruim, mas também não tá bom<br> 6 é uma nota que não diz muita coisa <br> Então clica em um dos meus contatos e deixe um comentário com sugestões de melhorias <br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota7 = "<p>Aí sim… dá até pra passar de ano em colégio particular com essa nota<br> Não é aquela coisa que se diga “nossa, mas que notão”, mas pelo menos não passo tanta vergonha<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota8 = "<p>Então quer dizer que você gostou?<br> Que ótimo! <br>Então me chama em alguma das minhas redes sociais e vamos conversar<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota9 = "<p>Opa, que notona boa! <br>Que bom que gostou, mas me diz uma coisa… pq 9 e não 10? <br>Me conta o que ficou faltando pra gabaritar a prova?<br><span> Valeu pela sua opinião Sincerona!</span></p>"
-
     let nota10 = "<p>AEEEEEEEEWWWWWWEEEEWWEWEW <br> É sempre bom ganhar uma nota 10!!! <br>Muito obrigado e fico muito feliz que tenha gostado<br> Clica ai nas minhas redes sociais pra eu te agradecer pessoalmete...Ou quase!<br><span> Valeu pela sua opinião Sincerona!</span></p>"
 
     let rate1 = document.getElementById('nota1');
@@ -460,6 +500,7 @@ function avaliar() {
     let rate9 = document.getElementById('nota9');
     let rate10 = document.getElementById('nota10');
     let returnBack = document.getElementById('return-back');
+
     let counter = 0;
 
     btnGostei.addEventListener('click', () => {
@@ -472,126 +513,48 @@ function avaliar() {
         }
     });
 
-    rate1.addEventListener('click', () => {
+    function mostrarNota(html) {
         if (counter === 1) {
             rate.classList.add('hide');
             obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota1
-            returnBack.classList.remove('hide')
+            obrigadoConteudo.innerHTML = html;
+            if (returnBack) returnBack.classList.remove('hide');
             counter = 2;
         }
-    });
+    }
 
-    rate2.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota2
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
+    if(rate1) rate1.addEventListener('click', () => mostrarNota(nota1));
+    if(rate2) rate2.addEventListener('click', () => mostrarNota(nota2));
+    if(rate3) rate3.addEventListener('click', () => mostrarNota(nota3));
+    if(rate4) rate4.addEventListener('click', () => mostrarNota(nota4));
+    if(rate5) rate5.addEventListener('click', () => mostrarNota(nota5));
+    if(rate6) rate6.addEventListener('click', () => mostrarNota(nota6));
+    if(rate7) rate7.addEventListener('click', () => mostrarNota(nota7));
+    if(rate8) rate8.addEventListener('click', () => mostrarNota(nota8));
+    if(rate9) rate9.addEventListener('click', () => mostrarNota(nota9));
+    if(rate10) rate10.addEventListener('click', () => mostrarNota(nota10));
 
-    rate3.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota3
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate4.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota4
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate5.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota5
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate6.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota6
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate7.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota7
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate8.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota8
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate9.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota9
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-
-    rate10.addEventListener('click', () => {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = nota10
-            returnBack.classList.remove('hide')
-            counter = 2;
-        }
-    });
-    
     fecharObrigado.addEventListener('click', () => {
         if (counter === 2) {
             obrigadoContainer.classList.add('hide');
             tituloAvaliar.classList.add('hide');
-            returnBack.classList.add('hide')
+            if (returnBack) returnBack.classList.add('hide');
             rate.classList.remove('hide');
             counter = 1;
         }
     });
 
-    returnBack.addEventListener('click', () => {
-        if (counter === 2) {
-            returnBack.classList.add('hide');
-            obrigadoContainer.classList.add('hide');
-            tituloAvaliar.classList.add('hide');
-            rate.classList.remove('hide');
-            counter = 1;
-        }
-    });
-
+    if(returnBack){
+        returnBack.addEventListener('click', () => {
+            if (counter === 2) {
+                returnBack.classList.add('hide');
+                obrigadoContainer.classList.add('hide');
+                tituloAvaliar.classList.add('hide');
+                rate.classList.remove('hide');
+                counter = 1;
+            }
+        });
+    }
 }
 
 avaliar();
@@ -610,7 +573,7 @@ for(let i of listaMenu){
     i.addEventListener('click', ativaLink)
 }
 
-//MODAL SAIDA DO SITE
+//MODAL SAIDA DO SITE (mantido comentado)
 
 // let modalDeSaida = document.querySelector('dialog')
 // let btnFecharModal = document.querySelectorAll('dialog button')
