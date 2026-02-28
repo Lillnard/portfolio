@@ -61,8 +61,9 @@
                     </button>
                 </a>
 
+                <!-- ✅ ALTERADO: ícone agora muda entre sol/lua via JS -->
                 <div class="dark-mode dark-desktop" id="dark-mode" title="Alternar tema">
-                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <i class="fa-solid fa-sun" id="themeIconDesktop"></i>
                 </div><!-- dark-mode -->
             </div> <!-- social -->
 
@@ -109,9 +110,10 @@
 
             <p class="hamb-section-title">Aparência</p>
 
+            <!-- ✅ ALTERADO: ícone e texto agora mudam via JS -->
             <button class="hamb-dark-toggle" id="dark-mode-mobile" type="button" title="Alternar tema">
-                <span class="hamb-dark-ico"><i class="fa-solid fa-circle-half-stroke"></i></span>
-                <span class="hamb-dark-text">Modo Dark</span>
+                <span class="hamb-dark-ico"><i class="fa-solid fa-sun" id="themeIconMobile"></i></span>
+                <span class="hamb-dark-text" id="themeTextMobile">Modo Light</span>
             </button>
         </div>
     </aside>
@@ -175,7 +177,10 @@
 
                     <div class="img-topo">
                         <a href="https://github.com/Lillnard/portfolio" target="_blank">
-                            <img src="img/foto atualizada.jpg" alt="">
+                            <img src="img/foto atualizada.jpg" alt="" class="img-dark" id="imgDarkTopo">
+                        </a>
+                        <a href="https://github.com/Lillnard/portfolio" target="_blank">
+                            <img src="img/foto atualizada1.jpg" alt="" class="img-light hide" id="imgLightTopo">
                         </a>
                     </div> <!-- img topo -->
                 </div> <!-- flex -->
@@ -313,7 +318,6 @@
                 </button>
             </div><!-- ver mais-habilidades -->
         </section><!-- habilidades -->
-        
         <section class="section full-screen projetos" id="projetos">
             <div class="interface">
                 <h2 class="titulo">MEUS PROJETOS</h2>

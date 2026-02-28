@@ -473,6 +473,21 @@ body.dark .hamb-title{
     color: #242424;
 }
 
+/* ✅ NOVO: no modo claro (body.dark), os botões de redes dentro do PAINEL hambúrguer ficam claros */
+body.dark .hamb-panel .button button{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+body.dark .hamb-panel .button button i{
+    color: #000000;
+}
+
+/* ✅ NOVO: garante que o ícone do botão de tema (desktop) também fique correto no modo claro */
+.dark-mode.dark i{
+    color: #000000;
+}
+
 .hamb-close{
     background: transparent;
     border: none;
@@ -1589,6 +1604,7 @@ dialog::backdrop{
     .menu-mobile-magic ul li{
         width: 70px;
         height: 70px;
+        margin: 0 20px 0;
         list-style: none;
         position: relative;
         z-index: 2;
@@ -2082,13 +2098,22 @@ dialog::backdrop{
     }
 
     .topo .texto-topo h1{
-        font-size: 35px;
-        margin: 60px 0 10px 0;
+        font-size: 45px;
+        margin: 100px 0 -25px 0;
     }
 
     .topo .texto-topo h2{
         font-size: 25px;
     }
+
+    .topo .texto-topo h3{
+        margin: 30px 0 0 0;
+    }
+
+    .img-topo img{
+        margin: -20px 0 0 0;
+    }
+
 
     .habilidades h2{
         font-size: 28px;

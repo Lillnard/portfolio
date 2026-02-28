@@ -27,6 +27,15 @@ let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
 let mobileMagic = document.querySelector('.menu-mobile-magic');
 
+/* ✅ NOVO: imagens topo (dark/light) */
+let imgDarkTopo = document.getElementById('imgDarkTopo');
+let imgLightTopo = document.getElementById('imgLightTopo');
+
+/* ✅ NOVO: ícones/texto do tema */
+let themeIconDesktop = document.getElementById('themeIconDesktop');
+let themeIconMobile = document.getElementById('themeIconMobile');
+let themeTextMobile = document.getElementById('themeTextMobile');
+
 /* ✅ NOVO: elementos do hambúrguer */
 let hambBtn = document.getElementById('hambBtn');
 let hambPanel = document.getElementById('hambPanel');
@@ -67,6 +76,40 @@ if (darkModeMobileBtn) {
     darkModeMobileBtn.addEventListener('click', () => {
         toggleDarkMode();
     });
+}
+
+/* ✅ NOVO: atualiza UI do tema (ícones/texto/foto) baseado no estado atual */
+function atualizarUITheme() {
+    // Lembrete: no seu projeto, body.dark = TEMA CLARO
+    const estaNoModoClaro = body.classList.contains('dark');
+
+    // Regras que você pediu:
+    // - Se estiver no modo claro => ícone LUA e no mobile "Modo Dark"
+    // - Se estiver no modo escuro => ícone SOL e no mobile "Modo Light"
+    if (themeIconDesktop) {
+        themeIconDesktop.classList.remove('fa-sun', 'fa-moon');
+        themeIconDesktop.classList.add(estaNoModoClaro ? 'fa-moon' : 'fa-sun');
+    }
+
+    if (themeIconMobile) {
+        themeIconMobile.classList.remove('fa-sun', 'fa-moon');
+        themeIconMobile.classList.add(estaNoModoClaro ? 'fa-moon' : 'fa-sun');
+    }
+
+    if (themeTextMobile) {
+        themeTextMobile.textContent = estaNoModoClaro ? 'Modo Dark' : 'Modo Light';
+    }
+
+    // ✅ Troca da foto do topo
+    if (imgDarkTopo && imgLightTopo) {
+        if (estaNoModoClaro) {
+            imgDarkTopo.classList.add('hide');
+            imgLightTopo.classList.remove('hide');
+        } else {
+            imgLightTopo.classList.add('hide');
+            imgDarkTopo.classList.remove('hide');
+        }
+    }
 }
 
 function toggleDarkMode() {
@@ -122,8 +165,15 @@ function toggleDarkMode() {
     logoLight.forEach(logo => {
         logo.classList.toggle('hide');
     });
+
+    // ✅ NOVO: aplica ícone/texto/foto do tema sempre que alternar
+    atualizarUITheme();
 }
 
+/* ✅ NOVO: aplica ao carregar a página */
+document.addEventListener("DOMContentLoaded", () => {
+    atualizarUITheme();
+});
 
 
 //FUNÇÃO SECTION ENTRANDO PELA ESQUERDA
