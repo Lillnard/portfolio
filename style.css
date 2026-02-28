@@ -155,7 +155,7 @@ header.dark{
     background-image: linear-gradient(45deg, #252525, #585858);
 }
 
-/* ✅ HOVER CLARO NO MODO DARK (ver mais / botões com .btn-hover) */
+/* HOVER CLARO NO MODO DARK (ver mais / botões com .btn-hover) */
 body.dark .btn-hover:hover{
     background-image: linear-gradient(45deg, #ffffff, #d9d9d9);
 }
@@ -396,7 +396,7 @@ header.dark button i{
     top: 0;
 }
 
-/* ✅ HAMBÚRGUER (novo) */
+/* HAMBÚRGUER (novo) */
 
 .hamb-btn{
     display: none;
@@ -473,7 +473,7 @@ body.dark .hamb-title{
     color: #242424;
 }
 
-/* ✅ NOVO: no modo claro (body.dark), os botões de redes dentro do PAINEL hambúrguer ficam claros */
+/*no modo claro (body.dark), os botões de redes dentro do PAINEL hambúrguer ficam claros */
 body.dark .hamb-panel .button button{
     background-color: #cccccc;
     box-shadow: 0px 0px 5px #000000;
@@ -483,7 +483,6 @@ body.dark .hamb-panel .button button i{
     color: #000000;
 }
 
-/* ✅ NOVO: garante que o ícone do botão de tema (desktop) também fique correto no modo claro */
 .dark-mode.dark i{
     color: #000000;
 }
@@ -614,7 +613,6 @@ section.topo .flex{
     color: #1f1f1f;
 }
 
-/* ✅ GARANTIA: NO MODO DARK, H3 e P DO TOPO SEMPRE ESCUROS */
 body.dark .topo .texto-topo h3{ color: #242424; }
 body.dark .topo .texto-topo p{ color: #1f1f1f; }
 
@@ -763,7 +761,6 @@ section.habilidades .interface{
     font-weight: 600;
 }
 
-/* ✅ GARANTIA: se o BODY estiver em dark, o sombreado fica escuro */
 body.dark .sombreado-habil{
     color: #242424;
 }
@@ -831,7 +828,6 @@ section.dark .ver-mais button i{
     color: #000000;
 }
 
-/* ✅ HOVER CLARO PARA "VER MAIS" NO MODO DARK */
 section.dark .ver-mais button:hover{
     background-image: linear-gradient(45deg, #ffffff, #d9d9d9);
 }
@@ -889,7 +885,6 @@ section.sobre .texto-sobre p{
     cursor: pointer;
 }
 
-/* ✅ CV CLARO NO MODO DARK */
 .cv.dark button{
     background: #f5f5f5;
     box-shadow: 0px 0px 8px #000000;
@@ -1077,7 +1072,7 @@ section.projetos .flex{
     overflow: hidden;
 }
 
-/* ✅ BOTÕES "VER PROJETO / VER CÓDIGO" CLAROS NO MODO DARK */
+/*BOTÕES "VER PROJETO / VER CÓDIGO" CLAROS NO MODO DARK */
 .projeto-buttons.dark button{
     background-color: #f5f5f5;
     box-shadow: 0px 0px 5px #000000;
@@ -1107,327 +1102,14 @@ section.projetos .flex{
     font-size: 10px;
 }
 
-/* FAQ RECRUTADORES (mantido) */
 
-.faq-recrutadores{
-    padding: 60px 0 20px 0;
+.block { 
+    display: block; 
 }
 
-.titulo-faq{
-    font-size: 50px;
-    padding: 10px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
 
-.faq{
-   width: 70%;
-   margin: 30px auto 0;
-   padding: 0 0 15px 0;
-   cursor: pointer;
-   border-bottom: 2px solid #636363;
-   transition: .2s;
-}
-
-.faq:hover{
-    border-bottom: 2px solid #cccccc;
-}
-
-.questions-container{
-   padding: 10px;
-   height: 30px;
-   justify-content: space-between;
-   align-items: center;
-}
-
-.questions-container p{
-   font-size: 24px;
-}
-
-.down{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   transition: transform .2s ease-in;
-}
-
-.down i{
-    font-size: 18px;
-    font-weight: 600px;
-}
-
-.answer{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease;
-}
-
-.answer p{
-    padding: 15px;
-    line-height: 20px;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.line{
-    text-decoration: line-through #cccccc;
-}
-
-.faq.active .answer{
-    max-height: 400px;
-    animation: fade 1.2s ease-in-out;
-}
-
-.faq.active .down{
-    transform: rotate(180deg);
-}
-
-.faq-btn{
-    margin: 40px 0 0 0;
-}
-
-@keyframes fade{
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateX(0px); }
-}
-
-/* SINCERÃO (mantido) */
-
-.sincerao{
-    padding: 100px 0 0 0;
-    position: relative;
-    height: 100vh;
-}
-
-.sincerao-container{
-    margin: 0 auto;
-    display: block;
-}
-
-.sincerao h2{
-    font-size: 50px;
-    padding: 15px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-
-.sincerao p{
-    padding: 20px;
-    text-align: center;
-}
-
-.sincerao-btn{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-}
-
-.sincerao-btn button{
-    background-color: #242424;
-    color: #ffffff;
-    font-size: 30px;
-    box-shadow: 0px 0px 8px #ffffff;
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    margin: 10px auto 20px;
-    transition: 0.2s;
-    position: relative;
-    overflow: hidden;
-}
-
-/* ✅ BOTÕES DO SINCERÃO CLAROS NO MODO DARK */
-.sincerao-btn.dark button{
-    background-color: #f5f5f5;
-    box-shadow: 0px 0px 8px #000000;
-}
-
-.sincerao-btn.dark button i{
-    color: #000000;
-}
-
-.sincerao-btn button:hover{
-    color: #ffffff;
-    transform: scale(1.05);
-}
-
-.sincerao-btn button:hover i{
-    color: #ffffff;
-    transform: scale(1.05);
-}
-
-.nao-btn{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#nao-gostei{
-    position: absolute;
-    margin: 10px auto;
-}
-
-#nao-gostei::before{
-    background: linear-gradient(#ff0000 , #af1717 , #6b2525);
-}
-
-#gostei::before{
-    background: linear-gradient(#189e54 , #4cb622 , #77d728);
-}
-
-.obrigado-container{
-    max-width: 60%;
-    padding: 0 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px #ffffff;
-    margin: 0 auto;
-    font-weight: 400;
-}
-
-.obrigado-container span{
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.obrigado-container.dark{
-    box-shadow: 0px 0px 5px #000000;
-}
-
-.obrigado-container.dark p{
-    color: #242424;
-}
-
-.obrigado {
-    text-align: center;
-}
-
-.block { display: block; }
-.feedback-button { display: block; }
-.hide { display: none; }
-
-.fechar-obrigado{
-    text-align: end;
-    margin: 5px 10px 0 0;
-}
-
-.fechar-obrigado i{
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.sincerao-btn button::before{
-    content: "";
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-    position: absolute;
-    left: -100%;
-    top: 100%;
-    background-color: #555555e3;
-}
-
-.sincerao-btn button:hover::before{
-    animation: deslocamento .6s;
-    left: 0;
-    top: 0;
-}
-
-/* SINCERÃO NOTA (mantido) */
-
-.rate p{
-    margin: 10px auto;
-    font-size: 25px;
-    line-height: 30px;
-    animation: fade 1.2s ease-in-out;
-}
-
-.rate-container{
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 400px;
-    height: 50px;
-}
-
-.rate-container div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    width: 90px;
-    height: 40px;
-    transition: .2s;
-    cursor: pointer;
-}
-
-.rate-container div:hover{
-    background: linear-gradient(45deg, #ff2500, #ff7100);
-}
-
-.rate-container div p:hover{
-    font-weight: 600;
-    color: #000000;
-}
-
-/* RETURN BUTTON (mantido) */
-
-.return-container{
-    margin: 30px auto;
-}
-
-.reset{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #242424;
-    color: #ffffff;
-    font-size: 30px;
-    box-shadow: 0px 0px 8px #ffffff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    margin: 20px auto 10px;
-    transition: 0.2s;
-}
-
-/* ✅ RESET CLARO NO MODO DARK */
-.reset.dark{
-    background-color: #f5f5f5;
-    box-shadow: 0px 0px 15px #000000;
-}
-
-.reset button i{
-    font-size: 25px;
-}
-
-.reset.dark i{
-    color: #000000;
-}
-
-.return-container p{
-    margin: auto;
-    cursor: pointer;
+.hide { 
+    display: none; 
 }
 
 /* FOOTER */

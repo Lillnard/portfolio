@@ -27,16 +27,16 @@ let resetBtn = document.querySelector('.reset');
 let footer = document.querySelector('footer');
 let mobileMagic = document.querySelector('.menu-mobile-magic');
 
-/* ✅ NOVO: imagens topo (dark/light) */
+/* imagens topo (dark/light) */
 let imgDarkTopo = document.getElementById('imgDarkTopo');
 let imgLightTopo = document.getElementById('imgLightTopo');
 
-/* ✅ NOVO: ícones/texto do tema */
+/* ícones/texto do tema */
 let themeIconDesktop = document.getElementById('themeIconDesktop');
 let themeIconMobile = document.getElementById('themeIconMobile');
 let themeTextMobile = document.getElementById('themeTextMobile');
 
-/* ✅ NOVO: elementos do hambúrguer */
+/* elementos do hambúrguer */
 let hambBtn = document.getElementById('hambBtn');
 let hambPanel = document.getElementById('hambPanel');
 let hambOverlay = document.getElementById('hambOverlay');
@@ -65,7 +65,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') fecharHamb();
 });
 
-/* ✅ Dark Mode: clique no desktop e no mobile */
+/*Dark Mode: desktop e no mobile */
 let darkModeDesktopEl = document.getElementById('dark-mode');
 if (darkModeDesktopEl) {
     darkModeDesktopEl.addEventListener('click', () => {
@@ -78,12 +78,11 @@ if (darkModeMobileBtn) {
     });
 }
 
-/* ✅ NOVO: atualiza UI do tema (ícones/texto/foto) baseado no estado atual */
+/* atualiza UI do tema (ícones/texto/foto)*/
 function atualizarUITheme() {
-    // Lembrete: no seu projeto, body.dark = TEMA CLARO
+    // Lembrete: body.dark = TEMA CLARO
     const estaNoModoClaro = body.classList.contains('dark');
 
-    // Regras que você pediu:
     // - Se estiver no modo claro => ícone LUA e no mobile "Modo Dark"
     // - Se estiver no modo escuro => ícone SOL e no mobile "Modo Light"
     if (themeIconDesktop) {
@@ -100,7 +99,7 @@ function atualizarUITheme() {
         themeTextMobile.textContent = estaNoModoClaro ? 'Modo Dark' : 'Modo Light';
     }
 
-    // ✅ Troca da foto do topo
+    // Troca da foto do topo
     if (imgDarkTopo && imgLightTopo) {
         if (estaNoModoClaro) {
             imgDarkTopo.classList.add('hide');
@@ -114,7 +113,7 @@ function atualizarUITheme() {
 
 function toggleDarkMode() {
 
-    // ✅ deixa os dois botões (desktop e mobile) “sincronizados”
+    //deixa os dois botões (desktop e mobile) “sincronizados”
     if (darkModeDesktopEl) darkModeDesktopEl.classList.toggle('dark');
 
     body.classList.toggle('dark');
@@ -166,11 +165,11 @@ function toggleDarkMode() {
         logo.classList.toggle('hide');
     });
 
-    // ✅ NOVO: aplica ícone/texto/foto do tema sempre que alternar
+    //aplica ícone/texto/foto do tema sempre que alternar
     atualizarUITheme();
 }
 
-/* ✅ NOVO: aplica ao carregar a página */
+/*aplica ao carregar a página */
 document.addEventListener("DOMContentLoaded", () => {
     atualizarUITheme();
 });
@@ -454,161 +453,6 @@ function scrollToSection(sectionId) {
       section.scrollIntoView({ behavior: "smooth" });
     }
 }
-
-// FAQ RECRUTADORES
-
-let faq = document.querySelectorAll('.faq');
-
-faq.forEach((faq) => {
-    faq.addEventListener('click', () =>{
-        faq.classList.toggle('active');
-    });
-});
-
-//FUNÇÃO TROCA DE PAGINA FAQ
-
-function trocarFaq() {
-
-    let faq1 = document.getElementById('faq1');
-    let faq2 = document.getElementById('faq2');
-    let switchFaqBtn1 = document.getElementById('switch-faq-btn1');
-    let switchFaqBtn2 = document.getElementById('switch-faq-btn2');
-
-    if(!switchFaqBtn1 || !switchFaqBtn2 || !faq1 || !faq2) return;
-
-    switchFaqBtn1.addEventListener('click', () =>{
-        faq2.classList.add('hide');
-        faq1.classList.remove('hide');
-
-        switchFaqBtn2.classList.remove('ativo');
-        switchFaqBtn1.classList.add('ativo');
-    });
-
-    switchFaqBtn2.addEventListener('click', () =>{
-        faq1.classList.add('hide');
-        faq2.classList.remove('hide');
-
-        switchFaqBtn1.classList.remove('ativo');
-        switchFaqBtn2.classList.add('ativo');
-    });
-}
-
-trocarFaq()
-
-//BOTÃO SINCERÃO MOVENDO
-
-function move(){
-
-    let naoGostei = document.getElementById('nao-gostei')
-    if(!naoGostei) return;
-
-    let sectionWidth = window.innerWidth;
-    let sectionHeight = window.innerHeight;
-    let maxX = sectionWidth - naoGostei.offsetWidth;
-    let maxY = sectionHeight - naoGostei.offsetHeight;
-    let randomX = Math.floor(Math.random() * maxX);
-    let randomY = Math.floor(Math.random() * maxY);
-
-    naoGostei.style.left = randomX + "px";
-    naoGostei.style.top = randomY + "px";
-}
-
-//FUNÇÃO DE CLICK NA AVALIAÇÃP
-
-function avaliar() {
-
-    let btnGostei = document.getElementById('gostei');
-    let btnNaoGostei = document.getElementById('nao-gostei');
-    let tituloLike = document.getElementById('like-title');
-    let tituloAvaliar = document.getElementById('rate-title');
-    let obrigadoContainer = document.getElementById('obrigado-container');
-    let obrigadoConteudo= document.getElementById('obrigado-conteudo');
-    let fecharObrigado = document.getElementById('fechar-obrigado');
-    let rate = document.getElementById('rate');
-
-    if(!btnGostei || !btnNaoGostei || !tituloLike || !tituloAvaliar || !obrigadoContainer || !obrigadoConteudo || !fecharObrigado || !rate) return;
-
-    let nota1 = "<p>Poxa 😥 Ficou tão ruim assim? <br/>Então me chama em uma das minhas redes sociais e diga o que não gostou, para que eu possa aprimorar nas próximas atualizações<br/> <span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota2 = "<p>2? É sério isso? Bom.. pelo menos 2 é melhor que 1 <br/>Não esqueça de me dar um feedback dos pontos negativos, assim eu consigo me aperfeiçoar cada vez mais <br/><span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota3 = "<p>Deve ter algo muito errado mesmo, poderia ter arredondado pra 5, né? <br/>Então diz aí, o que tem de tão errado que te fez dar uma nota tão especifica assim? <br/><span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota4 = "<p>Essa nota é o pavor da minha adolescência<br/> “Sem video-game pro resto do mês” <br/> Obrigado mesmo viu! <br><span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota5 = "<p>Bom… se fosse numa escola pública dava pra passar de ano <br/>Mesmo assim, ainda tem muita coisa pra melhorar <br/>Me ajuda ai… me conta o que vc não gostou<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota6 = "<p>Não tá ruim, mas também não tá bom<br> 6 é uma nota que não diz muita coisa <br> Então clica em um dos meus contatos e deixe um comentário com sugestões de melhorias <br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota7 = "<p>Aí sim… dá até pra passar de ano em colégio particular com essa nota<br> Não é aquela coisa que se diga “nossa, mas que notão”, mas pelo menos não passo tanta vergonha<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota8 = "<p>Então quer dizer que você gostou?<br> Que ótimo! <br>Então me chama em alguma das minhas redes sociais e vamos conversar<br> <span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota9 = "<p>Opa, que notona boa! <br>Que bom que gostou, mas me diz uma coisa… pq 9 e não 10? <br>Me conta o que ficou faltando pra gabaritar a prova?<br><span> Valeu pela sua opinião Sincerona!</span></p>"
-    let nota10 = "<p>AEEEEEEEEWWWWWWEEEEWWEWEW <br> É sempre bom ganhar uma nota 10!!! <br>Muito obrigado e fico muito feliz que tenha gostado<br> Clica ai nas minhas redes sociais pra eu te agradecer pessoalmete...Ou quase!<br><span> Valeu pela sua opinião Sincerona!</span></p>"
-
-    let rate1 = document.getElementById('nota1');
-    let rate2 = document.getElementById('nota2');
-    let rate3 = document.getElementById('nota3');
-    let rate4 = document.getElementById('nota4');
-    let rate5 = document.getElementById('nota5');
-    let rate6 = document.getElementById('nota6');
-    let rate7 = document.getElementById('nota7');
-    let rate8 = document.getElementById('nota8');
-    let rate9 = document.getElementById('nota9');
-    let rate10 = document.getElementById('nota10');
-    let returnBack = document.getElementById('return-back');
-
-    let counter = 0;
-
-    btnGostei.addEventListener('click', () => {
-        if (counter === 0) {
-            tituloLike.classList.add('hide');
-            btnGostei.classList.add('hide');
-            btnNaoGostei.classList.add('hide');
-            rate.classList.remove('hide');
-            counter = 1;
-        }
-    });
-
-    function mostrarNota(html) {
-        if (counter === 1) {
-            rate.classList.add('hide');
-            obrigadoContainer.classList.remove('hide');
-            obrigadoConteudo.innerHTML = html;
-            if (returnBack) returnBack.classList.remove('hide');
-            counter = 2;
-        }
-    }
-
-    if(rate1) rate1.addEventListener('click', () => mostrarNota(nota1));
-    if(rate2) rate2.addEventListener('click', () => mostrarNota(nota2));
-    if(rate3) rate3.addEventListener('click', () => mostrarNota(nota3));
-    if(rate4) rate4.addEventListener('click', () => mostrarNota(nota4));
-    if(rate5) rate5.addEventListener('click', () => mostrarNota(nota5));
-    if(rate6) rate6.addEventListener('click', () => mostrarNota(nota6));
-    if(rate7) rate7.addEventListener('click', () => mostrarNota(nota7));
-    if(rate8) rate8.addEventListener('click', () => mostrarNota(nota8));
-    if(rate9) rate9.addEventListener('click', () => mostrarNota(nota9));
-    if(rate10) rate10.addEventListener('click', () => mostrarNota(nota10));
-
-    fecharObrigado.addEventListener('click', () => {
-        if (counter === 2) {
-            obrigadoContainer.classList.add('hide');
-            tituloAvaliar.classList.add('hide');
-            if (returnBack) returnBack.classList.add('hide');
-            rate.classList.remove('hide');
-            counter = 1;
-        }
-    });
-
-    if(returnBack){
-        returnBack.addEventListener('click', () => {
-            if (counter === 2) {
-                returnBack.classList.add('hide');
-                obrigadoContainer.classList.add('hide');
-                tituloAvaliar.classList.add('hide');
-                rate.classList.remove('hide');
-                counter = 1;
-            }
-        });
-    }
-}
-
-avaliar();
-
 
 const listaMenu = document.querySelectorAll('.lista-menu')
 
