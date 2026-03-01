@@ -139,11 +139,11 @@ header.dark{
 }
 
 .social{
-    width: 25%;
+    width: 30%;
 }
 
 .menu-desktop{
-    width: 75%;
+    width: 70%;
 }
 
 .logo img{
@@ -165,7 +165,7 @@ body.dark .btn-hover:hover{
 .menu-desktop{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
 }
 
 .menu-desktop nav a{
@@ -176,7 +176,7 @@ body.dark .btn-hover:hover{
     position: relative;
     display: inline-block;
     transition: 0.2s;
-    margin: 0 50px;
+    margin: 0 30px;
 }
 
 .menu-desktop nav a:hover{
@@ -292,6 +292,10 @@ header.dark .menu-desktop nav a:hover::after{
     transition: 0.2s;
 }
 
+.social-header {
+    margin-right: 30px;
+}
+
 .social button{
     margin-right: 20px;
     position: relative;
@@ -394,6 +398,78 @@ header.dark button i{
     animation: deslocamento .6s;
     left: 0;
     top: 0;
+}
+
+/* ✅ BOTÃO IDIOMA (DESKTOP) */
+.lang-mode{
+    background-color: #242424;
+    box-shadow: 0px 0px 5px #ffffff;
+    width: 52px;
+    height: 30px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 0 0;
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+header.dark .lang-mode{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+.lang-mode i{
+    font-size: 16px;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+header.dark .lang-mode i{
+    color: #000000;
+}
+
+.lang-label{
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+header.dark .lang-label{
+    color: #000000;
+}
+
+.lang-mode:hover{
+    transform: scale(1.03);
+}
+
+.lang-mode::before{
+    content: "";
+    width: 52px;
+    height: 30px;
+    border-radius: 16px;
+    position: absolute;
+    left: -100%;
+    top: 100%;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    opacity: 0.9;
+}
+
+.lang-mode:hover::before{
+    animation: deslocamento .6s;
+    left: 0;
+    top: 0;
+}
+
+.lang-mode *{
+    position: relative;
+    z-index: 1;
 }
 
 /* HAMBÚRGUER (novo) */
@@ -551,6 +627,81 @@ body.dark .hamb-dark-toggle{
 
 body.dark .hamb-dark-toggle .hamb-dark-ico i,
 body.dark .hamb-dark-toggle .hamb-dark-text{
+    color: #242424;
+}
+
+/* ✅ BOTÃO IDIOMA (MOBILE no hambúrguer) */
+.hamb-lang-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: #242424;
+    box-shadow: 0px 0px 5px #ffffff;
+    transition: 0.2s;
+}
+
+.hamb-lang-toggle .hamb-lang-ico i{
+    color: #ffffff;
+}
+
+.hamb-lang-toggle .hamb-lang-text{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+body.dark .hamb-lang-toggle{
+    background: #e9e9e9;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+body.dark .hamb-lang-toggle .hamb-lang-ico i,
+body.dark .hamb-lang-toggle .hamb-lang-text{
+    color: #242424;
+}
+
+/* ✅ BOTÃO CV (MOBILE no hambúrguer) */
+.hamb-cv-link{
+    display: block;
+    width: 100%;
+}
+
+.hamb-cv-btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: #242424;
+    box-shadow: 0px 0px 5px #ffffff;
+    transition: 0.2s;
+}
+
+.hamb-cv-btn .hamb-cv-ico i{
+    color: #ffffff;
+}
+
+.hamb-cv-btn .hamb-cv-text{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+body.dark .hamb-cv-btn{
+    background: #e9e9e9;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+body.dark .hamb-cv-btn .hamb-cv-ico i,
+body.dark .hamb-cv-btn .hamb-cv-text{
     color: #242424;
 }
 
@@ -1049,7 +1200,6 @@ section.projetos .flex{
     width: 80px;
 }
 
-
 .projeto-content.dark p{
     color: #242424;
 }
@@ -1102,11 +1252,9 @@ section.projetos .flex{
     font-size: 10px;
 }
 
-
 .block { 
     display: block; 
 }
-
 
 .hide { 
     display: none; 
@@ -1240,9 +1388,9 @@ dialog::backdrop{
 
 /* RESPONSIVIDADE */
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1000px){
 
-    /* ✅ Mostra Hambúrguer e esconde redes no topo */
+    /* Mostra Hambúrguer e esconde redes no topo */
     .hamb-btn{ display: block; }
     #social-header{ display: none; }
 
@@ -1262,7 +1410,7 @@ dialog::backdrop{
         transform: translateX(-50%);
     }
 
-    /* ✅ FUNDO DO MENU MOBILE MAGIC CLARO NO MODO DARK */
+    /* FUNDO DO MENU MOBILE MAGIC CLARO NO MODO DARK */
     .menu-mobile-magic.dark{
         background-color: #e9e9e9f6;
         box-shadow: 0px 0px 8px #000000;
@@ -1649,94 +1797,6 @@ dialog::backdrop{
         line-height: 30px;
     }
 
-    /* FAQ */
-
-    .questions-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .questions p{
-        font-size: 15px;
-    }
-
-    .down{
-        width: 20px;
-        height: 20px;
-    }
-
-    .down i{
-        font-size: 15px;
-    }
-
-    .answer p{
-        font-size: 15px;
-    }
-
-    .faq.active .answer{
-        max-height: 620px;
-    }
-
-    /* SINCERÃO */
-
-    .sincerao{
-        padding: 80px 0 0 0;
-        width: 100vw;
-        height: 600px;
-    }
-
-    .sincerao h2{
-        font-size: 35px;
-    }
-
-    .sincerao p{
-        font-size: 15px;
-        width: 300px;
-        margin: 0 auto;
-    }
-
-    .rate p{
-        font-size: 25px;
-    }
-
-    .rate-container{
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 300px;
-        height: 40px;
-    }
-
-    .rate-container div{
-        margin: 0 auto;
-        width: 60px;
-        height: 40px;
-        transition: .2s;
-        cursor: pointer;
-    }
-
-    .obrigado-container{
-        max-width: 90%;
-    }
-
-    .obrigado-container p{
-        padding: 0 0 10px;
-        font-size: 15px;
-        align-items: center;
-        margin: auto;
-    }
-
-    .obrigado-container span{
-        font-size: 18px;
-    }
-
-    .obrigado{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 @media screen and (max-width: 600px){
@@ -1796,7 +1856,6 @@ dialog::backdrop{
         margin: -20px 0 0 0;
     }
 
-
     .habilidades h2{
         font-size: 28px;
     }
@@ -1811,14 +1870,6 @@ dialog::backdrop{
 
     .projeto-content{
         width: 280px;
-    }
-
-    .faq{
-        width: 280px;
-    }
-
-    .faq.active .answer{
-        max-height: 630px;
     }
 
     .logo-footer img{

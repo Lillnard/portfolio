@@ -20,7 +20,7 @@
     <!-- css -->
     <link rel="stylesheet" href="style.css">
 
-    <title>Léo Fonseca Portfólio</title>
+    <title data-i18n="meta.title">Léo Fonseca Portfólio</title>
 </head>
 <body>
     <header>
@@ -34,10 +34,22 @@
 
             <div class="menu-desktop">
                 <nav>
-                    <a href="#inicio" class="ativo js menu-inicio"><i class="fa-solid fa-house-chimney"></i> Início</a>
-                    <a href="#habilidades" class="js menu-habilidades"><i class="fa-solid fa-code"></i> Habilidades</a>
-                    <a href="#projetos" class="js menu-projetos"><i class="fa-solid fa-list-check"></i> Projetos</a>
-                    <a href="#sobre" class="js menu-sobre"><i class="fa-solid fa-id-badge"></i> Sobre</a>
+                    <a href="#inicio" class="ativo js menu-inicio">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <span data-i18n="nav.home">Início</span>
+                    </a>
+                    <a href="#habilidades" class="js menu-habilidades">
+                        <i class="fa-solid fa-code"></i>
+                        <span data-i18n="nav.skills">Habilidades</span>
+                    </a>
+                    <a href="#projetos" class="js menu-projetos">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span data-i18n="nav.projects">Projetos</span>
+                    </a>
+                    <a href="#sobre" class="js menu-sobre">
+                        <i class="fa-solid fa-id-badge"></i>
+                        <span data-i18n="nav.about">Sobre</span>
+                    </a>
                 </nav>
             </div> <!-- menu-desktop -->
 
@@ -65,6 +77,12 @@
                 <div class="dark-mode dark-desktop" id="dark-mode" title="Alternar tema">
                     <i class="fa-solid fa-sun" id="themeIconDesktop"></i>
                 </div><!-- dark-mode -->
+
+                <!--Botão Idioma (Desktop) ao lado do tema -->
+                <div class="lang-mode lang-desktop" id="langToggleDesktop" title="Trocar idioma">
+                    <i class="fa-solid fa-language" aria-hidden="true"></i>
+                    <span class="lang-label" id="langLabelDesktop">EN</span>
+                </div>
             </div> <!-- social -->
 
             <!-- Hambúrguer-->
@@ -79,14 +97,14 @@
 
     <aside class="hamb-panel" id="hambPanel" aria-hidden="true">
         <div class="hamb-panel-top">
-            <p class="hamb-title">Menu</p>
+            <p class="hamb-title" data-i18n="hamb.title">Menu</p>
             <button class="hamb-close" id="hambClose" aria-label="Fechar menu" title="Fechar">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
 
         <div class="hamb-panel-content">
-            <p class="hamb-section-title">Redes</p>
+            <p class="hamb-section-title" data-i18n="hamb.socialTitle">Redes</p>
 
             <div class="hamb-social button">
                 <a href="https://www.linkedin.com/in/leofonseca0/" target="_blank">
@@ -108,12 +126,28 @@
                 </a>
             </div>
 
-            <p class="hamb-section-title">Aparência</p>
+            <p class="hamb-section-title" data-i18n="hamb.appearanceTitle">Aparência</p>
 
             <button class="hamb-dark-toggle" id="dark-mode-mobile" type="button" title="Alternar tema">
                 <span class="hamb-dark-ico"><i class="fa-solid fa-sun" id="themeIconMobile"></i></span>
                 <span class="hamb-dark-text" id="themeTextMobile">Modo Light</span>
             </button>
+
+            <!-- ✅ Botão Idioma (Mobile dentro do hambúrguer) -->
+            <p class="hamb-section-title" data-i18n="hamb.languageTitle">Idioma</p>
+            <button class="hamb-lang-toggle" id="langToggleMobile" type="button" title="Trocar idioma">
+                <span class="hamb-lang-ico"><i class="fa-solid fa-language" aria-hidden="true"></i></span>
+                <span class="hamb-lang-text" id="langTextMobile">English</span>
+            </button>
+
+            <!-- ✅ Botão Visualizar CV (Mobile dentro do hambúrguer) -->
+            <p class="hamb-section-title" data-i18n="hamb.cvTitle">Currículo</p>
+            <a href="https://lillnard.github.io/CV-2024/" target="_blank" class="hamb-cv-link">
+                <button class="hamb-cv-btn" type="button" title="Visualizar CV">
+                    <span class="hamb-cv-ico"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+                    <span class="hamb-cv-text" data-i18n="hamb.cvBtn">Visualizar CV</span>
+                </button>
+            </a>
         </div>
     </aside>
 
@@ -125,7 +159,7 @@
                         <span class="icone-menu">
                             <i class="fa-solid fa-house-chimney"></i>
                         </span>
-                        <span class="texto-menu">Início</span>
+                        <span class="texto-menu" data-i18n="nav.home">Início</span>
                     </a>
                 </li>
 
@@ -134,7 +168,7 @@
                         <span class="icone-menu">
                             <i class="fa-solid fa-code"></i>
                         </span>
-                        <span class="texto-menu">Habilidades</span>
+                        <span class="texto-menu" data-i18n="nav.skills">Habilidades</span>
                     </a>
                 </li>
 
@@ -143,7 +177,7 @@
                         <span class="icone-menu">
                             <i class="fa-solid fa-list-check"></i>
                         </span>
-                        <span class="texto-menu">Projetos</span>
+                        <span class="texto-menu" data-i18n="nav.projects">Projetos</span>
                     </a>
                 </li>
 
@@ -152,7 +186,7 @@
                         <span class="icone-menu">
                             <i class="fa-solid fa-id-badge"></i>
                         </span>
-                        <span class="texto-menu">Sobre</span>
+                        <span class="texto-menu" data-i18n="nav.about">Sobre</span>
                     </a>
                 </li>
             </ul>
@@ -164,14 +198,14 @@
             <div class="interface">
                 <div class="flex ">
                     <div class="texto-topo">
-                        <h1>Leonardo Fonseca</h1>
-                        <h2>Desenvolvedor de soluções digitais</h2>
+                        <h1 data-i18n="hero.name">Leonardo Fonseca</h1>
+                        <h2 data-i18n="hero.role">Desenvolvedor de soluções digitais</h2>
 
-                        <h3>Bem-vindo(a) ao meu portfólio</h3>
+                        <h3 data-i18n="hero.welcome">Bem-vindo(a) ao meu portfólio</h3>
 
-                        <p>Aqui você encontra alguns dos meus projetos <br>e experiências em desenvolvimento web.</p>
+                        <p data-i18n="hero.p1">Aqui você encontra alguns dos meus projetos <br>e experiências em desenvolvimento web.</p>
 
-                        <p>Fique à vontade para navegar e conhecer meu trabalho.</p>
+                        <p data-i18n="hero.p2">Fique à vontade para navegar e conhecer meu trabalho.</p>
                     </div> <!-- texto topo -->
 
                     <div class="img-topo">
@@ -188,7 +222,7 @@
 
         <section class="section full-screen habilidades" id="habilidades">
             <div class="interface">
-                <h2 class="titulo" id="titulo-habilidades">MINHAS HABILIDADES</h2>
+                <h2 class="titulo" id="titulo-habilidades" data-i18n="skills.title">MINHAS HABILIDADES</h2>
             </div><!-- interface -->
 
             <div class="lista" id="tecnologias1">
@@ -254,10 +288,10 @@
             <div class="tecnologias hide" id="tecnologias2">
                 <div class="tec-container">
                     <div class="card-content">
-                        <h2 class="tec-title">HTML - CSS - JavaScript</h2>
-                        <p><span class="sep">&#8226;</span> As bases do Front-End: estrutura, estilo e interatividade. Com essas três tecnologias eu construo interfaces responsivas, acessíveis e com boa experiência de uso.</p>
-                        <p><span class="sep">&#8226;</span> Comecei minha jornada dominando fundamentos, porque eles fazem a diferença em qualquer projeto, com ou sem frameworks.</p>
-                        <p><span class="sep">&#8226;</span> Entender o “por trás dos panos” me ajuda a escrever código mais limpo, sustentável e pronto para evoluir.</p>
+                        <h2 class="tec-title" data-i18n="skills.card1.title">HTML - CSS - JavaScript</h2>
+                        <p data-i18n="skills.card1.p1"><span class="sep">&#8226;</span> As bases do Front-End: estrutura, estilo e interatividade. Com essas três tecnologias eu construo interfaces responsivas, acessíveis e com boa experiência de uso.</p>
+                        <p data-i18n="skills.card1.p2"><span class="sep">&#8226;</span> Comecei minha jornada dominando fundamentos, porque eles fazem a diferença em qualquer projeto, com ou sem frameworks.</p>
+                        <p data-i18n="skills.card1.p3"><span class="sep">&#8226;</span> Entender o “por trás dos panos” me ajuda a escrever código mais limpo, sustentável e pronto para evoluir.</p>
                     </div><!-- card-content -->
                     <div class="card-image">
                         <img src="img/tecnologias/icons8-html-144.png" alt="" id="card-image-html">
@@ -270,10 +304,10 @@
             <div class="tecnologias hide" id="tecnologias3">
                 <div class="tec-container">
                     <div class="card-content">
-                        <h2 class="tec-title">Angular - Bootstrap - React.JS </h2>
-                        <p><span class="sep">&#8226;</span> Após me consolidar nos fundamentos, passei a aprender os frameworks e bibliotecas para ganhar produtividade e organizar melhor a arquitetura do front-end.</p>
-                        <p><span class="sep">&#8226;</span> Estudei sobre componentes reutilizáveis, boas práticas de organização e padrões que facilitam manutenção e evolução do projeto.</p>
-                        <p><span class="sep">&#8226;</span> Cada ferramenta tem seu papel: do layout responsivo à construção de aplicações mais completas e escaláveis.</p>
+                        <h2 class="tec-title" data-i18n="skills.card2.title">Angular - Bootstrap - React.JS</h2>
+                        <p data-i18n="skills.card2.p1"><span class="sep">&#8226;</span> Após me consolidar nos fundamentos, passei a aprender os frameworks e bibliotecas para ganhar produtividade e organizar melhor a arquitetura do front-end.</p>
+                        <p data-i18n="skills.card2.p2"><span class="sep">&#8226;</span> Estudei sobre componentes reutilizáveis, boas práticas de organização e padrões que facilitam manutenção e evolução do projeto.</p>
+                        <p data-i18n="skills.card2.p3"><span class="sep">&#8226;</span> Cada ferramenta tem seu papel: do layout responsivo à construção de aplicações mais completas e escaláveis.</p>
                     </div><!-- card-content -->
                     <div class="card-image">
                         <img src="img/tecnologias/icons8-angular-96.png" alt="" id="card-image-angular">
@@ -286,10 +320,10 @@
             <div class="tecnologias hide" id="tecnologias4">
                 <div class="tec-container">
                     <div class="card-content">
-                        <h2 class="tec-title">Python - SQL - PowerBI</h2>
-                        <p><span class="sep">&#8226;</span> Para o Back-End e dados, venho estudando Python e SQL, aplicando conceitos como CRUD, integração com banco de dados e manipulação de informações.</p>
-                        <p><span class="sep">&#8226;</span> Também utilizo Power BI para transformar dados em dashboards claros, com indicadores e visualizações úteis para tomada de decisão.</p>
-                        <p><span class="sep">&#8226;</span> Meu objetivo é conectar aplicações e dados de forma consistente, com foco em qualidade, organização e valor para o usuário.</p>
+                        <h2 class="tec-title" data-i18n="skills.card3.title">Python - SQL - PowerBI</h2>
+                        <p data-i18n="skills.card3.p1"><span class="sep">&#8226;</span> Para o Back-End e dados, venho estudando Python e SQL, aplicando conceitos como CRUD, integração com banco de dados e manipulação de informações.</p>
+                        <p data-i18n="skills.card3.p2"><span class="sep">&#8226;</span> Também utilizo Power BI para transformar dados em dashboards claros, com indicadores e visualizações úteis para tomada de decisão.</p>
+                        <p data-i18n="skills.card3.p3"><span class="sep">&#8226;</span> Meu objetivo é conectar aplicações e dados de forma consistente, com foco em qualidade, organização e valor para o usuário.</p>
                     </div><!-- card-content -->
                     <div class="card-image">
                         <img src="img/tecnologias/icons8-python-144.png" alt="" id="card-image-py">
@@ -317,9 +351,10 @@
                 </button>
             </div><!-- ver mais-habilidades -->
         </section><!-- habilidades -->
+
         <section class="section full-screen projetos" id="projetos">
             <div class="interface">
-                <h2 class="titulo">MEUS PROJETOS</h2>
+                <h2 class="titulo" data-i18n="projects.title">MEUS PROJETOS</h2>
 
                 <div class="projeto flex" id="projetos1">
                     <div class="projeto-container">
@@ -345,16 +380,14 @@
                         </div><!-- images-content -->
 
                         <div class="projeto-content">
-                            <h3>Cifra de César</h3>
-                            <p><span class="sep">&#8226;</span> A Cifra de César, um dos métodos mais clássicos de criptografia</p>
+                            <h3 data-i18n="p1.title">Cifra de César</h3>
+                            <p data-i18n="p1.p1"><span class="sep">&#8226;</span> A Cifra de César, um dos métodos mais clássicos de criptografia</p>
+                            <p data-i18n="p1.p2"><span class="sep">&#8226;</span> O projeto permite criptografar e descriptografar mensagens em tempo real, ajustando o número de casas de deslocamento através de um controle dinâmico.</p>
+                            <p data-i18n="p1.p3"><span class="sep">&#8226;</span> A interface foi pensada para tornar o processo visual e intuitivo, simulando o funcionamento tradicional da cifra com discos rotativos do alfabeto.</p>
+                            <p data-i18n="p1.p4"><span class="sep">&#8226;</span> Acesse o projeto para testar diferentes combinações e explorar na prática um dos conceitos fundamentais da criptografia clássica.</p>
 
-                            <p><span class="sep">&#8226;</span> O projeto permite criptografar e descriptografar mensagens em tempo real, ajustando o número de casas de deslocamento através de um controle dinâmico.</p>
-                                                
-                            <p><span class="sep">&#8226;</span> A interface foi pensada para tornar o processo visual e intuitivo, simulando o funcionamento tradicional da cifra com discos rotativos do alfabeto.</p>
-                            
-                            <p><span class="sep">&#8226;</span> Acesse o projeto para testar diferentes combinações e explorar na prática um dos conceitos fundamentais da criptografia clássica.</p>
                             <div class="projeto-tecnologias">
-                                <h3>Tecnologias Usadas no projeto:</h3>
+                                <h3 data-i18n="projects.techTitle">Tecnologias Usadas no projeto:</h3>
                                 <div class="projeto-tecnologias-images">
                                     <img src="img/tecnologias/icons8-html-144.png" alt="">
                                     <img src="img/tecnologias/icons8-css-144.png" alt="">
@@ -363,8 +396,8 @@
                             </div>
 
                             <div class="projeto-buttons">
-                                <a href="https://lillnard.github.io/cifra-de-cesar/" target="_blank"><button class="btn-projeto">Ver projeto</button></a>
-                                <a href="https://github.com/Lillnard/cifra-de-cesar" target="_blank"><button class="btn-projeto">Ver código</button></a>
+                                <a href="https://lillnard.github.io/cifra-de-cesar/" target="_blank"><button class="btn-projeto" data-i18n="projects.btnView">Ver projeto</button></a>
+                                <a href="https://github.com/Lillnard/cifra-de-cesar" target="_blank"><button class="btn-projeto" data-i18n="projects.btnCode">Ver código</button></a>
                             </div><!-- projeto-buttons -->
                         </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
@@ -391,15 +424,13 @@
                         </div><!-- images-content -->
 
                         <div class="projeto-content">
-                            <h3>Pomo Do It! - Método Pomodoro</h3>
-                            <p><span class="sep">&#8226;</span> Aplicação desenvolvida com HTML, CSS e JavaScript baseada no método Pomodoro para organização e foco nos estudos.</p>
-
-                            <p><span class="sep">&#8226;</span> O sistema inclui temporizador inteligente, controle de tarefas, histórico de sessões e interface interativa.</p>
-                            
-                            <p><span class="sep">&#8226;</span> Conta com recursos como sons ambientes, suporte a múltiplos idiomas e modo claro/escuro para melhorar a experiência do usuário.</p>
+                            <h3 data-i18n="p2.title">Pomo Do It! - Método Pomodoro</h3>
+                            <p data-i18n="p2.p1"><span class="sep">&#8226;</span> Aplicação desenvolvida com HTML, CSS e JavaScript baseada no método Pomodoro para organização e foco nos estudos.</p>
+                            <p data-i18n="p2.p2"><span class="sep">&#8226;</span> O sistema inclui temporizador inteligente, controle de tarefas, histórico de sessões e interface interativa.</p>
+                            <p data-i18n="p2.p3"><span class="sep">&#8226;</span> Conta com recursos como sons ambientes, suporte a múltiplos idiomas e modo claro/escuro para melhorar a experiência do usuário.</p>
 
                             <div class="projeto-tecnologias">
-                                <h3>Tecnologias Usadas no projeto:</h3>
+                                <h3 data-i18n="projects.techTitle">Tecnologias Usadas no projeto:</h3>
                                 <div class="projeto-tecnologias-images">
                                     <img src="img/tecnologias/icons8-html-144.png" alt="">
                                     <img src="img/tecnologias/icons8-css-144.png" alt="">
@@ -408,14 +439,14 @@
                             </div>
 
                             <div class="projeto-buttons">
-                                <a href="https://lillnard.github.io/pomo-do-it/" target="_blank"><button class="btn-projeto">Ver projeto</button></a>
-                                <a href="https://github.com/Lillnard/pomo-do-it" target="_blank"><button class="btn-projeto">Ver código</button></a>
+                                <a href="https://lillnard.github.io/pomo-do-it/" target="_blank"><button class="btn-projeto" data-i18n="projects.btnView">Ver projeto</button></a>
+                                <a href="https://github.com/Lillnard/pomo-do-it" target="_blank"><button class="btn-projeto" data-i18n="projects.btnCode">Ver código</button></a>
                             </div>
                         </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
                 </div><!-- projeto flex -->
 
-                <div class="projeto flex hide" id="projetos2">                
+                <div class="projeto flex hide" id="projetos2">
                     <div class="projeto-container">
                         <div class="images-content">
                             <a href="https://lillnard.github.io/ToDo-List-Kanban/" target="_blank">
@@ -427,29 +458,25 @@
                             <div class="bullets-container">
                                 <div class="circulo ativo btn1" id="projeto3-btn1">
                                     <i class="fa-regular fa-circle"></i>
-                                </div>                    
+                                </div>
                                 <div class="circulo btn2" id="projeto3-btn2">
                                     <i class="fa-regular fa-circle"></i>
                                 </div>
                                 <div class="circulo btn3" id="projeto3-btn3">
                                     <i class="fa-regular fa-circle"></i>
-                                </div>                
+                                </div>
                             </div>
                         </div><!-- images-content -->
 
                         <div class="projeto-content">
-
-                            <h3>ToDo List - Kanban</h3>
-                            <p><span class="sep">&#8226;</span> Sistema de organização de tarefas desenvolvido com HTML, CSS e JavaScript, baseado no modelo Kanban.</p>
-
-                            <p><span class="sep">&#8226;</span> Permite criar, editar e mover tarefas entre colunas, facilitando o acompanhamento do progresso das atividades.</p>
-                            
-                            <p><span class="sep">&#8226;</span> Interface responsiva com foco em usabilidade, incluindo suporte a modo claro/escuro e adaptação para dispositivos móveis.</p>
-                            
-                            <p><span class="sep">&#8226;</span> O projeto continua em evolução, com planos de adicionar novas funcionalidades de produtividade e personalização.</p>
+                            <h3 data-i18n="p3.title">ToDo List - Kanban</h3>
+                            <p data-i18n="p3.p1"><span class="sep">&#8226;</span> Sistema de organização de tarefas desenvolvido com HTML, CSS e JavaScript, baseado no modelo Kanban.</p>
+                            <p data-i18n="p3.p2"><span class="sep">&#8226;</span> Permite criar, editar e mover tarefas entre colunas, facilitando o acompanhamento do progresso das atividades.</p>
+                            <p data-i18n="p3.p3"><span class="sep">&#8226;</span> Interface responsiva com foco em usabilidade, incluindo suporte a modo claro/escuro e adaptação para dispositivos móveis.</p>
+                            <p data-i18n="p3.p4"><span class="sep">&#8226;</span> O projeto continua em evolução, com planos de adicionar novas funcionalidades de produtividade e personalização.</p>
 
                             <div class="projeto-tecnologias">
-                                <h3>Tecnologias Usadas no projeto:</h3>
+                                <h3 data-i18n="projects.techTitle">Tecnologias Usadas no projeto:</h3>
                                 <div class="projeto-tecnologias-images">
                                     <img src="img/tecnologias/icons8-html-144.png" alt="">
                                     <img src="img/tecnologias/icons8-css-144.png" alt="">
@@ -458,14 +485,11 @@
                             </div>
 
                             <div class="projeto-buttons">
-
-                                <a href="https://lillnard.github.io/ToDo-List-Kanban/" target="_blank"><button class="btn-projeto">Ver projeto</button></a>
-                                <a href="https://github.com/Lillnard/ToDo-List-Kanban" target="_blank"><button class="btn-projeto">Ver código</button></a>
-        
+                                <a href="https://lillnard.github.io/ToDo-List-Kanban/" target="_blank"><button class="btn-projeto" data-i18n="projects.btnView">Ver projeto</button></a>
+                                <a href="https://github.com/Lillnard/ToDo-List-Kanban" target="_blank"><button class="btn-projeto" data-i18n="projects.btnCode">Ver código</button></a>
                             </div><!-- projeto-buttons -->
-                        </div><!-- projeto-content -->           
+                        </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
-                
 
                     <div class="projeto-container reverse line-up">
                         <div class="images-content">
@@ -474,50 +498,45 @@
                                 <img src="img/projeto4-img2.png" alt="" class="img2 fade hide" id="projeto4-img2">
                                 <img src="img/projeto4-img3.png" alt="" class="img3 fade hide" id="projeto4-img3">
                             </a>
-                            
 
                             <div class="bullets-container">
                                 <div class="circulo ativo btn1" id="projeto4-btn1">
                                     <i class="fa-regular fa-circle"></i>
-                                </div>                    
+                                </div>
                                 <div class="circulo btn2" id="projeto4-btn2">
                                     <i class="fa-regular fa-circle"></i>
                                 </div>
                                 <div class="circulo btn3" id="projeto4-btn3">
                                     <i class="fa-regular fa-circle"></i>
-                                </div>                
+                                </div>
                             </div>
                         </div><!-- images-content -->
 
                         <div class="projeto-content">
-
-                            <h3>Jogo da memória - Emojis de animais</h3>
-                            <p><span class="sep">&#8226;</span> Jogo de memória criado do zero com HTML, CSS e JavaScript.</p>
-                            <p><span class="sep">&#8226;</span> Interface simples e dinâmica, com foco em usabilidade e feedback visual.</p>
-                            <p><span class="sep">&#8226;</span> Projeto pensado para ser leve e divertido, inclusive em momentos em família.</p>
-                            <p><span class="sep">&#8226;</span> Próximos passos: novos modos de jogo e níveis de dificuldade.</p>
+                            <h3 data-i18n="p4.title">Jogo da memória - Emojis de animais</h3>
+                            <p data-i18n="p4.p1"><span class="sep">&#8226;</span> Jogo de memória criado do zero com HTML, CSS e JavaScript.</p>
+                            <p data-i18n="p4.p2"><span class="sep">&#8226;</span> Interface simples e dinâmica, com foco em usabilidade e feedback visual.</p>
+                            <p data-i18n="p4.p3"><span class="sep">&#8226;</span> Projeto pensado para ser leve e divertido, inclusive em momentos em família.</p>
+                            <p data-i18n="p4.p4"><span class="sep">&#8226;</span> Próximos passos: novos modos de jogo e níveis de dificuldade.</p>
 
                             <div class="projeto-tecnologias">
-                                <h3>Tecnologias Usadas no projeto:</h3>
+                                <h3 data-i18n="projects.techTitle">Tecnologias Usadas no projeto:</h3>
                                 <div class="projeto-tecnologias-images reverse">
                                     <img src="img/tecnologias/icons8-html-144.png" alt="">
                                     <img src="img/tecnologias/icons8-css-144.png" alt="">
                                     <img src="img/tecnologias/icons8-javascript-144.png" alt="">
                                 </div>
                             </div>
-                            
-                            <div class="projeto-buttons reverse">
 
-                                <a href="https://lillnard.github.io/memory-game-js/" target="_blank"><button class="btn-projeto">Ver projeto</button></a>
-    
-                                <a href="https://github.com/Lillnard/memory-game-js" target="_blank"><button class="btn-projeto">Ver código</button></a>
-        
+                            <div class="projeto-buttons reverse">
+                                <a href="https://lillnard.github.io/memory-game-js/" target="_blank"><button class="btn-projeto" data-i18n="projects.btnView">Ver projeto</button></a>
+                                <a href="https://github.com/Lillnard/memory-game-js" target="_blank"><button class="btn-projeto" data-i18n="projects.btnCode">Ver código</button></a>
                             </div><!-- projeto-buttons -->
-                        </div><!-- projeto-content -->           
+                        </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
                 </div><!-- projeto flex -->
 
-                <div class="projeto flex hide" id="projetos3">                
+                <div class="projeto flex hide" id="projetos3">
                     <div class="projeto-container">
                         <div class="images-content">
                             <a href="https://lillnard.github.io/player-de-musicas/" target="_blank">
@@ -540,14 +559,14 @@
                         </div><!-- images-content -->
 
                         <div class="projeto-content">
-                            <h3>Player de música - SpotiFAKE</h3>
-                            <p><span class="sep">&#8226;</span> Um player de música inspirado na experiência do Spotify, com interface simples e navegação intuitiva.</p>
-                            <p><span class="sep">&#8226;</span> Projeto desenvolvido com foco em estrutura, estilização e interações no front-end.</p>
-                            <p><span class="sep">&#8226;</span> A playlist foi montada como uma seleção especial (TOP 10 + 1) para tornar o projeto mais pessoal e divertido.</p>
-                            <p><span class="sep">&#8226;</span> Acesse o projeto e, se quiser, me conte sua opinião.</p>
+                            <h3 data-i18n="p5.title">Player de música - SpotiFAKE</h3>
+                            <p data-i18n="p5.p1"><span class="sep">&#8226;</span> Um player de música inspirado na experiência do Spotify, com interface simples e navegação intuitiva.</p>
+                            <p data-i18n="p5.p2"><span class="sep">&#8226;</span> Projeto desenvolvido com foco em estrutura, estilização e interações no front-end.</p>
+                            <p data-i18n="p5.p3"><span class="sep">&#8226;</span> A playlist foi montada como uma seleção especial (TOP 10 + 1) para tornar o projeto mais pessoal e divertido.</p>
+                            <p data-i18n="p5.p4"><span class="sep">&#8226;</span> Acesse o projeto e, se quiser, me conte sua opinião.</p>
 
                             <div class="projeto-tecnologias">
-                                <h3>Tecnologias Usadas no projeto:</h3>
+                                <h3 data-i18n="projects.techTitle">Tecnologias Usadas no projeto:</h3>
                                 <div class="projeto-tecnologias-images">
                                     <img src="img/tecnologias/icons8-html-144.png" alt="">
                                     <img src="img/tecnologias/icons8-css-144.png" alt="">
@@ -556,8 +575,8 @@
                             </div>
 
                             <div class="projeto-buttons">
-                                <a href="https://lillnard.github.io/player-de-musicas/" target="_blank"><button class="btn-projeto">Ver projeto</button></a>
-                                <a href="https://github.com/Lillnard/player-de-musicas" target="_blank"><button class="btn-projeto">Ver código</button></a>
+                                <a href="https://lillnard.github.io/player-de-musicas/" target="_blank"><button class="btn-projeto" data-i18n="projects.btnView">Ver projeto</button></a>
+                                <a href="https://github.com/Lillnard/player-de-musicas" target="_blank"><button class="btn-projeto" data-i18n="projects.btnCode">Ver código</button></a>
                             </div><!-- projeto-buttons -->
                         </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
@@ -584,13 +603,13 @@
                         </div><!-- images-content -->
 
                         <div class="projeto-content">
-                            <h3>Jogo de clique - Detona Ralph</h3>
-                            <p><span class="sep">&#8226;</span> Jogo desenvolvido com HTML, CSS e JavaScript, com foco em lógica e interatividade.</p>
-                            <p><span class="sep">&#8226;</span> Um dos meus primeiros projetos práticos, criado durante um bootcamp de desenvolvimento de jogos (DIO).</p>
-                            <p><span class="sep">&#8226;</span> O projeto segue em evolução: pretendo adicionar melhorias e novas funcionalidades.</p>
+                            <h3 data-i18n="p6.title">Jogo de clique - Detona Ralph</h3>
+                            <p data-i18n="p6.p1"><span class="sep">&#8226;</span> Jogo desenvolvido com HTML, CSS e JavaScript, com foco em lógica e interatividade.</p>
+                            <p data-i18n="p6.p2"><span class="sep">&#8226;</span> Um dos meus primeiros projetos práticos, criado durante um bootcamp de desenvolvimento de jogos (DIO).</p>
+                            <p data-i18n="p6.p3"><span class="sep">&#8226;</span> O projeto segue em evolução: pretendo adicionar melhorias e novas funcionalidades.</p>
 
                             <div class="projeto-tecnologias">
-                                <h3>Tecnologias Usadas no projeto:</h3>
+                                <h3 data-i18n="projects.techTitle">Tecnologias Usadas no projeto:</h3>
                                 <div class="projeto-tecnologias-images">
                                     <img src="img/tecnologias/icons8-html-144.png" alt="">
                                     <img src="img/tecnologias/icons8-css-144.png" alt="">
@@ -599,9 +618,9 @@
                             </div>
 
                             <div class="projeto-buttons">
-                                <a href="https://lillnard.github.io/game-detona-ralph-js/" target="_blank"><button class="btn-projeto">Ver projeto</button></a>
-                                <a href="https://github.com/Lillnard/game-detona-ralph-js" target="_blank"><button class="btn-projeto">Ver código</button></a>
-                            </div>
+                                <a href="https://lillnard.github.io/game-detona-ralph-js/" target="_blank"><button class="btn-projeto" data-i18n="projects.btnView">Ver projeto</button></a>
+                                <a href="https://github.com/Lillnard/game-detona-ralph-js" target="_blank"><button class="btn-projeto" data-i18n="projects.btnCode">Ver código</button></a>
+                            </div><!-- projeto-content -->
                         </div><!-- projeto-content -->
                     </div><!-- projeto-container -->
                 </div><!-- projeto flex -->
@@ -626,28 +645,25 @@
             <div class="interface">
                 <div class="flex">
                     <div class="texto-sobre">
-                        <h2 class="titulo">MUITO PRAZER!</h2>
+                        <h2 class="titulo" data-i18n="about.title">MUITO PRAZER!</h2>
 
-                        <p>Olá! Eu sou o Leonardo Fonseca.</p>
+                        <p data-i18n="about.p1">Olá! Eu sou o Leonardo Fonseca.</p>
+                        <p data-i18n="about.p2">Sou um profissional em transição de carreira para a área da tecnologia.</p>
+                        <p data-i18n="about.p3">Ao longo de mais de 15 anos de carreira, desenvolvi algumas habilidades que considero valiosas, como comunicação, negociação, organização e foco em resultados.</p>
 
-                        <p>Sou um profissional em transição de carreira para a área da tecnologia.</p>
-
-                        <p>Ao longo de mais de 15 anos de carreira, desenvolvi algumas habilidades que considero valiosas, como comunicação, negociação, organização e foco em resultados.</p>
-
-                        <p>Destaco aqui mais algumas das minhas soft skills: <br>
-                            <span class="sep">&#8226;</span> Comunicação assertiva <span class="sep">&#8226;</span> Facilidade de aprendizado <span class="sep">&#8226;</span> Negociação e persuasão <span class="sep">&#8226;</span> Criatividade <span class="sep">&#8226;</span> Tomada de decisão <span class="sep">&#8226;</span> Pensamento crítico <span class="sep">&#8226;</span> Adaptabilidade <span class="sep">&#8226;</span> Trabalho em equipe <span class="sep">&#8226;</span> Inteligência emocional <span class="sep">&#8226;</span> Motivação <span class="sep">&#8226;</span> Ética profissional <span class="sep">&#8226;</span> Responsabilidade <span class="sep">&#8226;</span> Confiabilidade 
+                        <p data-i18n="about.p4">Destaco aqui mais algumas das minhas soft skills: <br>
+                            <span class="sep">&#8226;</span> Comunicação assertiva <span class="sep">&#8226;</span> Facilidade de aprendizado <span class="sep">&#8226;</span> Negociação e persuasão <span class="sep">&#8226;</span> Criatividade <span class="sep">&#8226;</span> Tomada de decisão <span class="sep">&#8226;</span> Pensamento crítico <span class="sep">&#8226;</span> Adaptabilidade <span class="sep">&#8226;</span> Trabalho em equipe <span class="sep">&#8226;</span> Inteligência emocional <span class="sep">&#8226;</span> Motivação <span class="sep">&#8226;</span> Ética profissional <span class="sep">&#8226;</span> Responsabilidade <span class="sep">&#8226;</span> Confiabilidade
                         </p>
 
-                        <p>Atualmente, curso Análise e Desenvolvimento de Sistemas (ADS) e direciono meus estudos para desenvolvimento Full Stack.</p>
-
-                        <p>Disponibilizei uma versão do meu currículo. Para acessar, clique no botão abaixo.</p>
+                        <p data-i18n="about.p5">Atualmente, curso Análise e Desenvolvimento de Sistemas (ADS) e direciono meus estudos para desenvolvimento Full Stack.</p>
+                        <p data-i18n="about.p6">Disponibilizei uma versão do meu currículo. Para acessar, clique no botão abaixo.</p>
                     </div><!-- texto sobre -->
 
                     <div class="cv">
                         <a href="https://lillnard.github.io/CV-2024/" target="_blank">
                             <button>
                                 <i class="fa-solid fa-file-lines"></i>
-                                <p>Visualizar CV</p>
+                                <p data-i18n="about.cvBtn">Visualizar CV</p>
                             </button>
                         </a>
                     </div><!-- cv -->
@@ -666,7 +682,7 @@
                     </div> <!-- logo-footer -->
 
                     <div class="footer">
-                        <p>Desenvolvido por <span>LEONARDO G. FONSECA</span></p>
+                        <p data-i18n="footer.by">Desenvolvido por <span>LEONARDO G. FONSECA</span></p>
                     </div><!-- divisa-footer -->
 
                     <div class="social social-footer button">
@@ -686,19 +702,20 @@
             </div><!-- divisa-footer -->
 
             <div class="divisa footer-desktop">
-                <p>Todos os direitos reservados</p>
+                <p data-i18n="footer.rights">Todos os direitos reservados</p>
             </div><!-- divisa -->
 
             <div class="footer-mbl footer-mobile">
-                <p>Desenvolvido por <span>LEONARDO G. FONSECA</span></p>
+                <p data-i18n="footer.by">Desenvolvido por <span>LEONARDO G. FONSECA</span></p>
             </div><!-- footer -->
 
             <div class="divisa-footer-mobile footer-mobile">
-                <p>Todos os direitos reservados</p>
+                <p data-i18n="footer.rights">Todos os direitos reservados</p>
             </div><!-- divisa -->
         </div><!-- interface -->
     </footer>
 
     <script src="script.js"></script>
+    <script src="translate.js"></script>
 </body>
 </html>
