@@ -6,7 +6,6 @@
     font-family: 'Roboto Condensed', sans-serif;
     text-decoration: none;
     list-style-type: none;
-    color: #cccccc;
     user-select: none;
 }
 
@@ -177,6 +176,20 @@ body.dark .btn-hover:hover{
     display: inline-block;
     transition: 0.2s;
     margin: 0 30px;
+}
+
+/* COR DO MENU NO MODO CLARO */
+body.dark .menu-desktop.dark nav a{
+    color: #242424;
+}
+
+body.dark .menu-desktop.dark nav a i{
+    color: #242424;
+}
+
+/* LINK ATIVO NO MODO CLARO */
+body.dark .menu-desktop nav a.ativo{
+    color: #000000;
 }
 
 .menu-desktop nav a:hover{
@@ -391,7 +404,7 @@ header.dark button i{
     position: absolute;
     left: -100%;
     top: 100%;
-    background-image: linear-gradient(90deg, #000000, #ffffff);
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
 }
 
 .dark-mode:hover::before{
@@ -400,7 +413,7 @@ header.dark button i{
     top: 0;
 }
 
-/* ✅ BOTÃO IDIOMA (DESKTOP) */
+/*BOTÃO IDIOMA (DESKTOP) */
 .lang-mode{
     background-color: #242424;
     box-shadow: 0px 0px 5px #ffffff;
@@ -1034,6 +1047,7 @@ section.sobre .texto-sobre p{
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    color: #cccccc;
 }
 
 .cv.dark button{
@@ -1116,6 +1130,7 @@ section.projetos .flex{
     justify-content: center;
     width: 80%;
     margin: auto;
+    color: #cccccc;
 }
 
 .images-content, .projeto-content{
@@ -1212,6 +1227,7 @@ section.projetos .flex{
 .btn-projeto{
     background-color: #242424;
     box-shadow: 0px 0px 5px #ffffff;
+    color: #cccccc;
     width: 100px;
     height: 50px;
     border-radius: 10px;
