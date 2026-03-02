@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="icon" href="img/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;300;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/2021d3515c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Admin Projetos | Portfólio</title>
+
+  <style>
+    :root{
+      --grad: linear-gradient(45deg, #ff2500, #ff7100);
+      --radius: 20px;
+    }
+
+    main{ padding-top: 90px; padding-bottom: 40px; }
+    .shell{ width: min(1100px, 92vw); margin: 0 auto; }
+
+    header .container{ justify-content: space-between; }
+    .nav-left{ display:flex; align-items:center; gap: 12px; }
+    .back-link{
+      display:flex; align-items:center; gap: 10px;
+      color: #636363; font-weight: 700;
+      padding: 10px 12px; border-radius: 12px; transition: .2s;
+    }
+    body.dark .back-link, header.dark .back-link{ color:#242424; }
+    .back-link:hover{ background: rgba(36,36,36,0.35); }
+    body.dark .back-link:hover{ background: rgba(0,0,0,0.08); }
+
+    .title{
+      padding: 18px 0 10px;
+      display:flex; gap: 10px; align-items:flex-end; justify-content: space-between; flex-wrap: wrap;
+    }
+    .title h1{
+      font-size: 38px;
+      background-image: var(--grad);
+      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .title p{
+      color: #8f8f8f; font-weight: 300;
+      max-width: 560px;
+    }
+    body.dark .title p{ color:#4a4a4a; }
+
+    .panel{
+      border-radius: var(--radius);
+      background: rgba(17,18,23,0.6);
+      box-shadow: 0px 0px 3px #ffffff;
+      padding: 16px;
+      backdrop-filter: blur(8px);
+      margin: 12px 0 16px;
+    }
+    body.dark .panel{
+      background: rgba(233,233,233,0.85);
+      box-shadow: 0px 0px 8px #000000;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .field{
+      display:flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field label{
+      font-weight: 700;
+      color: #cccccc;
+    }
+    body.dark .field label{ color:#242424; }
+
+    .field input, .field textarea{
+      border:none;
+      outline:none;
+      border-radius: 14px;
+      padding: 12px 12px;
+      font-size: 16px;
+      background: #242424;
+      box-shadow: 0px 0px 5px #ffffff;
+      color: #ffffff;
+      font-weight: 300;
+    }
+    body.dark .field input, body.dark .field textarea{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 5px #000000;
+      color: #242424;
+    }
+
+    textarea{ min-height: 92px; resize: vertical; }
+
+    .row{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn{
+      background-color: #242424;
+      box-shadow: 0px 0px 5px #ffffff;
+      color: #cccccc;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border:none;
+      cursor: pointer;
+      font-weight: 800;
+      transition: .2s;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      overflow:hidden;
+    }
+    body.dark .btn{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 8px #000000;
+      color: #242424;
+    }
+    .btn:hover{
+      background-image: var(--grad);
+      color: #111217;
+      transform: scale(1.02);
+    }
+    body.dark .btn:hover{ color:#e9e9e9; }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){ .split{ grid-template-columns: 1fr; } }
+
+    .list{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .item{
+      border-radius: var(--radius);
+      background: #111217;
+      box-shadow: 0px 0px 3px #ffffff;
+      padding: 12px;
+      display:flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    body.dark .item{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 8px #000000;
+    }
+
+    .item h3{
+      font-size: 20px;
+      background-image: var(--grad);
+      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .muted{
+      color:#8f8f8f;
+      font-weight: 300;
+      font-size: 14px;
+    }
+    body.dark .muted{ color:#4a4a4a; }
+
+    .tiny{
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #242424;
+      color:#cccccc;
+      box-shadow: 0px 0px 5px #ffffff;
+      display:inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+    body.dark .tiny{
+      background:#e9e9e9;
+      color:#242424;
+      box-shadow: 0px 0px 5px #000000;
+    }
+
+    .right-actions{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 180px;
+    }
+
+    .hr{
+      border-top: 2px solid #636363;
+      margin: 18px 0;
+      opacity: 0.7;
+    }
+
+    .json-box{
+      width: 100%;
+      min-height: 260px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+      <div class="nav-left">
+        <a class="back-link" href="index.html">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Voltar</span>
+        </a>
+
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.png" alt="Logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="social" style="display:flex; align-items:center; justify-content:end; gap:10px;">
+        <button class="dark-mode" id="darkBtn" title="Modo claro/escuro">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <div class="title">
+        <div>
+          <h1>Admin de Projetos</h1>
+          <p>Cadastre aqui e exporte o JSON para substituir o arquivo <b>data/projects.json</b>. Sem backend, sem dor.</p>
+        </div>
+      </div>
+
+      <div class="panel split">
+        <div>
+          <div class="grid2">
+            <div class="field">
+              <label for="title">Título</label>
+              <input id="title" type="text" placeholder="Ex: Kanban To-Do List" />
+            </div>
+
+            <div class="field">
+              <label for="date">Data (YYYY-MM-DD)</label>
+              <input id="date" type="date" />
+            </div>
+
+            <div class="field" style="grid-column: 1 / -1;">
+              <label for="description">Descrição</label>
+              <textarea id="description" placeholder="Resumo curto e direto do projeto..."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="tags">Tags (separe por vírgula)</label>
+              <input id="tags" type="text" placeholder="HTML, CSS, JavaScript, API" />
+            </div>
+
+            <div class="field">
+              <label for="image">Imagem (caminho ou URL)</label>
+              <input id="image" type="text" placeholder="Ex: img/projetos/kanban.png" />
+            </div>
+
+            <div class="field">
+              <label for="demoUrl">Link do Projeto (demo)</label>
+              <input id="demoUrl" type="text" placeholder="https://..." />
+            </div>
+
+            <div class="field">
+              <label for="codeUrl">Link do Código (GitHub)</label>
+              <input id="codeUrl" type="text" placeholder="https://github.com/..." />
+            </div>
+
+            <div class="field">
+              <label>
+                <input id="featured" type="checkbox" />
+                <span style="font-weight:800; margin-left:8px;">Destaque</span>
+              </label>
+              <span class="muted">Se marcado, aparece com badge e prioriza a listagem.</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <button class="btn btn-hover" id="addBtn" type="button">
+              <i class="fa-solid fa-plus"></i> Adicionar / Atualizar
+            </button>
+
+            <button class="btn btn-hover" id="resetBtn" type="button">
+              <i class="fa-solid fa-rotate-left"></i> Limpar formulário
+            </button>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="row">
+            <button class="btn btn-hover" id="exportBtn" type="button">
+              <i class="fa-solid fa-file-export"></i> Exportar JSON
+            </button>
+
+            <button class="btn btn-hover" id="downloadBtn" type="button">
+              <i class="fa-solid fa-download"></i> Baixar projects.json
+            </button>
+
+            <button class="btn btn-hover" id="importBtn" type="button">
+              <i class="fa-solid fa-file-import"></i> Importar do JSON
+            </button>
+
+            <button class="btn btn-hover" id="wipeBtn" type="button" title="Apaga a lista salva nesta página">
+              <i class="fa-solid fa-trash"></i> Zerar lista
+            </button>
+          </div>
+
+          <div class="field" style="margin-top: 12px;">
+            <label for="jsonOut">JSON (cole no data/projects.json)</label>
+            <textarea id="jsonOut" class="json-box" spellcheck="false" placeholder="Clique em Exportar JSON..."></textarea>
+            <span class="muted">
+              Dica: depois de substituir <b>data/projects.json</b>, abra <b>projetos.html</b> e atualize (Ctrl+F5).
+            </span>
+          </div>
+        </div>
+
+        <div class="panel" style="margin:0;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <div>
+              <h2 style="font-size:22px; background-image:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+                Lista atual
+              </h2>
+              <p class="muted">Clique em “Editar” para carregar no formulário.</p>
+            </div>
+            <a class="btn btn-hover" href="projetos.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+              <i class="fa-solid fa-eye"></i> Ver página pública
+            </a>
+          </div>
+
+          <div class="list" id="list"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ----------------- Tema -----------------
+    function applyTheme(mode) {
+      const header = document.getElementById("header");
+      if (mode === "light") {
+        document.body.classList.add("dark");
+        header.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+        header.classList.remove("dark");
+      }
+    }
+    (function initTheme(){
+      const t = (localStorage.getItem("theme") || "").toLowerCase();
+      if (t === "light") applyTheme("light");
+      else applyTheme("dark");
+    })();
+    document.getElementById("darkBtn").addEventListener("click", () => {
+      const isLight = document.body.classList.contains("dark");
+      if (isLight) { applyTheme("dark"); localStorage.setItem("theme","dark"); }
+      else { applyTheme("light"); localStorage.setItem("theme","light"); }
+    });
+
+    // ----------------- Admin logic -----------------
+    const STORAGE_KEY = "portfolio_projects_admin_list_v1";
+
+    const $ = (id) => document.getElementById(id);
+
+    const form = {
+      title: $("title"),
+      date: $("date"),
+      description: $("description"),
+      tags: $("tags"),
+      image: $("image"),
+      demoUrl: $("demoUrl"),
+      codeUrl: $("codeUrl"),
+      featured: $("featured"),
+    };
+
+    const listEl = $("list");
+    const jsonOut = $("jsonOut");
+
+    let projects = [];
+    let editingId = null;
+
+    function slugify(text){
+      return (text || "")
+        .toString()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "")
+        .slice(0, 80) || ("proj-" + Math.random().toString(16).slice(2));
+    }
+
+    function readStorage(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      }catch{
+        return [];
+      }
+    }
+
+    function writeStorage(){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(projects, null, 2));
+    }
+
+    function resetForm(){
+      editingId = null;
+      form.title.value = "";
+      form.date.value = "";
+      form.description.value = "";
+      form.tags.value = "";
+      form.image.value = "";
+      form.demoUrl.value = "";
+      form.codeUrl.value = "";
+      form.featured.checked = false;
+    }
+
+    function toTags(str){
+      return (str || "")
+        .split(",")
+        .map(s => s.trim())
+        .filter(Boolean);
+    }
+
+    function sortProjects(arr){
+      // destaque primeiro, depois por data desc
+      return [...arr].sort((a,b) => {
+        if ((b.featured === true) !== (a.featured === true)) return (b.featured === true) - (a.featured === true);
+        const da = new Date(a.date || "1970-01-01").getTime();
+        const db = new Date(b.date || "1970-01-01").getTime();
+        return db - da;
+      });
+    }
+
+    function renderList(){
+      const sorted = sortProjects(projects);
+
+      listEl.innerHTML = sorted.map(p => {
+        const tags = (p.tags || []).slice(0,4).map(t => `<span class="tiny"><i class="fa-solid fa-tag"></i>${t}</span>`).join("");
+        const date = p.date ? `<span class="muted"><i class="fa-regular fa-calendar"></i> ${p.date}</span>` : `<span class="muted">Sem data</span>`;
+        const feat = p.featured ? `<span class="tiny"><i class="fa-solid fa-star"></i>Destaque</span>` : "";
+        return `
+          <div class="item">
+            <div style="flex:1;">
+              <h3>${p.title || "Projeto"}</h3>
+              <div class="muted" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                ${date}
+                <span class="muted"><i class="fa-solid fa-hashtag"></i> ${p.id}</span>
+              </div>
+              <div style="margin-top:8px;">${feat}${tags}</div>
+            </div>
+
+            <div class="right-actions">
+              <button class="btn btn-hover" type="button" onclick="editProject('${p.id}')">
+                <i class="fa-solid fa-pen"></i> Editar
+              </button>
+              <button class="btn btn-hover" type="button" onclick="removeProject('${p.id}')">
+                <i class="fa-solid fa-trash"></i> Remover
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // expõe no window pra funcionar no onclick do template
+    window.editProject = function(id){
+      const p = projects.find(x => x.id === id);
+      if (!p) return;
+      editingId = id;
+
+      form.title.value = p.title || "";
+      form.date.value = p.date || "";
+      form.description.value = p.description || "";
+      form.tags.value = (p.tags || []).join(", ");
+      form.image.value = p.image || "";
+      form.demoUrl.value = p.demoUrl || "";
+      form.codeUrl.value = p.codeUrl || "";
+      form.featured.checked = !!p.featured;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    window.removeProject = function(id){
+      projects = projects.filter(p => p.id !== id);
+      writeStorage();
+      renderList();
+    }
+
+    function buildProjectFromForm(){
+      const title = form.title.value.trim();
+      if (!title) return null;
+
+      const id = editingId || slugify(title);
+
+      return {
+        id,
+        title,
+        description: form.description.value.trim(),
+        tags: toTags(form.tags.value),
+        date: form.date.value ? form.date.value : "",
+        featured: form.featured.checked,
+        image: form.image.value.trim(),
+        demoUrl: form.demoUrl.value.trim(),
+        codeUrl: form.codeUrl.value.trim()
+      };
+    }
+
+    $("addBtn").addEventListener("click", () => {
+      const p = buildProjectFromForm();
+      if (!p) {
+        alert("Preencha pelo menos o TÍTULO do projeto.");
+        return;
+      }
+
+      const idx = projects.findIndex(x => x.id === p.id);
+      if (idx >= 0) projects[idx] = p;
+      else projects.push(p);
+
+      writeStorage();
+      renderList();
+      resetForm();
+    });
+
+    $("resetBtn").addEventListener("click", resetForm);
+
+    $("exportBtn").addEventListener("click", () => {
+      // ordena antes de exportar (destaque e data)
+      const out = sortProjects(projects);
+      jsonOut.value = JSON.stringify(out, null, 2);
+      jsonOut.focus();
+      jsonOut.select();
+    });
+
+    $("downloadBtn").addEventListener("click", () => {
+      const out = sortProjects(projects);
+      const blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "projects.json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+    });
+
+    $("importBtn").addEventListener("click", () => {
+      try{
+        const raw = jsonOut.value.trim();
+        if (!raw) {
+          alert("Cole o JSON no campo antes de importar.");
+          return;
+        }
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed)) {
+          alert("O JSON precisa ser um ARRAY de projetos.");
+          return;
+        }
+        projects = parsed;
+        writeStorage();
+        renderList();
+        alert("Importado! Agora sua lista foi atualizada nesta página.");
+      }catch(err){
+        alert("JSON inválido. Verifique a formatação.");
+      }
+    });
+
+    $("wipeBtn").addEventListener("click", () => {
+      const ok = confirm("Tem certeza que deseja zerar a lista desta página (localStorage)?");
+      if (!ok) return;
+      projects = [];
+      writeStorage();
+      renderList();
+      resetForm();
+      jsonOut.value = "";
+    });
+
+    // init
+    projects = readStorage();
+    renderList();
+  </script>
+</body>
+</html>

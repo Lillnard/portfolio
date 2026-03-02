@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Seus assets -->
+  <link rel="icon" type="icon" href="img/favicon.ico">
+
+  <!-- Fonte (igual ao seu portfólio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;300;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (igual ao seu portfólio) -->
+  <script src="https://kit.fontawesome.com/2021d3515c.js" crossorigin="anonymous"></script>
+
+  <!-- Seu CSS principal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Mais Projetos | Portfólio</title>
+
+  <style>
+    /* --------- Page-only (não quebra seu CSS do portfólio) --------- */
+    :root{
+      --bg-dark: #111217;
+      --bg-dark-2:#171927;
+      --txt-dark:#cccccc;
+      --txt-dark-2:#8f8f8f;
+
+      --bg-light:#e9e9e9;
+      --bg-light-2:#f5f5f5;
+      --txt-light:#242424;
+      --txt-light-2:#4a4a4a;
+
+      --card-radius: 20px;
+      --shadow-dark: 0px 0px 5px #ffffff;
+      --shadow-light: 0px 0px 8px #000000;
+
+      --grad: linear-gradient(45deg, #ff2500, #ff7100);
+    }
+
+    main{
+      padding-top: 90px; /* header fixo */
+      padding-bottom: 50px;
+      width: 100%;
+    }
+
+    .page-shell{
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+    }
+
+    .page-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 20px 0 10px;
+    }
+
+    .page-title h1{
+      font-size: 42px;
+      line-height: 1.1;
+      background-image: var(--grad);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-title p{
+      color: var(--txt-dark-2);
+      font-size: 18px;
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    body.dark .page-title p{
+      color: var(--txt-light-2);
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 18px;
+      padding: 16px;
+      border-radius: var(--card-radius);
+      background: rgba(17,18,23,0.6);
+      box-shadow: 0px 0px 3px #ffffff;
+      backdrop-filter: blur(8px);
+    }
+
+    body.dark .top-actions{
+      background: rgba(233,233,233,0.8);
+      box-shadow: 0px 0px 8px #000000;
+    }
+
+    .search-wrap{
+      flex: 1;
+      display:flex;
+      gap: 10px;
+      min-width: 240px;
+      align-items:center;
+      background: #242424;
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow-dark);
+    }
+
+    body.dark .search-wrap{
+      background: #f5f5f5;
+      box-shadow: var(--shadow-light);
+    }
+
+    .search-wrap i{
+      color: #ffffff;
+      opacity: 0.9;
+    }
+    body.dark .search-wrap i{ color: #242424; }
+
+    .search-wrap input{
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    body.dark .search-wrap input{ color: #242424; }
+
+    .select-wrap{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      background: #242424;
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow-dark);
+    }
+    body.dark .select-wrap{
+      background: #f5f5f5;
+      box-shadow: var(--shadow-light);
+    }
+
+    .select-wrap label{
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    body.dark .select-wrap label{ color: #242424; }
+
+    .select-wrap select{
+      border:none;
+      outline:none;
+      background: transparent;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    body.dark .select-wrap select{ color: #242424; }
+
+    .mini-btn{
+      background-color: #242424;
+      box-shadow: 0px 0px 5px #ffffff;
+      color: #cccccc;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+      overflow:hidden;
+      position: relative;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    body.dark .mini-btn{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 8px #000000;
+      color: #242424;
+    }
+    .mini-btn:hover{
+      background-image: var(--grad);
+      color: #111217;
+      transform: scale(1.02);
+    }
+    body.dark .mini-btn:hover{ color: #e9e9e9; }
+
+    .tags-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 2px 16px;
+    }
+
+    .chip{
+      border: none;
+      cursor: pointer;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #cccccc;
+      background: #242424;
+      box-shadow: 0px 0px 5px #ffffff;
+      transition: .2s;
+      user-select: none;
+    }
+
+    body.dark .chip{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 8px #000000;
+      color: #242424;
+    }
+
+    .chip:hover{ transform: scale(1.03); }
+    .chip.active{
+      background-image: var(--grad);
+      color: #111217;
+      box-shadow: 0px 0px 12px rgba(255, 113, 0, 0.4);
+    }
+    body.dark .chip.active{ color: #e9e9e9; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-bottom: 10px;
+    }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px){
+      .grid{ grid-template-columns: 1fr; }
+      .page-title h1{ font-size: 34px; }
+    }
+
+    .card{
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      background: #111217;
+      box-shadow: 0px 0px 3px #ffffff;
+      transition: .2s;
+      display:flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    body.dark .card{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 8px #000000;
+    }
+    .card:hover{ transform: translateY(-3px); }
+
+    .thumb{
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: #242424;
+      position: relative;
+      overflow:hidden;
+    }
+    body.dark .thumb{ background: #e1e1e1; }
+
+    .thumb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      opacity: 0.95;
+      transition: .25s;
+    }
+    .card:hover .thumb img{ transform: scale(1.03); opacity: 1; }
+
+    .badge{
+      position:absolute;
+      top: 12px;
+      left: 12px;
+      background-image: var(--grad);
+      color: #111217;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      box-shadow: 0px 0px 10px rgba(255, 113, 0, 0.35);
+    }
+
+    .content{
+      padding: 14px 14px 12px;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .content h3{
+      font-size: 22px;
+      line-height: 1.2;
+      background-image: var(--grad);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content p{
+      color: #cccccc;
+      font-weight: 300;
+      line-height: 24px;
+      font-size: 16px;
+    }
+    body.dark .content p{ color: #242424; }
+
+    .tagline{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .pill{
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #242424;
+      color: #cccccc;
+      box-shadow: 0px 0px 5px #ffffff;
+    }
+    body.dark .pill{
+      background: #e9e9e9;
+      color: #242424;
+      box-shadow: 0px 0px 5px #000000;
+    }
+
+    .card-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 0 14px 14px;
+    }
+
+    .card-actions a{
+      flex: 1;
+      min-width: 130px;
+      text-align:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      height: 44px;
+      border-radius: 12px;
+      background: #242424;
+      box-shadow: 0px 0px 5px #ffffff;
+      color: #cccccc;
+      font-weight: 700;
+      transition: .2s;
+      position: relative;
+      overflow:hidden;
+    }
+    body.dark .card-actions a{
+      background: #f5f5f5;
+      box-shadow: 0px 0px 5px #000000;
+      color: #242424;
+    }
+    .card-actions a:hover{
+      background-image: var(--grad);
+      color: #111217;
+      transform: scale(1.01);
+    }
+    body.dark .card-actions a:hover{ color:#e9e9e9; }
+
+    .empty{
+      margin: 30px auto 10px;
+      padding: 18px;
+      border-radius: var(--card-radius);
+      background: rgba(36,36,36,0.4);
+      box-shadow: 0px 0px 3px #ffffff;
+      color: #cccccc;
+      font-weight: 300;
+      text-align:center;
+    }
+    body.dark .empty{
+      background: rgba(245,245,245,0.9);
+      box-shadow: 0px 0px 8px #000000;
+      color: #242424;
+    }
+
+    /* Header “mini” reaproveitando o seu header fixo */
+    header .container{
+      justify-content: space-between;
+    }
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+    }
+    .back-link{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      color: #636363;
+      font-weight: 700;
+      padding: 10px 12px;
+      border-radius: 12px;
+      transition: .2s;
+    }
+    header.dark .back-link,
+    body.dark .back-link{
+      color: #242424;
+    }
+    .back-link:hover{
+      background: rgba(36,36,36,0.35);
+    }
+    body.dark .back-link:hover{
+      background: rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header fixo, no mesmo padrão -->
+  <header id="header">
+    <div class="container">
+      <div class="nav-left">
+        <button class="hamb-btn" style="display:none;"></button>
+
+        <a class="back-link" href="index.html" aria-label="Voltar para o portfólio">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Voltar</span>
+        </a>
+
+        <div class="logo">
+          <a href="index.html" aria-label="Ir para o início do portfólio">
+            <img src="img/logo.png" alt="Logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="social" style="display:flex; align-items:center; justify-content:end; gap:10px;">
+        <button class="dark-mode" id="darkBtn" title="Modo claro/escuro" aria-label="Alternar modo claro/escuro">
+          <i class="fa-solid fa-moon" id="moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-shell">
+      <div class="page-title">
+        <div>
+          <h1>Mais Projetos</h1>
+          <p>Uma vitrine completa: filtre por tags, busque por nome e encontre o que você quiser explorar.</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <div class="search-wrap" title="Buscar por nome, descrição ou tags">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="text" placeholder="Buscar projeto..." autocomplete="off" />
+        </div>
+
+        <div class="select-wrap">
+          <label for="sortSelect">Ordenar:</label>
+          <select id="sortSelect">
+            <option value="newest">Mais recentes</option>
+            <option value="oldest">Mais antigos</option>
+            <option value="title">A-Z</option>
+          </select>
+        </div>
+
+        <button class="mini-btn btn-hover" id="clearBtn" type="button" title="Limpar filtros">
+          <i class="fa-solid fa-broom"></i> Limpar
+        </button>
+      </div>
+
+      <div class="tags-row" id="tagsRow"></div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="empty" id="emptyState" style="display:none;">
+        Nenhum projeto encontrado. Tente outra busca ou limpe os filtros. 👀
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ----------------- Tema (compatível com vários jeitos de salvar) -----------------
+    function getStoredTheme() {
+      const keys = ["theme", "modo", "darkMode", "isDark", "portfolioTheme"];
+      for (const k of keys) {
+        const v = localStorage.getItem(k);
+        if (!v) continue;
+        const val = String(v).toLowerCase();
+        if (val === "dark" || val === "true" || val === "1") return "dark";
+        if (val === "light" || val === "false" || val === "0") return "light";
+      }
+      // fallback: se tiver classe no body salvo num snapshot (raríssimo), ignoramos.
+      return null;
+    }
+
+    function applyTheme(mode) {
+      const header = document.getElementById("header");
+      if (mode === "light") {
+        document.body.classList.add("dark");
+        header.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+        header.classList.remove("dark");
+      }
+    }
+
+    (function initTheme(){
+      const saved = getStoredTheme();
+      if (saved === "light") applyTheme("light");
+      else applyTheme("dark"); // seu padrão é dark
+    })();
+
+    document.getElementById("darkBtn").addEventListener("click", () => {
+      const isLight = document.body.classList.contains("dark");
+      if (isLight) {
+        applyTheme("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        applyTheme("light");
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // ----------------- Dados -----------------
+    const grid = document.getElementById("grid");
+    const tagsRow = document.getElementById("tagsRow");
+    const emptyState = document.getElementById("emptyState");
+
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const clearBtn = document.getElementById("clearBtn");
+
+    let ALL = [];
+    let activeTag = "Todos";
+
+    function normalize(str){
+      return (str || "")
+        .toString()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    function uniq(arr){
+      return [...new Set(arr)];
+    }
+
+    function sortProjects(list, mode){
+      const copy = [...list];
+      if (mode === "title") {
+        copy.sort((a,b) => (a.title || "").localeCompare(b.title || "", "pt-BR"));
+        return copy;
+      }
+      // datas no formato YYYY-MM-DD
+      copy.sort((a,b) => {
+        const da = new Date(a.date || "1970-01-01").getTime();
+        const db = new Date(b.date || "1970-01-01").getTime();
+        return mode === "oldest" ? da - db : db - da;
+      });
+      return copy;
+    }
+
+    function buildTags(projects){
+      const tags = uniq(projects.flatMap(p => Array.isArray(p.tags) ? p.tags : []))
+        .filter(Boolean)
+        .sort((a,b) => a.localeCompare(b, "pt-BR"));
+
+      const allTags = ["Todos", ...tags];
+
+      tagsRow.innerHTML = "";
+      allTags.forEach(tag => {
+        const btn = document.createElement("button");
+        btn.className = "chip" + (tag === activeTag ? " active" : "");
+        btn.type = "button";
+        btn.textContent = tag;
+        btn.addEventListener("click", () => {
+          activeTag = tag;
+          [...tagsRow.querySelectorAll(".chip")].forEach(c => c.classList.remove("active"));
+          btn.classList.add("active");
+          render();
+        });
+        tagsRow.appendChild(btn);
+      });
+    }
+
+    function cardTemplate(p){
+      const tags = Array.isArray(p.tags) ? p.tags : [];
+      const safeTitle = p.title || "Projeto";
+      const safeDesc = p.description || "Sem descrição.";
+      const img = p.image || "img/projeto-placeholder.png";
+
+      const hasDemo = !!p.demoUrl;
+      const hasCode = !!p.codeUrl;
+
+      const badge = p.featured ? `<span class="badge">Destaque</span>` : "";
+
+      const pills = tags.slice(0, 6).map(t => `<span class="pill">${t}</span>`).join("");
+
+      const demoBtn = hasDemo
+        ? `<a class="btn-hover" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">
+             <i class="fa-solid fa-play"></i> Ver Projeto
+           </a>`
+        : "";
+
+      const codeBtn = hasCode
+        ? `<a class="btn-hover" href="${p.codeUrl}" target="_blank" rel="noopener noreferrer">
+             <i class="fa-brands fa-github"></i> Ver Código
+           </a>`
+        : "";
+
+      const fallbackBtn = (!hasDemo && !hasCode)
+        ? `<a class="btn-hover" href="#" onclick="return false" style="opacity:.6; cursor:not-allowed;">
+             <i class="fa-solid fa-lock"></i> Em breve
+           </a>`
+        : "";
+
+      return `
+        <article class="card">
+          <div class="thumb">
+            ${badge}
+            <img src="${img}" alt="Imagem do projeto ${safeTitle}" loading="lazy" onerror="this.src='img/projeto-placeholder.png'"/>
+          </div>
+
+          <div class="content">
+            <h3>${safeTitle}</h3>
+            <p>${safeDesc}</p>
+            <div class="tagline">${pills}</div>
+          </div>
+
+          <div class="card-actions">
+            ${demoBtn}
+            ${codeBtn}
+            ${fallbackBtn}
+          </div>
+        </article>
+      `;
+    }
+
+    function filterProjects(){
+      const q = normalize(searchInput.value);
+      let list = [...ALL];
+
+      if (activeTag && activeTag !== "Todos") {
+        list = list.filter(p => (p.tags || []).includes(activeTag));
+      }
+
+      if (q) {
+        list = list.filter(p => {
+          const blob = normalize([
+            p.title, p.description,
+            Array.isArray(p.tags) ? p.tags.join(" ") : "",
+            p.stack, p.role
+          ].join(" "));
+          return blob.includes(q);
+        });
+      }
+
+      list = sortProjects(list, sortSelect.value);
+      return list;
+    }
+
+    function render(){
+      const list = filterProjects();
+      grid.innerHTML = list.map(cardTemplate).join("");
+
+      emptyState.style.display = list.length ? "none" : "block";
+    }
+
+    async function loadProjects(){
+      try{
+        const res = await fetch("data/projects.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Falha ao carregar projects.json");
+        const json = await res.json();
+        ALL = Array.isArray(json) ? json : (json.projects || []);
+      }catch(err){
+        console.warn(err);
+        // fallback: exemplo mínimo se der ruim
+        ALL = [
+          {
+            id: "exemplo-1",
+            title: "Exemplo de Projeto",
+            description: "Se você está vendo isso, o arquivo data/projects.json não foi encontrado (ou está com erro).",
+            tags: ["HTML", "CSS", "JS"],
+            date: "2026-03-01",
+            featured: true,
+            image: "img/projeto-placeholder.png",
+            demoUrl: "index.html",
+            codeUrl: "https://github.com/"
+          }
+        ];
+      }
+
+      // destaca primeiro (opcional)
+      ALL.sort((a,b) => (b.featured === true) - (a.featured === true));
+
+      buildTags(ALL);
+      render();
+    }
+
+    searchInput.addEventListener("input", render);
+    sortSelect.addEventListener("change", render);
+
+    clearBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      sortSelect.value = "newest";
+      activeTag = "Todos";
+      buildTags(ALL);
+      render();
+    });
+
+    loadProjects();
+  </script>
+</body>
+</html>

@@ -1268,6 +1268,13 @@ section.projetos .flex{
     font-size: 10px;
 }
 
+.ver-todos-projetos{
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 0;
+    width: 100px;
+}
+
 .block { 
     display: block; 
 }
